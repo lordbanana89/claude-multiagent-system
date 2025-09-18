@@ -22,8 +22,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configuration
-PORT = 8099
-WS_PORT = 8100
+PORT = 9999
+WS_PORT = 10000
 
 class SessionManager:
     """Manage MCP sessions with persistence"""
