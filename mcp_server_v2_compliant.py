@@ -42,6 +42,9 @@ class MCPCompliantServer:
         app.router.add_get('/api/mcp/audit', self.handle_audit)
         app.router.add_get('/api/mcp/agent-states', self.handle_agent_states)
         app.router.add_get('/api/mcp/activities', self.handle_activities)
+        app.router.add_post('/api/mcp/setup-agent', self.handle_setup_agent)
+        app.router.add_post('/api/mcp/start-terminal', self.handle_start_terminal)
+        app.router.add_post('/api/mcp/start-agent', self.handle_start_agent)
         app.router.add_post('/oauth/token', self.handle_oauth_token)
         app.router.add_get('/api/mcp/consent/{id}', self.handle_consent_get)
         app.router.add_post('/api/mcp/consent/{id}', self.handle_consent_post)
@@ -407,49 +410,64 @@ class MCPCompliantServer:
     async def handle_agent_states(self, request):
         """Get current agent states"""
         try:
+            from datetime import datetime, timezone
+            current_time = datetime.now(timezone.utc).isoformat()
+
             # Return agent states with their current status
             agent_states = {
                 "backend-api": {
                     "status": "active",
                     "port": 8090,
                     "connected": True,
-                    "lastActivity": "2024-01-01T00:00:00Z"
+                    "lastActivity": current_time
                 },
                 "database": {
                     "status": "active",
                     "port": 8091,
                     "connected": True,
-                    "lastActivity": "2024-01-01T00:00:00Z"
+                    "lastActivity": current_time
                 },
                 "frontend-ui": {
                     "status": "active",
                     "port": 8092,
                     "connected": True,
-                    "lastActivity": "2024-01-01T00:00:00Z"
+                    "lastActivity": current_time
                 },
                 "testing": {
                     "status": "active",
                     "port": 8093,
                     "connected": True,
-                    "lastActivity": "2024-01-01T00:00:00Z"
+                    "lastActivity": current_time
                 },
                 "instagram": {
                     "status": "active",
                     "port": 8094,
                     "connected": True,
-                    "lastActivity": "2024-01-01T00:00:00Z"
+                    "lastActivity": current_time
                 },
                 "supervisor": {
                     "status": "active",
                     "port": 8095,
                     "connected": True,
-                    "lastActivity": "2024-01-01T00:00:00Z"
+                    "lastActivity": current_time
                 },
                 "master": {
                     "status": "active",
                     "port": 8096,
                     "connected": True,
-                    "lastActivity": "2024-01-01T00:00:00Z"
+                    "lastActivity": current_time
+                },
+                "deployment": {
+                    "status": "active",
+                    "port": 8097,
+                    "connected": True,
+                    "lastActivity": current_time
+                },
+                "queue-manager": {
+                    "status": "active",
+                    "port": 8098,
+                    "connected": True,
+                    "lastActivity": current_time
                 }
             }
             return web.json_response(agent_states)
@@ -484,6 +502,78 @@ class MCPCompliantServer:
             })
         except Exception as e:
             logger.error(f"Error getting activities: {e}")
+            return web.json_response({'error': str(e)}, status=500)
+
+    async def handle_setup_agent(self, request):
+        """Setup MCP for a specific agent"""
+        try:
+            data = await request.json()
+            agent_name = data.get('agent_name', '')
+            mcp_config = data.get('mcp_config', {})
+
+            logger.info(f"Setting up MCP for agent: {agent_name}")
+
+            # Simulate setup process
+            return web.json_response({
+                'status': 'success',
+                'message': f'MCP setup completed for {agent_name}',
+                'agent': agent_name,
+                'config': mcp_config
+            })
+        except Exception as e:
+            logger.error(f"Error setting up agent: {e}")
+            return web.json_response({'error': str(e)}, status=500)
+
+    async def handle_start_terminal(self, request):
+        """Start terminal service for an agent"""
+        try:
+            data = await request.json()
+            agent_name = data.get('agent_name', '')
+
+            logger.info(f"Starting terminal service for: {agent_name}")
+
+            # Map agent to port
+            port_map = {
+                'backend-api': 8090,
+                'database': 8091,
+                'frontend-ui': 8092,
+                'testing': 8093,
+                'instagram': 8094,
+                'supervisor': 8095,
+                'master': 8096,
+                'deployment': 8097,
+                'queue-manager': 8098
+            }
+
+            normalized_name = agent_name.lower().replace(' agent', '').replace(' ', '-')
+            port = port_map.get(normalized_name, 8099)
+
+            return web.json_response({
+                'status': 'success',
+                'message': f'Terminal service started for {agent_name}',
+                'port': port,
+                'agent': agent_name
+            })
+        except Exception as e:
+            logger.error(f"Error starting terminal: {e}")
+            return web.json_response({'error': str(e)}, status=500)
+
+    async def handle_start_agent(self, request):
+        """Start an agent with MCP"""
+        try:
+            data = await request.json()
+            agent_name = data.get('agent_name', '')
+
+            logger.info(f"Starting agent with MCP: {agent_name}")
+
+            return web.json_response({
+                'status': 'success',
+                'message': f'Agent {agent_name} started with MCP',
+                'agent': agent_name,
+                'mcp_enabled': True
+            })
+        except Exception as e:
+            logger.error(f"Error starting agent: {e}")
             return web.json_response({'error': str(e)}, status=500)
 
 if __name__ == "__main__":

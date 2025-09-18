@@ -153,10 +153,11 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
 
   // Check which ttyd terminals are running
   const checkTerminalPorts = useCallback(async () => {
-    // Disabled terminal port checking to prevent ERR_INSUFFICIENT_RESOURCES
-    // The terminals are known to be on ports 8090-8098
-    // We'll use the static port map instead of checking availability
+    // Use static port map as base
     setTerminalPorts(TERMINAL_PORT_MAP);
+
+    // Optional: verify which are actually running
+    // Disabled to prevent ERR_INSUFFICIENT_RESOURCES
     return;
 
     /* Original code - disabled due to too many requests
@@ -176,8 +177,8 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
     */
   }, []);
 
-  // Calculate MCP status for each agent
-  const calculateAgentMCPStatus = useCallback((agentName: string): MCPAgentStatus => {
+  // Calculate MCP status for each agent - NOT useCallback to avoid deps issues
+  const calculateAgentMCPStatus = (agentName: string): MCPAgentStatus => {
     const normalizedName = agentName.toLowerCase().replace(/ agent$/i, '').replace(/ /g, '-');
 
     // Find agent state - check multiple formats
@@ -215,7 +216,7 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
       currentTask: agentState?.current_task || agentState?.currentTask,
       syncStatus
     };
-  }, [agentStates, mcpActivities, mcpStatus]);
+  };
 
   // Fetch agent states from MCP
   const fetchAgentStates = useCallback(async () => {
@@ -278,23 +279,19 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
         setTmuxSessions(data.tmux_sessions || []);
         setAgentStates(data.agent_states || []);
 
-        // Update MCP status for each agent
-        const newAgentMCPStatus: {[key: string]: MCPAgentStatus} = {};
-        agents.forEach(agent => {
-          newAgentMCPStatus[agent.name] = calculateAgentMCPStatus(agent.name);
-        });
-        setAgentMCPStatus(newAgentMCPStatus);
+        // MCP status for agents will be updated separately
       }
     } catch (error) {
       console.error('Failed to fetch MCP status:', error);
     } finally {
       setLoading(false);
     }
-  }, [agents, calculateAgentMCPStatus]);
+  }, []);
 
   // Setup agent with proper MCP configuration
   const setupAgentMCP = async (agentName: string) => {
     try {
+      console.log(`Setting up MCP for ${agentName}`);
       // Setup MCP environment for the agent
       const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
       const response = await fetch(`${mcpApiUrl}/api/mcp/setup-agent`, {
@@ -317,11 +314,18 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
         // Refresh status after setup
         setTimeout(() => {
           fetchMCPStatus();
+          fetchAgentStates();
+          fetchActivities();
           checkTerminalPorts();
         }, 1000);
+      } else {
+        const error = await response.text();
+        console.error(`MCP setup failed: ${error}`);
+        alert(`Failed to setup MCP for ${agentName}: ${error}`);
       }
     } catch (error) {
       console.error('Failed to setup MCP:', error);
+      alert(`Failed to setup MCP: ${error}`);
     }
   };
 
@@ -342,10 +346,13 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
           checkTerminalPorts();
         }, 2000);
       } else {
-        console.error('Failed to start terminal service');
+        const error = await response.text();
+        console.error('Failed to start terminal service:', error);
+        alert(`Failed to start terminal for ${agentName}: ${error}`);
       }
     } catch (error) {
       console.error('Failed to start terminal service:', error);
+      alert(`Failed to start terminal: ${error}`);
     }
   };
 
@@ -371,6 +378,16 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
     }
   };
 
+  // Update agent MCP status when data changes
+  useEffect(() => {
+    const newAgentMCPStatus: {[key: string]: MCPAgentStatus} = {};
+    agents.forEach(agent => {
+      newAgentMCPStatus[agent.name] = calculateAgentMCPStatus(agent.name);
+    });
+    setAgentMCPStatus(newAgentMCPStatus);
+  }, [agents, agentStates, mcpActivities, mcpStatus]);
+
+  // Main polling effect - run once on mount
   useEffect(() => {
     // Initial fetch
     fetchMCPStatus();
@@ -387,7 +404,7 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
     }, 10000); // Reduced frequency to avoid rate limiting
 
     return () => clearInterval(interval);
-  }, [fetchMCPStatus, fetchAgentStates, fetchActivities, checkTerminalPorts]); // Dependencies
+  }, []); // Empty deps - run once on mount
 
   if (fullscreenAgent) {
     const agent = agents.find(a => a.id === fullscreenAgent);
@@ -420,7 +437,7 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
               <div className="text-yellow-400">Terminal not available</div>
               <div className="mt-4 text-white">Start ttyd for this agent:</div>
               <div className="mt-2 bg-gray-900 p-3 rounded text-sm">
-                ttyd -p {TERMINAL_PORT_MAP[agent.name] || 8099} --writable tmux attach -t claude-{agent.name}
+                ttyd -p {getTerminalPort(agent.name) || 8099} --writable tmux attach -t claude-{agent.name}
               </div>
             </div>
           )}
@@ -763,7 +780,7 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
                         {activity.agent}
                       </span>
                       <span className="text-xs text-gray-400">
-                        {new Date(activity.timestamp).toLocaleTimeString()}
+                        {activity.timestamp ? new Date(activity.timestamp).toLocaleTimeString() : 'N/A'}
                       </span>
                     </div>
                     <div className="text-sm text-gray-300">
