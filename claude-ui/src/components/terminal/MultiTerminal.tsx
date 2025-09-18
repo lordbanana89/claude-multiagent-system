@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 // Terminal controls removed - using TMUX sessions instead
-import { Database, Activity, CheckCircle, XCircle, RefreshCw, Zap, AlertCircle, Settings, Play } from 'lucide-react';
+import { Database, Activity, CheckCircle, XCircle, RefreshCw, Zap, AlertCircle, Settings, Play, Power } from 'lucide-react';
+import mcpCache from '../../services/mcpCache';
 import './terminal-fix.css';
 
 interface Agent {
@@ -203,13 +204,20 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
     };
   }, [agentStates, mcpActivities]);
 
-  // Fetch MCP status
+  // Fetch MCP status with caching
   const fetchMCPStatus = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/mcp/status');
-      if (response.ok) {
-        const data = await response.json();
+      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
+
+      // Use cache service to prevent duplicate requests
+      const data = await mcpCache.fetch('mcp-status', async () => {
+        const response = await fetch(`${mcpApiUrl}/api/mcp/status`);
+        if (!response.ok) throw new Error('Failed to fetch status');
+        return response.json();
+      }, 5000); // 5 second cache
+
+      if (data) {
         setMcpStatus({
           serverRunning: data.server_running,
           totalActivities: data.stats.total_activities,
@@ -238,7 +246,8 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
   const setupAgentMCP = async (agentName: string) => {
     try {
       // Setup MCP environment for the agent
-      const response = await fetch('http://localhost:5001/api/mcp/setup-agent', {
+      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
+      const response = await fetch(`${mcpApiUrl}/api/mcp/setup-agent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -266,6 +275,30 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
     }
   };
 
+  // Start terminal ttyd service manually
+  const startTerminalService = async (agentName: string) => {
+    try {
+      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
+      const response = await fetch(`${mcpApiUrl}/api/mcp/start-terminal`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ agent_name: agentName })
+      });
+
+      if (response.ok) {
+        console.log(`Terminal service started for ${agentName}`);
+        // Wait a bit then check port availability
+        setTimeout(() => {
+          checkTerminalPorts();
+        }, 2000);
+      } else {
+        console.error('Failed to start terminal service');
+      }
+    } catch (error) {
+      console.error('Failed to start terminal service:', error);
+    }
+  };
+
   // Start agent with MCP
   const startAgentWithMCP = async (agentName: string) => {
     try {
@@ -273,7 +306,8 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
       await setupAgentMCP(agentName);
 
       // Then start the agent
-      const response = await fetch('http://localhost:5001/api/mcp/start-agent', {
+      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
+      const response = await fetch(`${mcpApiUrl}/api/mcp/start-agent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ agent_name: agentName })
@@ -293,7 +327,7 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
     const interval = setInterval(() => {
       fetchMCPStatus();
       checkTerminalPorts();
-    }, 2000); // Faster refresh for better real-time updates
+    }, 10000); // Reduced frequency to avoid rate limiting
     return () => clearInterval(interval);
   }, [fetchMCPStatus, checkTerminalPorts]);
 
@@ -526,6 +560,13 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
                       })()}
                     </div>
                     <div className="flex items-center space-x-1">
+                      <button
+                        onClick={() => startTerminalService(agent.name)}
+                        className="p-1 hover:bg-gray-600 rounded text-green-400 hover:text-green-300"
+                        title="Start Terminal Service"
+                      >
+                        <Power className="w-4 h-4" />
+                      </button>
                       <button
                         onClick={() => setupAgentMCP(agent.name)}
                         className="p-1 hover:bg-gray-600 rounded text-blue-400 hover:text-blue-300"

@@ -170,12 +170,17 @@ def setup_agent():
                          capture_output=True).returncode != 0:
             subprocess.run(['tmux', 'new-session', '-d', '-s', session_name])
 
-        # First, exit Claude if it's running
-        # Send /exit command to exit Claude properly
-        subprocess.run(['tmux', 'send-keys', '-t', session_name, '/exit', 'Enter'], capture_output=True)
-        time.sleep(1.0)  # Give Claude time to exit
+        # First, kill any Claude processes in this session
+        # Get the pane PID and kill its process tree
+        result = subprocess.run(['tmux', 'list-panes', '-t', session_name, '-F', '#{pane_pid}'],
+                              capture_output=True, text=True)
+        if result.returncode == 0 and result.stdout:
+            pane_pid = result.stdout.strip()
+            # Kill all child processes of the pane
+            subprocess.run(['pkill', '-P', pane_pid], capture_output=True)
+            time.sleep(0.5)
 
-        # Send Ctrl+C to ensure we're at shell prompt
+        # Send Ctrl+C to clear any pending input
         subprocess.run(['tmux', 'send-keys', '-t', session_name, 'C-c'], capture_output=True)
         time.sleep(0.2)
 
