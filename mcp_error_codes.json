@@ -1,0 +1,71 @@
+{
+  "json_rpc_errors": {
+    "-32700": {
+      "name": "ParseError",
+      "message": "Invalid JSON was received by the server"
+    },
+    "-32600": {
+      "name": "InvalidRequest",
+      "message": "The JSON sent is not a valid Request object"
+    },
+    "-32601": {
+      "name": "MethodNotFound",
+      "message": "The method does not exist or is not available"
+    },
+    "-32602": {
+      "name": "InvalidParams",
+      "message": "Invalid method parameter(s)"
+    },
+    "-32603": {
+      "name": "InternalError",
+      "message": "Internal JSON-RPC error"
+    }
+  },
+  "mcp_specific_errors": {
+    "-32000": {
+      "name": "ToolExecutionError",
+      "message": "Tool execution failed",
+      "data_fields": ["tool_name", "error_type", "details"]
+    },
+    "-32001": {
+      "name": "ResourceAccessDenied",
+      "message": "Access to resource denied",
+      "data_fields": ["uri", "reason", "required_permission"]
+    },
+    "-32002": {
+      "name": "CapabilityNotSupported",
+      "message": "Requested capability not supported",
+      "data_fields": ["capability", "available_capabilities"]
+    },
+    "-32003": {
+      "name": "IdempotencyConflict",
+      "message": "Different request with same idempotency key",
+      "data_fields": ["idempotency_key", "original_request_id"]
+    },
+    "-32004": {
+      "name": "TimeoutError",
+      "message": "Request exceeded timeout",
+      "data_fields": ["timeout_ms", "elapsed_ms"]
+    },
+    "-32005": {
+      "name": "RateLimitExceeded",
+      "message": "Rate limit exceeded",
+      "data_fields": ["limit", "window", "retry_after"]
+    },
+    "-32006": {
+      "name": "ValidationError",
+      "message": "Schema validation failed",
+      "data_fields": ["schema_errors", "invalid_fields"]
+    },
+    "-32007": {
+      "name": "PathTraversalAttempt",
+      "message": "Path traversal detected and blocked",
+      "data_fields": ["requested_path", "normalized_path"]
+    },
+    "-32008": {
+      "name": "DryRunMode",
+      "message": "Operation skipped due to dry_run mode",
+      "data_fields": ["would_execute", "simulated_result"]
+    }
+  }
+}

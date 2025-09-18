@@ -15,7 +15,7 @@ const logError = (context: string, error: any) => {
   console.error(`[${context}] Error:`, error);
 };
 
-const InboxPanel: React.FC<InboxPanelProps> = ({ messages, agents, selectedAgent }) => {
+const InboxPanel: React.FC<InboxPanelProps> = ({ messages, agents, selectedAgent, setMessages }) => {
   const [filter, setFilter] = useState('all');
   const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);
   const [composing, setComposing] = useState(false);
@@ -26,6 +26,7 @@ const InboxPanel: React.FC<InboxPanelProps> = ({ messages, agents, selectedAgent
     priority: 'normal' as const
   });
   const [loading, setLoading] = useState(false);
+  const [localMessages, setLocalMessages] = useState<Message[]>(messages || []);
 
   // Fetch messages
   const fetchMessages = async () => {
@@ -41,6 +42,8 @@ const InboxPanel: React.FC<InboxPanelProps> = ({ messages, agents, selectedAgent
       const response = await axios.get(`${config.API_URL}/api/inbox/messages`, { params });
       if (setMessages) {
         setMessages(response.data);
+      } else {
+        setLocalMessages(response.data);
       }
     } catch (err) {
       logError('fetchMessages', err);
@@ -156,12 +159,12 @@ const InboxPanel: React.FC<InboxPanelProps> = ({ messages, agents, selectedAgent
 
         {/* Message List */}
         <div className="flex-1 overflow-y-auto">
-          {messages.length === 0 ? (
+          {(localMessages || messages).length === 0 ? (
             <div className="p-4 text-center text-gray-500">
               No messages
             </div>
           ) : (
-            messages.map(message => (
+            (localMessages || messages).map(message => (
               <div
                 key={message.id}
                 onClick={() => {

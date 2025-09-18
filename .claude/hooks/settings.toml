@@ -1,21 +1,53 @@
-# Claude Code Hooks Configuration for MCP Bridge
+# Claude Code Hooks Configuration for MCP v2 Integration
+# Protocol Version: 2025-06-18
 
-[hooks.pre_tool_use]
-command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_bridge.py pre_tool_use"
+# Session Management Hooks
+[hooks.session_start]
+command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_client_v2.py SessionStart"
 enabled = true
-description = "Intercept before tool execution for MCP coordination"
+description = "Initialize MCP v2 connection and capability negotiation"
+
+[hooks.session_end]
+command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_client_v2.py SessionEnd"
+enabled = true
+description = "Cleanup MCP session and log final state"
+
+# Tool Execution Hooks
+[hooks.pre_tool_use]
+command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_client_v2.py PreToolUse"
+enabled = true
+description = "Validate and authorize MCP tool execution"
+matcher = "mcp__*"  # Only intercept MCP tools
 
 [hooks.post_tool_use]
-command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_bridge.py post_tool_use"
+command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_client_v2.py PostToolUse"
 enabled = true
-description = "Process tool results for MCP logging"
+description = "Log MCP tool execution results"
+matcher = "mcp__*"  # Only process MCP tool results
 
-[hooks.notification]
-command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_bridge.py notification"
+# User Interaction Hooks
+[hooks.user_prompt_submit]
+command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_client_v2.py UserPromptSubmit"
 enabled = true
-description = "Capture Claude notifications for MCP"
+description = "Suggest relevant MCP prompts based on user input"
+
+# Notification and Control Hooks
+[hooks.notification]
+command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_client_v2.py Notification"
+enabled = true
+description = "Process Claude notifications for MCP logging"
 
 [hooks.stop]
-command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_bridge.py stop"
+command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_client_v2.py Stop"
 enabled = true
-description = "Handle session end for MCP cleanup"
+description = "Handle user-initiated generation stop"
+
+[hooks.subagent_stop]
+command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_client_v2.py SubagentStop"
+enabled = true
+description = "Handle subagent task cancellation"
+
+[hooks.pre_compact]
+command = "python3 /Users/erik/Desktop/claude-multiagent-system/mcp_client_v2.py PreCompact"
+enabled = true
+description = "Save MCP state before conversation compaction"

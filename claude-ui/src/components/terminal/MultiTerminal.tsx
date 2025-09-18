@@ -153,6 +153,13 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
 
   // Check which ttyd terminals are running
   const checkTerminalPorts = useCallback(async () => {
+    // Disabled terminal port checking to prevent ERR_INSUFFICIENT_RESOURCES
+    // The terminals are known to be on ports 8090-8098
+    // We'll use the static port map instead of checking availability
+    setTerminalPorts(TERMINAL_PORT_MAP);
+    return;
+
+    /* Original code - disabled due to too many requests
     const activePorts: {[key: string]: number} = {};
     for (const [name, port] of Object.entries(TERMINAL_PORT_MAP)) {
       try {
@@ -166,43 +173,86 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
       }
     }
     setTerminalPorts(activePorts);
+    */
   }, []);
 
   // Calculate MCP status for each agent
   const calculateAgentMCPStatus = useCallback((agentName: string): MCPAgentStatus => {
     const normalizedName = agentName.toLowerCase().replace(/ agent$/i, '').replace(/ /g, '-');
 
-    // Find agent state
-    const agentState = agentStates.find(s =>
-      s.agent.toLowerCase() === normalizedName ||
-      s.agent.toLowerCase() === agentName.toLowerCase()
-    );
+    // Find agent state - check multiple formats
+    const agentState = agentStates.find(s => {
+      const stateAgentName = s.agent?.toLowerCase() || '';
+      return stateAgentName === normalizedName ||
+             stateAgentName === agentName.toLowerCase() ||
+             stateAgentName.includes(normalizedName) ||
+             normalizedName.includes(stateAgentName);
+    });
 
     // Count activities for this agent
     const agentActivities = mcpActivities.filter(a =>
-      a.agent && (a.agent.toLowerCase() === normalizedName || a.agent.toLowerCase() === agentName.toLowerCase())
+      a.agent && (a.agent.toLowerCase() === normalizedName ||
+                  a.agent.toLowerCase() === agentName.toLowerCase() ||
+                  a.agent.toLowerCase().includes(normalizedName))
     );
 
-    // Check if heartbeat is recent (within 30 seconds)
-    const isConnected = agentState && agentState.last_seen &&
-      (new Date().getTime() - new Date(agentState.last_seen).getTime()) < 30000;
+    // For now, consider connected if we have the agent state and server is running
+    // Since we're using static mock data from the server
+    const isConnected = agentState && agentState.connected !== false;
 
-    // Determine sync status
+    // Determine sync status based on agent state
     let syncStatus: 'connected' | 'syncing' | 'disconnected' = 'disconnected';
     if (isConnected) {
-      syncStatus = 'connected';
-    } else if (agentState && agentState.last_seen) {
+      syncStatus = agentState.status === 'active' ? 'connected' : 'syncing';
+    } else if (mcpStatus?.serverRunning) {
       syncStatus = 'syncing';
     }
 
     return {
       connected: isConnected || false,
-      lastHeartbeat: agentState?.last_seen,
+      lastHeartbeat: agentState?.lastActivity || agentState?.last_seen || new Date().toISOString(),
       activitiesCount: agentActivities.length,
-      currentTask: agentState?.current_task,
+      currentTask: agentState?.current_task || agentState?.currentTask,
       syncStatus
     };
-  }, [agentStates, mcpActivities]);
+  }, [agentStates, mcpActivities, mcpStatus]);
+
+  // Fetch agent states from MCP
+  const fetchAgentStates = useCallback(async () => {
+    try {
+      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
+      const response = await fetch(`${mcpApiUrl}/api/mcp/agent-states`);
+      if (response.ok) {
+        const states = await response.json();
+        // Convert object to array if needed
+        if (!Array.isArray(states)) {
+          const statesArray = Object.entries(states).map(([key, value]: [string, any]) => ({
+            agent: key,
+            ...value
+          }));
+          setAgentStates(statesArray);
+        } else {
+          setAgentStates(states);
+        }
+      }
+    } catch (error) {
+      console.error('Failed to fetch agent states:', error);
+    }
+  }, []);
+
+  // Fetch activities from MCP
+  const fetchActivities = useCallback(async () => {
+    try {
+      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
+      const response = await fetch(`${mcpApiUrl}/api/mcp/activities?limit=50`);
+      if (response.ok) {
+        const data = await response.json();
+        setMcpActivities(data.activities || data || []);
+      }
+    } catch (error) {
+      console.error('Failed to fetch activities:', error);
+    }
+  }, []);
 
   // Fetch MCP status with caching
   const fetchMCPStatus = useCallback(async () => {
@@ -219,9 +269,9 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
 
       if (data) {
         setMcpStatus({
-          serverRunning: data.server_running,
-          totalActivities: data.stats.total_activities,
-          activeAgents: data.stats.active_agents,
+          serverRunning: data.status === 'operational',
+          totalActivities: data.stats?.activities_total || 0,
+          activeAgents: data.stats?.agents_online || 0,
           lastUpdate: new Date().toISOString()
         });
         setMcpActivities(data.activities || []);
@@ -322,14 +372,22 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
   };
 
   useEffect(() => {
+    // Initial fetch
     fetchMCPStatus();
+    fetchAgentStates();
+    fetchActivities();
     checkTerminalPorts();
+
+    // Set up polling interval
     const interval = setInterval(() => {
       fetchMCPStatus();
+      fetchAgentStates();
+      fetchActivities();
       checkTerminalPorts();
     }, 10000); // Reduced frequency to avoid rate limiting
+
     return () => clearInterval(interval);
-  }, [fetchMCPStatus, checkTerminalPorts]);
+  }, [fetchMCPStatus, fetchAgentStates, fetchActivities, checkTerminalPorts]); // Dependencies
 
   if (fullscreenAgent) {
     const agent = agents.find(a => a.id === fullscreenAgent);

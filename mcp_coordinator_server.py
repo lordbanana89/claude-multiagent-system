@@ -11,7 +11,8 @@ import mcp.types as types
 from datetime import datetime
 import json
 import os
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
+from pydantic import AnyUrl
 
 class SharedContextServer:
     """MCP Server that maintains shared context between Claude agents"""
@@ -42,19 +43,19 @@ class SharedContextServer:
             """List available resources"""
             return [
                 types.Resource(
-                    uri="context://shared/state",
+                    uri=AnyUrl("context://shared/state"),
                     name="System State",
                     description="Complete shared state of the multi-agent system",
                     mimeType="application/json"
                 ),
                 types.Resource(
-                    uri="context://shared/activities",
+                    uri=AnyUrl("context://shared/activities"),
                     name="Agent Activities",
                     description="Recent activities from all agents",
                     mimeType="application/json"
                 ),
                 types.Resource(
-                    uri="context://shared/decisions",
+                    uri=AnyUrl("context://shared/decisions"),
                     name="System Decisions",
                     description="Key decisions made by agents",
                     mimeType="application/json"
@@ -62,16 +63,17 @@ class SharedContextServer:
             ]
 
         @self.server.read_resource()
-        async def handle_read_resource(uri: str) -> str:
+        async def handle_read_resource(uri: AnyUrl) -> str:
             """Read a specific resource"""
-            if uri == "context://shared/state":
+            uri_str = str(uri)
+            if uri_str == "context://shared/state":
                 return json.dumps(self.shared_state, indent=2)
-            elif uri == "context://shared/activities":
+            elif uri_str == "context://shared/activities":
                 return json.dumps(self.shared_state["activities"][-20:], indent=2)
-            elif uri == "context://shared/decisions":
+            elif uri_str == "context://shared/decisions":
                 return json.dumps(self.shared_state["decisions"], indent=2)
             else:
-                raise ValueError(f"Unknown resource: {uri}")
+                raise ValueError(f"Unknown resource: {uri_str}")
 
         @self.server.list_tools()
         async def handle_list_tools() -> list[types.Tool]:
@@ -147,15 +149,18 @@ class SharedContextServer:
         @self.server.call_tool()
         async def handle_call_tool(
             name: str,
-            arguments: dict | None
+            arguments: Optional[dict] = None
         ) -> list[types.TextContent | types.ImageContent | types.EmbeddedResource]:
             """Handle tool calls"""
+
+            if arguments is None:
+                arguments = {}
 
             if name == "log_activity":
                 entry = {
                     "timestamp": datetime.now().isoformat(),
-                    "agent": arguments["agent"],
-                    "activity": arguments["activity"],
+                    "agent": arguments.get("agent", "unknown"),
+                    "activity": arguments.get("activity", ""),
                     "category": arguments.get("category", "action")
                 }
                 self.shared_state["activities"].append(entry)
@@ -170,8 +175,8 @@ class SharedContextServer:
 
             elif name == "check_conflicts":
                 conflicts = self.check_for_conflicts(
-                    arguments["agent"],
-                    arguments["planned_action"],
+                    arguments.get("agent", "unknown"),
+                    arguments.get("planned_action", ""),
                     arguments.get("component", "")
                 )
 
@@ -187,17 +192,18 @@ class SharedContextServer:
                 )]
 
             elif name == "register_component":
-                component_type = arguments["component_type"]
-                if component_type in self.shared_state["project_structure"]:
-                    self.shared_state["project_structure"][component_type][arguments["component_name"]] = {
-                        "owner": arguments["agent"],
+                component_type = arguments.get("component_type", "")
+                component_name = arguments.get("component_name", "")
+                if component_type and component_type in self.shared_state["project_structure"]:
+                    self.shared_state["project_structure"][component_type][component_name] = {
+                        "owner": arguments.get("agent", "unknown"),
                         "details": arguments.get("details", {}),
                         "created_at": datetime.now().isoformat()
                     }
 
                 return [types.TextContent(
                     type="text",
-                    text=f"✅ Component registered: {component_type}/{arguments['component_name']}"
+                    text=f"✅ Component registered: {component_type}/{component_name}"
                 )]
 
             elif name == "get_agent_status":
@@ -211,13 +217,14 @@ class SharedContextServer:
 
             elif name == "coordinate_decision":
                 decision_id = f"decision_{datetime.now().timestamp()}"
+                requires_consensus = arguments.get("requires_consensus", False)
                 self.shared_state["decisions"][decision_id] = {
-                    "agent": arguments["agent"],
-                    "decision": arguments["decision"],
+                    "agent": arguments.get("agent", "unknown"),
+                    "decision": arguments.get("decision", ""),
                     "options": arguments.get("options", []),
-                    "requires_consensus": arguments.get("requires_consensus", False),
+                    "requires_consensus": requires_consensus,
                     "timestamp": datetime.now().isoformat(),
-                    "status": "pending" if arguments.get("requires_consensus") else "approved"
+                    "status": "pending" if requires_consensus else "approved"
                 }
 
                 return [types.TextContent(
@@ -315,7 +322,10 @@ class SharedContextServer:
                 InitializationOptions(
                     server_name="claude-coordinator",
                     server_version="1.0.0",
-                    capabilities={}
+                    capabilities=types.ServerCapabilities(
+                        resources=types.ResourcesCapability(subscribe=True, listChanged=True),
+                        tools=types.ToolsCapability(listChanged=True)
+                    )
                 )
             )
 

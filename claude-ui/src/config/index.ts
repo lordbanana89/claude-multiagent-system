@@ -4,17 +4,17 @@ export const config = {
   API_URL: import.meta.env.VITE_API_URL || 'http://localhost:8000',
   WS_URL: import.meta.env.VITE_WS_URL || 'ws://localhost:8000/ws',
 
-  // Terminal Port Mapping
+  // Terminal Port Mapping (corrected for actual ttyd services)
   TERMINAL_PORTS: {
-    'master': 8090,
-    'supervisor': 8091,
-    'backend-api': 8092,
-    'database': 8093,
-    'frontend-ui': 8094,
-    'testing': 8095,
-    'instagram': 8096,
-    'queue-manager': 8097,
-    'deployment': 8098,
+    'backend-api': 8090,
+    'database': 8091,
+    'frontend-ui': 8092,
+    'testing': 8093,
+    'instagram': 8094,
+    'supervisor': 8095,
+    'master': 8096,
+    'deployment': 8097,
+    'queue-manager': 8098,
   } as const,
 
   // Terminal Configuration

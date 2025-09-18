@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-09-18T15:20:16.475038",
+  "api_metrics": {
+    "endpoint": "/api/mcp/status",
+    "samples": 10,
+    "avg_response_ms": 9.671998023986816,
+    "median_response_ms": 7.275938987731934,
+    "min_response_ms": 2.668142318725586,
+    "max_response_ms": 18.013954162597656
+  },
+  "database_metrics": {
+    "query_type": "SELECT COUNT(*) FROM activities",
+    "samples": 10,
+    "avg_query_ms": 0.2716064453125,
+    "median_query_ms": 0.2955198287963867,
+    "table_sizes": {
+      "activities": 25,
+      "agent_states": 10,
+      "components": 1
+    }
+  },
+  "process_metrics": {
+    "process_count": 1,
+    "total_memory_mb": 24.06,
+    "total_cpu_percent": 0.0,
+    "processes": [
+      {
+        "pid": 49715,
+        "name": "Python",
+        "memory_mb": 24.06,
+        "cpu_percent": 0.0
+      }
+    ]
+  },
+  "system_metrics": {
+    "cpu_percent": 13.3,
+    "memory_percent": 63.5,
+    "memory_available_gb": 11.68,
+    "disk_usage_percent": 87.9,
+    "disk_free_gb": 108.13
+  }
+}

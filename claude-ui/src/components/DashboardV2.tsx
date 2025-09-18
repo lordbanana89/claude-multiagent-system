@@ -11,9 +11,13 @@ import MonitoringView from './views/MonitoringView';
 import NotificationToast from './ui/NotificationToast';
 import LoadingOverlay from './ui/LoadingOverlay';
 
+// MCP v2 Integration
+import useMCPv2 from '../hooks/useMCPv2';
+
 const DashboardCore: React.FC = () => {
   const { state, dispatch, notify } = useApp();
   const [isInitialized, setIsInitialized] = useState(false);
+  const { mcpV2Status } = useMCPv2();
 
   // Initialize
   useEffect(() => {
@@ -91,6 +95,14 @@ const DashboardCore: React.FC = () => {
                 <div className="bg-green-900/50 text-green-300 px-3 py-1 rounded-full text-xs font-medium border border-green-700">
                   <span className="w-2 h-2 bg-green-400 rounded-full mr-2 inline-block animate-pulse"></span>
                   WebSocket
+                </div>
+              )}
+
+              {/* MCP v2 Status Indicator */}
+              {mcpV2Status.connected && (
+                <div className="bg-blue-900/50 text-blue-300 px-3 py-1 rounded-full text-xs font-medium border border-blue-700">
+                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 inline-block animate-pulse"></span>
+                  MCP v2 ({mcpV2Status.capabilities} capabilities)
                 </div>
               )}
             </div>

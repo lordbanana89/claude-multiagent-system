@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import MultiTerminal from '../terminal/MultiTerminal';
-import TerminalPanel from '../panels/TerminalPanel';
 import InboxPanel from '../panels/InboxPanel';
 import QueuePanel from '../panels/QueuePanel';
 import TaskExecutor from '../panels/TaskExecutor';
+import MCPPanel from '../../mcp/components/MCPPanel';
 
-type OperationTab = 'terminals' | 'multi-terminal' | 'inbox' | 'queue' | 'executor';
+type OperationTab = 'multi-terminal' | 'inbox' | 'queue' | 'executor' | 'mcp';
 
 const OperationsView: React.FC = () => {
   const { state } = useApp();
-  const [activeTab, setActiveTab] = useState<OperationTab>('terminals');
+  const [activeTab, setActiveTab] = useState<OperationTab>('multi-terminal');
   const [selectedAgent, setSelectedAgent] = useState(state.selectedAgent);
 
   const tabs = [
-    { id: 'terminals' as const, label: 'Terminal', icon: '💻' },
     { id: 'multi-terminal' as const, label: 'Multi-Terminal', icon: '🖥️' },
     { id: 'inbox' as const, label: 'Inbox', icon: '📨' },
     { id: 'queue' as const, label: 'Queue', icon: '📋' },
     { id: 'executor' as const, label: 'Task Executor', icon: '⚡' },
+    { id: 'mcp' as const, label: 'MCP Tools', icon: '🔧' },
   ];
 
   return (
@@ -46,7 +46,7 @@ const OperationsView: React.FC = () => {
       {/* Content Area */}
       <div className="flex-1 flex overflow-hidden">
         {/* Left Sidebar - Agent List */}
-        {activeTab !== 'multi-terminal' && (
+        {activeTab !== 'multi-terminal' && activeTab !== 'mcp' && (
           <aside className="w-64 md:w-72 lg:w-80 bg-gray-800 border-r border-gray-700 p-4 flex-shrink-0">
             <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
               Agents
@@ -122,13 +122,6 @@ const OperationsView: React.FC = () => {
 
         {/* Main Content */}
         <main className="flex-1 bg-gray-900 overflow-hidden">
-          {activeTab === 'terminals' && (
-            <TerminalPanel
-              selectedAgent={selectedAgent}
-              agents={state.agents}
-            />
-          )}
-
           {activeTab === 'multi-terminal' && (
             <MultiTerminal agents={state.agents} />
           )}
@@ -157,6 +150,10 @@ const OperationsView: React.FC = () => {
                 onSelectAgent={setSelectedAgent}
               />
             </div>
+          )}
+
+          {activeTab === 'mcp' && (
+            <MCPPanel />
           )}
         </main>
       </div>
