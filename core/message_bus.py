@@ -1,429 +1,365 @@
+#!/usr/bin/env python3
 """
-Unified Message Bus for Claude Multi-Agent System
-Centralizes all inter-component communication through Redis
+Central Message Bus for Multi-Agent System
+Provides real event routing between all components
 """
 
-import json
-import time
 import asyncio
-import threading
-import uuid
-from typing import Any, Callable, Dict, List, Optional, Set
-from dataclasses import dataclass, asdict
-from enum import Enum
-from datetime import datetime
-import redis.asyncio as aioredis
-import redis
-from config.settings import REDIS_HOST, REDIS_PORT, REDIS_DB
+import json
 import logging
-from core.persistence import get_persistence_manager
+import time
+import uuid
+from typing import Dict, List, Any, Callable, Optional
+from dataclasses import dataclass, field
+from datetime import datetime
+from enum import Enum
+import threading
+from collections import defaultdict
+import queue
 
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class MessagePriority(Enum):
-    LOW = 0
-    NORMAL = 1
-    HIGH = 2
-    URGENT = 3
+class EventType(Enum):
+    """Event types in the system"""
+    # Agent events
+    AGENT_READY = "agent.ready"
+    AGENT_BUSY = "agent.busy"
+    AGENT_ERROR = "agent.error"
+    AGENT_OFFLINE = "agent.offline"
 
+    # Task events
+    TASK_CREATED = "task.created"
+    TASK_ASSIGNED = "task.assigned"
+    TASK_STARTED = "task.started"
+    TASK_COMPLETED = "task.completed"
+    TASK_FAILED = "task.failed"
 
-class MessageType(Enum):
-    TASK = "task"
-    RESULT = "result"
-    EVENT = "event"
-    COMMAND = "command"
-    STATUS = "status"
-    ERROR = "error"
-    NOTIFICATION = "notification"
+    # Message events
+    MESSAGE_SENT = "message.sent"
+    MESSAGE_RECEIVED = "message.received"
+    MESSAGE_ACKNOWLEDGED = "message.acknowledged"
+
+    # System events
+    SYSTEM_STARTUP = "system.startup"
+    SYSTEM_SHUTDOWN = "system.shutdown"
+    SYSTEM_ERROR = "system.error"
+
+    # Collaboration events
+    COLLABORATION_REQUEST = "collaboration.request"
+    COLLABORATION_ACCEPTED = "collaboration.accepted"
+    COLLABORATION_REJECTED = "collaboration.rejected"
+    COLLABORATION_COMPLETED = "collaboration.completed"
 
 
 @dataclass
-class Message:
-    """Universal message format for all system communications"""
-    id: str
-    type: MessageType
-    source: str
-    target: Optional[str]
-    payload: Dict[str, Any]
-    priority: MessagePriority = MessagePriority.NORMAL
-    timestamp: float = None
+class Event:
+    """Event data structure"""
+    id: str = field(default_factory=lambda: str(uuid.uuid4()))
+    type: EventType = EventType.SYSTEM_ERROR
+    source: str = ""
+    target: Optional[str] = None
+    payload: Dict[str, Any] = field(default_factory=dict)
+    timestamp: float = field(default_factory=time.time)
     correlation_id: Optional[str] = None
-
-    def __post_init__(self):
-        if self.timestamp is None:
-            self.timestamp = time.time()
-
-    def to_dict(self) -> dict:
-        return {
-            'id': self.id,
-            'type': self.type.value,
-            'source': self.source,
-            'target': self.target,
-            'payload': self.payload,
-            'priority': self.priority.value,
-            'timestamp': self.timestamp,
-            'correlation_id': self.correlation_id
-        }
-
-    @classmethod
-    def from_dict(cls, data: dict) -> 'Message':
-        return cls(
-            id=data['id'],
-            type=MessageType(data['type']),
-            source=data['source'],
-            target=data.get('target'),
-            payload=data['payload'],
-            priority=MessagePriority(data.get('priority', 1)),
-            timestamp=data.get('timestamp', time.time()),
-            correlation_id=data.get('correlation_id')
-        )
+    metadata: Dict[str, Any] = field(default_factory=dict)
 
 
-class UnifiedMessageBus:
-    """
-    Central message bus for all system communications
-    Handles task distribution, result aggregation, events, and notifications
-    """
+class MessageBus:
+    """Central message bus for event routing"""
+
+    _instance = None
+    _lock = threading.Lock()
+
+    def __new__(cls):
+        with cls._lock:
+            if cls._instance is None:
+                cls._instance = super().__new__(cls)
+                cls._instance._initialized = False
+            return cls._instance
 
     def __init__(self):
-        self.redis_client = redis.StrictRedis(
-            host=REDIS_HOST,
-            port=REDIS_PORT,
-            db=REDIS_DB,
-            decode_responses=True
-        )
-        self.async_redis = None
-        self.subscribers: Dict[str, Set[Callable]] = {}
-        self.persistence = get_persistence_manager()
+        if self._initialized:
+            return
+
+        self._initialized = True
+        self.subscribers = defaultdict(list)
+        self.event_queue = asyncio.Queue()
+        self.sync_queue = queue.Queue()
+        self.event_history = []
+        self.max_history = 1000
         self.running = False
-        self._listener_thread = None
+        self._event_loop = None
+        self._thread = None
 
-        # Channel patterns
-        self.TASK_CHANNEL = "bus:tasks:{agent}"
-        self.RESULT_CHANNEL = "bus:results:{task_id}"
-        self.EVENT_CHANNEL = "bus:events:{event_type}"
-        self.BROADCAST_CHANNEL = "bus:broadcast"
-        self.STATUS_CHANNEL = "bus:status:{agent}"
-
-        logger.info("UnifiedMessageBus initialized")
-
-    async def initialize_async(self):
-        """Initialize async Redis connection"""
-        self.async_redis = await aioredis.create_redis_pool(
-            f'redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}'
-        )
+        logger.info("🚌 Message Bus initialized")
 
     def start(self):
-        """Start the message bus listener"""
-        if not self.running:
-            self.running = True
-            self._listener_thread = threading.Thread(target=self._listener_loop)
-            self._listener_thread.daemon = True
-            self._listener_thread.start()
-            logger.info("Message bus listener started")
+        """Start the message bus"""
+        if self.running:
+            return
+
+        self.running = True
+
+        # Start async event loop in background thread
+        self._thread = threading.Thread(target=self._run_event_loop, daemon=True)
+        self._thread.start()
+
+        # Start sync processor
+        threading.Thread(target=self._process_sync_events, daemon=True).start()
+
+        logger.info("✅ Message Bus started")
 
     def stop(self):
-        """Stop the message bus listener"""
+        """Stop the message bus"""
         self.running = False
-        if self._listener_thread:
-            self._listener_thread.join(timeout=5)
-        logger.info("Message bus listener stopped")
+        if self._event_loop:
+            self._event_loop.call_soon_threadsafe(self._event_loop.stop)
+        logger.info("🛑 Message Bus stopped")
 
-    def publish_task(self, agent: str, task: Dict[str, Any], priority: MessagePriority = MessagePriority.NORMAL) -> str:
-        """
-        Publish a task to a specific agent
-        Returns task_id for tracking
-        """
-        import uuid
-        task_id = str(uuid.uuid4())
+    def _run_event_loop(self):
+        """Run async event loop in thread"""
+        self._event_loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(self._event_loop)
 
-        message = Message(
-            id=task_id,
-            type=MessageType.TASK,
-            source="orchestrator",
-            target=agent,
-            payload=task,
-            priority=priority
-        )
+        self._event_loop.run_until_complete(self._process_async_events())
 
-        channel = self.TASK_CHANNEL.format(agent=agent)
-
-        # Publish to Redis for any external listeners
-        self.redis_client.publish(channel, json.dumps(message.to_dict()))
-
-        # Also directly notify internal subscribers
-        self._process_message(channel, message)
-
-        # Store task in queue for persistence
-        queue_key = f"queue:{agent}:{priority.name.lower()}"
-        self.redis_client.lpush(queue_key, json.dumps(message.to_dict()))
-
-        # Set task status (only if it doesn't exist or is not already completed)
-        existing_status = self.redis_client.hget(f"task:{task_id}", 'status')
-        if not existing_status or existing_status == 'pending':
-            self.redis_client.hset(f"task:{task_id}", mapping={
-                'status': 'pending',
-                'agent': agent,
-                'created_at': time.time(),
-                'priority': priority.value
-            })
-
-            # Persist to SQLite
-            self.persistence.save_task(
-                task_id=task_id,
-                agent=agent,
-                command=task.get('command', ''),
-                params=task.get('params', {}),
-                priority=priority.value,
-                status='pending'
-            )
-
-        logger.info(f"Published task {task_id} to agent {agent} with priority {priority.name}")
-        return task_id
-
-    def publish_result(self, task_id: str, result: Dict[str, Any], success: bool = True):
-        """Publish task execution result"""
-        message = Message(
-            id=str(uuid.uuid4()),
-            type=MessageType.RESULT,
-            source="agent",
-            target=None,
-            payload={
-                'task_id': task_id,
-                'result': result,
-                'success': success
-            },
-            correlation_id=task_id
-        )
-
-        channel = self.RESULT_CHANNEL.format(task_id=task_id)
-        self.redis_client.publish(channel, json.dumps(message.to_dict()))
-
-        # Update task status
-        status = 'completed' if success else 'failed'
-        update_data = {
-            'status': status,
-            'completed_at': str(time.time()),
-            'result': json.dumps(result)
-        }
-
-        # Debug: Check what's in Redis before update
-        before = self.redis_client.hget(f"task:{task_id}", 'status')
-
-        # Use hset to update multiple fields (hmset is deprecated)
-        self.redis_client.hset(f"task:{task_id}", mapping=update_data)
-
-        # Debug: Check what's in Redis after update
-        after = self.redis_client.hget(f"task:{task_id}", 'status')
-
-        # Persist to SQLite
-        self.persistence.update_task_status(
-            task_id=task_id,
-            status=status,
-            result=result if success else None,
-            error=json.dumps(result) if not success else None
-        )
-
-        logger.info(f"Published result for task {task_id}: {status} (before={before}, after={after})")
-
-    def broadcast_event(self, event_type: str, data: Dict[str, Any]):
-        """Broadcast an event to all listeners"""
-        message = Message(
-            id=str(uuid.uuid4()),
-            type=MessageType.EVENT,
-            source="system",
-            target=None,
-            payload={
-                'event_type': event_type,
-                'data': data
-            }
-        )
-
-        # Publish to specific event channel
-        event_channel = self.EVENT_CHANNEL.format(event_type=event_type)
-        self.redis_client.publish(event_channel, json.dumps(message.to_dict()))
-
-        # Also publish to broadcast channel
-        self.redis_client.publish(self.BROADCAST_CHANNEL, json.dumps(message.to_dict()))
-
-        logger.info(f"Broadcast event: {event_type}")
-
-    def send_command(self, agent: str, command: str, params: Dict[str, Any] = None):
-        """Send a direct command to an agent"""
-        message = Message(
-            id=str(uuid.uuid4()),
-            type=MessageType.COMMAND,
-            source="system",
-            target=agent,
-            payload={
-                'command': command,
-                'params': params or {}
-            }
-        )
-
-        channel = self.TASK_CHANNEL.format(agent=agent)
-        self.redis_client.publish(channel, json.dumps(message.to_dict()))
-
-        logger.info(f"Sent command '{command}' to agent {agent}")
-
-    def update_agent_status(self, agent: str, status: str, details: Dict[str, Any] = None):
-        """Update and broadcast agent status"""
-        message = Message(
-            id=str(uuid.uuid4()),
-            type=MessageType.STATUS,
-            source=agent,
-            target=None,
-            payload={
-                'status': status,
-                'details': details or {},
-                'timestamp': time.time()
-            }
-        )
-
-        channel = self.STATUS_CHANNEL.format(agent=agent)
-        self.redis_client.publish(channel, json.dumps(message.to_dict()))
-
-        # Store status
-        self.redis_client.hset(f"agent:{agent}", mapping={
-            'status': status,
-            'last_update': time.time(),
-            'details': json.dumps(details or {})
-        })
-
-        logger.debug(f"Updated status for agent {agent}: {status}")
-
-    def subscribe(self, pattern: str, callback: Callable):
-        """Subscribe to a message pattern"""
-        if pattern not in self.subscribers:
-            self.subscribers[pattern] = set()
-        self.subscribers[pattern].add(callback)
-        logger.info(f"Added subscriber for pattern: {pattern}")
-
-    def unsubscribe(self, pattern: str, callback: Callable):
-        """Unsubscribe from a message pattern"""
-        if pattern in self.subscribers:
-            self.subscribers[pattern].discard(callback)
-            if not self.subscribers[pattern]:
-                del self.subscribers[pattern]
-        logger.info(f"Removed subscriber for pattern: {pattern}")
-
-    def get_task_status(self, task_id: str) -> Optional[Dict[str, Any]]:
-        """Get current status of a task"""
-        task_data = self.redis_client.hgetall(f"task:{task_id}")
-        if task_data:
-            if 'result' in task_data:
-                task_data['result'] = json.loads(task_data['result'])
-            return task_data
-        return None
-
-    def get_agent_status(self, agent: str) -> Optional[Dict[str, Any]]:
-        """Get current status of an agent"""
-        agent_data = self.redis_client.hgetall(f"agent:{agent}")
-        if agent_data:
-            if 'details' in agent_data:
-                agent_data['details'] = json.loads(agent_data['details'])
-            return agent_data
-        return None
-
-    def get_pending_tasks(self, agent: str = None) -> List[Dict[str, Any]]:
-        """Get all pending tasks, optionally filtered by agent"""
-        pattern = f"task:*"
-        tasks = []
-
-        for key in self.redis_client.scan_iter(match=pattern):
-            task_data = self.redis_client.hgetall(key)
-            if task_data.get('status') == 'pending':
-                if agent is None or task_data.get('agent') == agent:
-                    task_id = key.split(':')[1]
-                    task_data['id'] = task_id
-                    tasks.append(task_data)
-
-        # Sort by priority and timestamp
-        tasks.sort(key=lambda x: (-int(x.get('priority', 0)), float(x.get('created_at', 0))))
-        return tasks
-
-    def _listener_loop(self):
-        """Main listener loop for processing subscribed channels"""
-        pubsub = self.redis_client.pubsub()
-
-        # Subscribe to all patterns
-        for pattern in self.subscribers.keys():
-            pubsub.psubscribe(pattern)
-
-        pubsub.psubscribe(self.BROADCAST_CHANNEL)
-
+    async def _process_async_events(self):
+        """Process async events"""
         while self.running:
             try:
-                message = pubsub.get_message(timeout=1.0)
-                if message and message['type'] in ['message', 'pmessage']:
-                    data = message['data']
-                    channel = message.get('pattern', message.get('channel'))
-                    if isinstance(channel, bytes):
-                        channel = channel.decode('utf-8')
+                # Get event with timeout
+                event = await asyncio.wait_for(
+                    self.event_queue.get(),
+                    timeout=1.0
+                )
 
-                    if isinstance(data, str):
-                        try:
-                            msg_dict = json.loads(data)
-                            msg = Message.from_dict(msg_dict)
-                            self._process_message(channel, msg)
-                        except json.JSONDecodeError:
-                            logger.error(f"Failed to decode message: {data}")
-                    elif isinstance(data, bytes):
-                        try:
-                            msg_dict = json.loads(data.decode('utf-8'))
-                            msg = Message.from_dict(msg_dict)
-                            self._process_message(channel, msg)
-                        except (json.JSONDecodeError, UnicodeDecodeError):
-                            logger.error(f"Failed to decode message: {data}")
+                await self._dispatch_event(event)
+
+            except asyncio.TimeoutError:
+                continue
             except Exception as e:
-                logger.error(f"Error in listener loop: {e}")
-                time.sleep(1)
+                logger.error(f"Error processing async event: {e}")
 
-        pubsub.close()
+    def _process_sync_events(self):
+        """Process sync events"""
+        while self.running:
+            try:
+                event = self.sync_queue.get(timeout=1.0)
+                self._dispatch_sync_event(event)
+            except queue.Empty:
+                continue
+            except Exception as e:
+                logger.error(f"Error processing sync event: {e}")
 
-    def _process_message(self, channel: str, message: Message):
-        """Process incoming message and call appropriate callbacks"""
-        # Match channel to patterns and call callbacks
-        for pattern, callbacks in self.subscribers.items():
-            if self._pattern_matches(channel, pattern):
-                for callback in callbacks:
-                    try:
-                        callback(message)
-                    except Exception as e:
-                        logger.error(f"Error in callback for {pattern}: {e}")
+    def subscribe(self, event_type: EventType, handler: Callable,
+                  filter_func: Optional[Callable] = None):
+        """Subscribe to event type"""
+        subscription = {
+            'handler': handler,
+            'filter': filter_func,
+            'id': str(uuid.uuid4())
+        }
 
-    def _pattern_matches(self, channel: str, pattern: str) -> bool:
-        """Check if channel matches subscription pattern"""
-        # Simple pattern matching (can be enhanced)
-        if '*' in pattern:
-            pattern_parts = pattern.split('*')
-            return channel.startswith(pattern_parts[0]) and channel.endswith(pattern_parts[-1])
-        return channel == pattern
+        self.subscribers[event_type].append(subscription)
+        logger.info(f"📮 Subscribed to {event_type.value}")
 
-    async def wait_for_result(self, task_id: str, timeout: int = 300) -> Optional[Dict[str, Any]]:
-        """Async wait for task result"""
-        start_time = time.time()
+        return subscription['id']
 
-        while time.time() - start_time < timeout:
-            status = self.get_task_status(task_id)
-            if status and status['status'] in ['completed', 'failed']:
-                return status
-            await asyncio.sleep(0.5)
+    def unsubscribe(self, subscription_id: str):
+        """Unsubscribe from events"""
+        for event_type, subs in self.subscribers.items():
+            self.subscribers[event_type] = [
+                s for s in subs if s['id'] != subscription_id
+            ]
 
-        return None
+    def publish(self, event: Event, sync: bool = False):
+        """Publish an event"""
+        # Add to history
+        self._add_to_history(event)
+
+        # Log event
+        logger.debug(f"📤 Event: {event.type.value} from {event.source}")
+
+        # Route to appropriate queue
+        if sync:
+            self.sync_queue.put(event)
+        else:
+            if self._event_loop and self.running:
+                asyncio.run_coroutine_threadsafe(
+                    self.event_queue.put(event),
+                    self._event_loop
+                )
+
+    async def _dispatch_event(self, event: Event):
+        """Dispatch event to async subscribers"""
+        subscribers = self.subscribers.get(event.type, [])
+
+        for sub in subscribers:
+            try:
+                # Apply filter if provided
+                if sub['filter'] and not sub['filter'](event):
+                    continue
+
+                handler = sub['handler']
+
+                # Call handler
+                if asyncio.iscoroutinefunction(handler):
+                    await handler(event)
+                else:
+                    handler(event)
+
+            except Exception as e:
+                logger.error(f"Error in event handler: {e}")
+
+    def _dispatch_sync_event(self, event: Event):
+        """Dispatch event to sync subscribers"""
+        subscribers = self.subscribers.get(event.type, [])
+
+        for sub in subscribers:
+            try:
+                # Apply filter if provided
+                if sub['filter'] and not sub['filter'](event):
+                    continue
+
+                handler = sub['handler']
+
+                # Call handler synchronously
+                if not asyncio.iscoroutinefunction(handler):
+                    handler(event)
+                else:
+                    # Schedule async handler
+                    if self._event_loop and self.running:
+                        asyncio.run_coroutine_threadsafe(
+                            handler(event),
+                            self._event_loop
+                        )
+
+            except Exception as e:
+                logger.error(f"Error in sync event handler: {e}")
+
+    def _add_to_history(self, event: Event):
+        """Add event to history"""
+        self.event_history.append(event)
+
+        # Trim history if needed
+        if len(self.event_history) > self.max_history:
+            self.event_history = self.event_history[-self.max_history:]
+
+    def get_history(self, event_type: Optional[EventType] = None,
+                    source: Optional[str] = None,
+                    since: Optional[float] = None) -> List[Event]:
+        """Get event history with optional filters"""
+        history = self.event_history
+
+        if event_type:
+            history = [e for e in history if e.type == event_type]
+
+        if source:
+            history = [e for e in history if e.source == source]
+
+        if since:
+            history = [e for e in history if e.timestamp >= since]
+
+        return history
+
+    def create_event(self, event_type: EventType, source: str,
+                    payload: Dict[str, Any] = None,
+                    target: Optional[str] = None,
+                    correlation_id: Optional[str] = None) -> Event:
+        """Helper to create and publish event"""
+        event = Event(
+            type=event_type,
+            source=source,
+            target=target,
+            payload=payload or {},
+            correlation_id=correlation_id
+        )
+
+        return event
+
+    def request_reply(self, event: Event, timeout: float = 5.0) -> Optional[Event]:
+        """Send event and wait for reply"""
+        reply_queue = queue.Queue()
+        correlation_id = event.correlation_id or event.id
+
+        # Subscribe to replies
+        def reply_handler(reply_event: Event):
+            if reply_event.correlation_id == correlation_id:
+                reply_queue.put(reply_event)
+
+        sub_id = self.subscribe(EventType.MESSAGE_RECEIVED, reply_handler)
+
+        try:
+            # Publish request
+            self.publish(event)
+
+            # Wait for reply
+            reply = reply_queue.get(timeout=timeout)
+            return reply
+
+        except queue.Empty:
+            logger.warning(f"No reply received for {event.id}")
+            return None
+
+        finally:
+            self.unsubscribe(sub_id)
 
 
-# Singleton instance
-_message_bus = None
+# Global instance
+_message_bus = MessageBus()
 
-def get_message_bus() -> UnifiedMessageBus:
-    """Get or create singleton message bus instance"""
-    global _message_bus
-    if _message_bus is None:
-        _message_bus = UnifiedMessageBus()
-        _message_bus.start()
+
+def get_message_bus() -> MessageBus:
+    """Get message bus singleton"""
     return _message_bus
 
 
-import uuid  # Add this import at the top with other imports
+# Convenience functions
+def publish_event(event_type: EventType, source: str, **kwargs):
+    """Publish event convenience function"""
+    bus = get_message_bus()
+    event = bus.create_event(event_type, source, **kwargs)
+    bus.publish(event)
+    return event
+
+
+def subscribe_to_event(event_type: EventType, handler: Callable, **kwargs):
+    """Subscribe convenience function"""
+    bus = get_message_bus()
+    return bus.subscribe(event_type, handler, **kwargs)
+
+
+# Example usage
+if __name__ == "__main__":
+    import time
+
+    # Initialize bus
+    bus = get_message_bus()
+    bus.start()
+
+    # Example subscriber
+    def on_task_created(event: Event):
+        print(f"📥 Task created: {event.payload}")
+
+    # Subscribe
+    bus.subscribe(EventType.TASK_CREATED, on_task_created)
+
+    # Publish events
+    for i in range(3):
+        event = bus.create_event(
+            EventType.TASK_CREATED,
+            source="test",
+            payload={"task_id": f"task_{i}", "description": f"Test task {i}"}
+        )
+        bus.publish(event)
+        time.sleep(1)
+
+    # Check history
+    history = bus.get_history(EventType.TASK_CREATED)
+    print(f"\n📜 History: {len(history)} events")
+
+    # Cleanup
+    time.sleep(2)
+    bus.stop()

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
+import { config } from '../../config';
+import { useInboxAPI } from '../../hooks/useInboxAPI';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = config.INBOX_API_URL;
 
 interface Message {
   id: string;
@@ -29,6 +31,7 @@ const InboxSystem: React.FC = () => {
   const [selectedAgent, setSelectedAgent] = useState<string>('all');
   const [composeOpen, setComposeOpen] = useState(false);
   const queryClient = useQueryClient();
+  const { sendAction, convertToMCPTask, refreshMessages } = useInboxAPI();
 
   // Fetch messages
   const { data: messages = [], isLoading: messagesLoading } = useQuery<Message[]>({
@@ -66,7 +69,7 @@ const InboxSystem: React.FC = () => {
   // Mark as read mutation
   const markAsReadMutation = useMutation({
     mutationFn: async (messageId: string) => {
-      await axios.patch(`${API_URL}/api/inbox/messages/${messageId}/read`);
+      await sendAction(messageId, 'read');
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['messages'] });
@@ -76,7 +79,7 @@ const InboxSystem: React.FC = () => {
   // Archive message mutation
   const archiveMutation = useMutation({
     mutationFn: async (messageId: string) => {
-      await axios.patch(`${API_URL}/api/inbox/messages/${messageId}/archive`);
+      await sendAction(messageId, 'archive');
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['messages'] });
