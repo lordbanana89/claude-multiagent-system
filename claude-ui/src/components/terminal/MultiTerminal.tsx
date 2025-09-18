@@ -70,12 +70,12 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
     'master': 8096,
     'master agent': 8096,
     'master-agent': 8096,
-    'deployment': 8097,
-    'deployment agent': 8097,
-    'deployment-agent': 8097,
-    'queue-manager': 8098,
-    'queue manager agent': 8098,
-    'queue-manager-agent': 8098
+    'deployment': 8098,
+    'deployment agent': 8098,
+    'deployment-agent': 8098,
+    'queue-manager': 8097,
+    'queue manager agent': 8097,
+    'queue-manager-agent': 8097
   };
 
   // Get terminal port for agent - more flexible matching

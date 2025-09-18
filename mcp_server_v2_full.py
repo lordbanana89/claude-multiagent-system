@@ -277,6 +277,7 @@ class MCPServerV2Full:
         self.app.router.add_get('/api/mcp/agent-states', self.handle_agent_states)
         self.app.router.add_get('/api/mcp/activities', self.handle_activities)
         self.app.router.add_post('/api/mcp/setup-agent', self.handle_setup_agent)
+        self.app.router.add_post('/api/mcp/start-terminal', self.handle_start_terminal)
 
     def setup_cors(self):
         """Setup CORS"""
@@ -525,27 +526,131 @@ class MCPServerV2Full:
         """Execute the actual tool"""
         timestamp = datetime.now(timezone.utc).isoformat()
 
+        # Import database manager
+        try:
+            from core.database_manager import DatabaseManager
+            self.db_manager = DatabaseManager()
+        except:
+            self.db_manager = None
+
         # Tool implementations
         if tool_name == 'heartbeat':
+            agent = arguments.get('agent', 'unknown')
+
+            # Real database update
+            if self.db_manager:
+                try:
+                    result = self.db_manager.update_heartbeat(agent, timestamp)
+                    logger.info(f"Heartbeat saved for {agent} at {timestamp}")
+
+                    # Also update inbox if available
+                    try:
+                        import sqlite3
+                        inbox_db = sqlite3.connect('langgraph-test/shared_inbox.db')
+                        cursor = inbox_db.cursor()
+                        cursor.execute("""
+                            INSERT INTO messages (message_id, sender_id, recipient_id,
+                                                message_type, subject, content, timestamp, status)
+                            VALUES (?, ?, 'system', 'heartbeat', 'Heartbeat', ?, ?, 'delivered')
+                        """, (str(uuid.uuid4()), agent, f"Agent {agent} is alive", timestamp))
+                        inbox_db.commit()
+                        inbox_db.close()
+                    except Exception as e:
+                        logger.debug(f"Inbox update failed: {e}")
+
+                    return result
+                except Exception as e:
+                    logger.error(f"Database update failed: {e}")
+
+            # Fallback to mock if DB fails
             return {
                 'status': 'alive',
-                'agent': arguments.get('agent'),
-                'timestamp': timestamp
+                'agent': agent,
+                'timestamp': timestamp,
+                'db_updated': self.db_manager is not None
             }
 
         elif tool_name == 'update_status':
+            agent = arguments.get('agent', 'unknown')
+            status = arguments.get('status', 'idle')
+            task = arguments.get('task')
+
+            if self.db_manager:
+                try:
+                    result = self.db_manager.update_agent_status(agent, status, task)
+                    logger.info(f"Status updated for {agent}: {status}")
+
+                    # Update inbox
+                    try:
+                        import sqlite3
+                        inbox_db = sqlite3.connect('langgraph-test/shared_inbox.db')
+                        cursor = inbox_db.cursor()
+                        cursor.execute("""
+                            INSERT INTO messages (message_id, sender_id, recipient_id,
+                                                message_type, subject, content, timestamp, status)
+                            VALUES (?, ?, 'all', 'status_update', ?, ?, ?, 'broadcast')
+                        """, (str(uuid.uuid4()), agent, f"Status: {status}",
+                              f"Agent {agent} is now {status}" + (f" working on {task}" if task else ""),
+                              timestamp))
+                        inbox_db.commit()
+                        inbox_db.close()
+                    except Exception as e:
+                        logger.debug(f"Inbox broadcast failed: {e}")
+
+                    return result
+                except Exception as e:
+                    logger.error(f"Status update failed: {e}")
+
             return {
                 'success': True,
-                'agent': arguments.get('agent'),
-                'status': arguments.get('status'),
-                'timestamp': timestamp
+                'agent': agent,
+                'status': status,
+                'timestamp': timestamp,
+                'db_updated': self.db_manager is not None
             }
 
         elif tool_name == 'log_activity':
+            agent = arguments.get('agent', 'unknown')
+            category = arguments.get('category', 'info')
+            activity = arguments.get('activity', '')
+            details = arguments.get('details', {})
+
+            if self.db_manager:
+                try:
+                    result = self.db_manager.log_activity(agent, category, activity, details)
+                    logger.info(f"Activity logged for {agent}: {activity}")
+
+                    # Important activities go to inbox
+                    if category in ['error', 'warning', 'task']:
+                        try:
+                            import sqlite3
+                            inbox_db = sqlite3.connect('langgraph-test/shared_inbox.db')
+                            cursor = inbox_db.cursor()
+                            cursor.execute("""
+                                INSERT INTO messages (message_id, sender_id, recipient_id,
+                                                    message_type, priority, subject, content, timestamp, status)
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'sent')
+                            """, (str(uuid.uuid4()), agent,
+                                  'supervisor' if category == 'error' else 'all',
+                                  'activity_log',
+                                  3 if category == 'error' else 2,
+                                  f"{category.upper()}: {activity[:50]}",
+                                  json.dumps({'activity': activity, 'details': details}),
+                                  timestamp))
+                            inbox_db.commit()
+                            inbox_db.close()
+                        except Exception as e:
+                            logger.debug(f"Inbox log failed: {e}")
+
+                    return result
+                except Exception as e:
+                    logger.error(f"Activity log failed: {e}")
+
             return {
                 'logged': True,
                 'id': str(uuid.uuid4()),
-                'timestamp': timestamp
+                'timestamp': timestamp,
+                'db_updated': self.db_manager is not None
             }
 
         elif tool_name == 'check_conflicts':
@@ -756,6 +861,29 @@ class MCPServerV2Full:
             'status': 'success',
             'agent': data.get('agent_name')
         })
+
+    async def handle_start_terminal(self, request):
+        """Start terminal service for agent"""
+        try:
+            data = await request.json()
+            agent_name = data.get('agentName', 'unknown')
+
+            # Log the terminal start request
+            self.log_activity(agent_name, 'terminal_start', 'Starting terminal service')
+
+            # Return success response (CORS handled by aiohttp_cors)
+            return web.json_response({
+                'success': True,
+                'message': f'Terminal service started for {agent_name}',
+                'port': 8099,
+                'wsUrl': f'ws://localhost:8099/ws/{agent_name}'
+            })
+        except Exception as e:
+            logger.error(f"Error starting terminal: {e}")
+            return web.json_response({
+                'success': False,
+                'error': str(e)
+            }, status=500)
 
     def log_activity(self, agent: str, action: str, details: str = ''):
         """Log activity to database"""

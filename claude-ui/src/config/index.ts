@@ -21,8 +21,8 @@ export const config = {
     'instagram': 8094,
     'supervisor': 8095,
     'master': 8096,
-    'deployment': 8097,
-    'queue-manager': 8098,
+    'deployment': 8098,
+    'queue-manager': 8097,
   } as const,
 
   // Terminal Configuration
