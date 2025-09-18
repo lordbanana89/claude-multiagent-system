@@ -1,0 +1,20 @@
+# Development Procfile with minimal processes for testing
+# Start with: overmind start -f Procfile.dev
+
+# Test with just a few agents first
+supervisor: echo "Starting Claude Supervisor (DEV)..." && claude
+backend: echo "Starting Claude Backend (DEV)..." && claude
+web: streamlit run interfaces/web/complete_integration.py --server.port 8501
+
+# Simple test processes (for initial testing)
+test_echo: while true; do echo "Test process running $(date)"; sleep 5; done
+test_python: python3 -c "import time; [print(f'Python test: {i}', flush=True) or time.sleep(2) for i in range(1000)]"
+
+# Redis (optional for now)
+# redis: redis-server --port 6379 --loglevel verbose
+
+# Notes for development:
+# - Start with: overmind start -f Procfile.dev
+# - Test connection: overmind connect supervisor
+# - Watch logs: overmind connect test_echo
+# - Restart web: overmind restart web

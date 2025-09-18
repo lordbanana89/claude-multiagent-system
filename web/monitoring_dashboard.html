@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Multi-Agent System - Monitoring Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .status-bar {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.online {
+            background: #48bb78;
+        }
+
+        .status-indicator.offline {
+            background: #f56565;
+        }
+
+        .status-indicator.warning {
+            background: #ed8936;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #4a5568;
+            margin: 10px 0;
+        }
+
+        .metric-label {
+            color: #718096;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .metric-change {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .metric-change.positive {
+            color: #48bb78;
+        }
+
+        .metric-change.negative {
+            color: #f56565;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 250px;
+            margin-top: 15px;
+        }
+
+        .agent-list {
+            list-style: none;
+        }
+
+        .agent-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            margin: 8px 0;
+            background: #f7fafc;
+            border-radius: 8px;
+            border-left: 4px solid #4299e1;
+        }
+
+        .agent-item.busy {
+            border-left-color: #ed8936;
+        }
+
+        .agent-item.offline {
+            border-left-color: #f56565;
+            opacity: 0.6;
+        }
+
+        .agent-name {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .agent-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .load-bar {
+            width: 100px;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .load-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #48bb78, #ed8936, #f56565);
+            transition: width 0.3s ease;
+        }
+
+        .task-queue {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .task-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f7fafc;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .task-priority {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .priority-high {
+            background: #feb2b2;
+            color: #742a2a;
+        }
+
+        .priority-normal {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+
+        .priority-low {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .logs-container {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            margin: 4px 0;
+            white-space: pre-wrap;
+        }
+
+        .log-entry.error {
+            color: #fc8181;
+        }
+
+        .log-entry.warning {
+            color: #f6e05e;
+        }
+
+        .log-entry.info {
+            color: #63b3ed;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Claude Multi-Agent System</h1>
+            <div class="status-bar">
+                <div class="status-item">
+                    <div class="status-indicator online" id="systemStatus"></div>
+                    <span>System Status: <strong id="statusText">Online</strong></span>
+                </div>
+                <div class="status-item">
+                    <span>Uptime: <strong id="uptime">0h 0m</strong></span>
+                </div>
+                <div class="status-item">
+                    <span>Last Update: <strong id="lastUpdate">--</strong></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid">
+            <!-- Task Metrics -->
+            <div class="card">
+                <h2>📊 Task Metrics</h2>
+                <div class="metric-value" id="totalTasks">0</div>
+                <div class="metric-label">Total Tasks</div>
+                <div class="metric-change positive" id="taskChange">↑ 0% from last hour</div>
+                <div class="chart-container">
+                    <canvas id="taskChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Agent Status -->
+            <div class="card">
+                <h2>👥 Agent Status</h2>
+                <ul class="agent-list" id="agentList">
+                    <!-- Dynamically populated -->
+                </ul>
+            </div>
+
+            <!-- Success Rate -->
+            <div class="card">
+                <h2>✅ Success Rate</h2>
+                <div class="metric-value" id="successRate">0%</div>
+                <div class="metric-label">Task Success Rate</div>
+                <div class="chart-container">
+                    <canvas id="successChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Workflow Status -->
+            <div class="card">
+                <h2>🔄 Workflows</h2>
+                <div class="metric-value" id="activeWorkflows">0</div>
+                <div class="metric-label">Active Workflows</div>
+                <div class="chart-container">
+                    <canvas id="workflowChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Message Queue -->
+            <div class="card">
+                <h2>📬 Message Queue</h2>
+                <div class="task-queue" id="taskQueue">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- System Resources -->
+            <div class="card">
+                <h2>💻 System Resources</h2>
+                <div class="chart-container">
+                    <canvas id="resourceChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logs -->
+        <div class="card">
+            <h2>📝 System Logs</h2>
+            <div class="logs-container" id="logsContainer">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Claude Multi-Agent System © 2024 | Real-time Monitoring Dashboard</p>
+    </footer>
+
+    <script>
+        // Configuration
+        const API_BASE = 'http://localhost:8000';
+        const UPDATE_INTERVAL = 2000; // 2 seconds
+
+        // Chart instances
+        let taskChart, successChart, workflowChart, resourceChart;
+
+        // Initialize charts
+        function initCharts() {
+            // Task throughput chart
+            const taskCtx = document.getElementById('taskChart').getContext('2d');
+            taskChart = new Chart(taskCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Tasks/min',
+                        data: [],
+                        borderColor: '#4299e1',
+                        backgroundColor: 'rgba(66, 153, 225, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            // Success rate chart
+            const successCtx = document.getElementById('successChart').getContext('2d');
+            successChart = new Chart(successCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Success', 'Failed'],
+                    datasets: [{
+                        data: [0, 0],
+                        backgroundColor: ['#48bb78', '#f56565']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+
+            // Workflow status chart
+            const workflowCtx = document.getElementById('workflowChart').getContext('2d');
+            workflowChart = new Chart(workflowCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Pending', 'Running', 'Completed', 'Failed'],
+                    datasets: [{
+                        label: 'Workflows',
+                        data: [0, 0, 0, 0],
+                        backgroundColor: ['#ed8936', '#4299e1', '#48bb78', '#f56565']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            // Resource utilization chart
+            const resourceCtx = document.getElementById('resourceChart').getContext('2d');
+            resourceChart = new Chart(resourceCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['CPU', 'Memory', 'Disk', 'Network', 'Queue'],
+                    datasets: [{
+                        label: 'Usage %',
+                        data: [0, 0, 0, 0, 0],
+                        borderColor: '#9f7aea',
+                        backgroundColor: 'rgba(159, 122, 234, 0.1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // Update dashboard data
+        async function updateDashboard() {
+            try {
+                // Fetch metrics
+                const response = await axios.get(`${API_BASE}/metrics`);
+                const metrics = response.data;
+
+                // Update basic metrics
+                document.getElementById('totalTasks').textContent =
+                    metrics.tasks?.total || '0';
+                document.getElementById('successRate').textContent =
+                    Math.round((metrics.tasks?.success_rate || 0) * 100) + '%';
+                document.getElementById('activeWorkflows').textContent =
+                    metrics.workflows?.active || '0';
+
+                // Update uptime
+                const uptime = metrics.system?.uptime || 0;
+                const hours = Math.floor(uptime / 3600);
+                const minutes = Math.floor((uptime % 3600) / 60);
+                document.getElementById('uptime').textContent = `${hours}h ${minutes}m`;
+
+                // Update last update time
+                document.getElementById('lastUpdate').textContent =
+                    new Date().toLocaleTimeString();
+
+                // Update agents list
+                updateAgentList(metrics.agents || []);
+
+                // Update charts
+                updateCharts(metrics);
+
+                // Update task queue
+                updateTaskQueue(metrics.queue || []);
+
+                // Update logs
+                updateLogs(metrics.logs || []);
+
+            } catch (error) {
+                console.error('Failed to update dashboard:', error);
+                document.getElementById('systemStatus').className = 'status-indicator offline';
+                document.getElementById('statusText').textContent = 'Offline';
+            }
+        }
+
+        function updateAgentList(agents) {
+            const list = document.getElementById('agentList');
+            list.innerHTML = '';
+
+            agents.forEach(agent => {
+                const item = document.createElement('li');
+                item.className = `agent-item ${agent.status}`;
+                item.innerHTML = `
+                    <span class="agent-name">${agent.name}</span>
+                    <div class="agent-status">
+                        <div class="load-bar">
+                            <div class="load-fill" style="width: ${agent.load * 100}%"></div>
+                        </div>
+                        <span>${agent.status}</span>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        function updateCharts(metrics) {
+            // Update task throughput
+            if (taskChart && metrics.tasks?.throughput) {
+                const data = metrics.tasks.throughput;
+                taskChart.data.labels = data.labels.slice(-20);
+                taskChart.data.datasets[0].data = data.values.slice(-20);
+                taskChart.update('none');
+            }
+
+            // Update success rate
+            if (successChart && metrics.tasks) {
+                const success = metrics.tasks.completed_success || 0;
+                const failed = metrics.tasks.completed_failed || 0;
+                successChart.data.datasets[0].data = [success, failed];
+                successChart.update('none');
+            }
+
+            // Update workflow chart
+            if (workflowChart && metrics.workflows) {
+                workflowChart.data.datasets[0].data = [
+                    metrics.workflows.pending || 0,
+                    metrics.workflows.running || 0,
+                    metrics.workflows.completed || 0,
+                    metrics.workflows.failed || 0
+                ];
+                workflowChart.update('none');
+            }
+
+            // Update resource chart
+            if (resourceChart && metrics.resources) {
+                resourceChart.data.datasets[0].data = [
+                    metrics.resources.cpu || 0,
+                    metrics.resources.memory || 0,
+                    metrics.resources.disk || 0,
+                    metrics.resources.network || 0,
+                    metrics.resources.queue || 0
+                ];
+                resourceChart.update('none');
+            }
+        }
+
+        function updateTaskQueue(tasks) {
+            const queue = document.getElementById('taskQueue');
+            queue.innerHTML = '';
+
+            if (tasks.length === 0) {
+                queue.innerHTML = '<div style="color: #718096; text-align: center;">No pending tasks</div>';
+                return;
+            }
+
+            tasks.slice(0, 10).forEach(task => {
+                const item = document.createElement('div');
+                item.className = 'task-item';
+                item.innerHTML = `
+                    <span>${task.agent}: ${task.command.substring(0, 30)}...</span>
+                    <span class="task-priority priority-${task.priority}">${task.priority}</span>
+                `;
+                queue.appendChild(item);
+            });
+        }
+
+        function updateLogs(logs) {
+            const container = document.getElementById('logsContainer');
+
+            // Add new logs
+            logs.slice(-20).forEach(log => {
+                const entry = document.createElement('div');
+                entry.className = `log-entry ${log.level}`;
+                entry.textContent = `[${log.timestamp}] ${log.level}: ${log.message}`;
+                container.appendChild(entry);
+            });
+
+            // Keep only last 50 entries
+            while (container.children.length > 50) {
+                container.removeChild(container.firstChild);
+            }
+
+            // Auto-scroll to bottom
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // Initialize and start updates
+        document.addEventListener('DOMContentLoaded', () => {
+            initCharts();
+            updateDashboard();
+            setInterval(updateDashboard, UPDATE_INTERVAL);
+        });
+    </script>
+</body>
+</html>

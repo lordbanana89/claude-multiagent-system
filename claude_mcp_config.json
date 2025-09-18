@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "shared-context": {
+      "command": "python3",
+      "args": [
+        "/Users/erik/Desktop/claude-multiagent-system/mcp_coordinator_server.py"
+      ],
+      "env": {},
+      "name": "Claude Multi-Agent Coordinator",
+      "description": "Shared context and coordination for multi-agent system"
+    }
+  }
+}

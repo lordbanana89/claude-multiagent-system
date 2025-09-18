@@ -1,0 +1,165 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.33:8501
+
+2025-09-17 02:44:04.836 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:04.844 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:05.112 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:05.131 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:09.108 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:09.115 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:09.600 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:09.606 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:09.832 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:09.858 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:54.209 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:54.604 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:54.609 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:54.858 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:54.881 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:57.638 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:57.644 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:57.874 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 02:44:57.899 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+✅ Messaging system imported successfully
+📋 Loaded notification configs for 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+DEBUG: task_assigned = True, agent_ids = ['supervisor', 'master', 'backend-api', 'database', 'frontend-ui', 'instagram', 'testing']
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+DEBUG: task_assigned = True, agent_ids = ['supervisor', 'master', 'backend-api', 'database', 'frontend-ui', 'instagram', 'testing']
+✅ Messaging system imported successfully
+DEBUG: task_assigned = True, agent_ids = ['supervisor', 'master', 'backend-api', 'database', 'frontend-ui', 'instagram', 'testing']
+  Stopping...

@@ -1,0 +1,130 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7.2-alpine
+    container_name: claude-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - claude-network
+
+  dramatiq-worker:
+    build: .
+    container_name: claude-dramatiq
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - DRAMATIQ_PROCESSES=2
+      - DRAMATIQ_THREADS=4
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./logs:/app/logs
+      - ./langgraph-test:/app/langgraph-test
+    command: python -m dramatiq task_queue.worker --processes ${DRAMATIQ_PROCESSES:-2} --threads ${DRAMATIQ_THREADS:-4}
+    restart: unless-stopped
+    networks:
+      - claude-network
+
+  web:
+    build: .
+    container_name: claude-web
+    depends_on:
+      - redis
+      - dramatiq-worker
+    ports:
+      - "8501:8501"
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    volumes:
+      - ./interfaces:/app/interfaces
+      - ./logs:/app/logs
+    command: streamlit run interfaces/web/complete_integration.py --server.port 8501 --server.address 0.0.0.0
+    restart: unless-stopped
+    networks:
+      - claude-network
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: claude-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    networks:
+      - claude-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: claude-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_INSTALL_PLUGINS=redis-datasource
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    depends_on:
+      - prometheus
+    networks:
+      - claude-network
+
+  # Optional: Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: claude-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - web
+    networks:
+      - claude-network
+    profiles:
+      - production
+
+  # Optional: Overmind manager (for development)
+  overmind:
+    build: .
+    container_name: claude-overmind
+    volumes:
+      - .:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    working_dir: /app
+    command: overmind start
+    profiles:
+      - development
+    networks:
+      - claude-network
+
+volumes:
+  redis-data:
+  prometheus-data:
+  grafana-data:
+
+networks:
+  claude-network:
+    driver: bridge

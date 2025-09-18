@@ -1,0 +1,17 @@
+/* Fix for ttyd iframe integration */
+iframe[title*="Terminal"] {
+  isolation: isolate;
+  pointer-events: auto;
+}
+
+/* Ensure terminals are interactive */
+.terminal-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hide any error overlays from ttyd */
+iframe[title*="Terminal"]::after {
+  display: none !important;
+}

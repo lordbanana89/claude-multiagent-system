@@ -1,0 +1,69 @@
+📋 Loaded notification configs for 11 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1090 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔍 Starting Agent Request Monitor Test
+🔍 Agent Request Monitor started
+⏳ Pending approval request req_1758098233196: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098233196 from backend-api
+⏳ Pending approval request req_1758098234443: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098234443 from instagram
+⏳ Pending approval request req_1758098235493: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098235493 from testing
+Status: 1092 pending, 10 recent
+⏳ Pending approval request req_1758098241563: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098241563 from backend-api
+⏳ Pending approval request req_1758098242641: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+Status: 1094 pending, 10 recent
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098242641 from instagram
+⏳ Pending approval request req_1758098243691: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098243691 from testing
+Status: 1095 pending, 10 recent
+⏳ Pending approval request req_1758098249738: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098249738 from backend-api
+⏳ Pending approval request req_1758098250790: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098250790 from instagram
+⏳ Pending approval request req_1758098251838: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098251838 from testing
+Status: 1098 pending, 10 recent
+⏳ Pending approval request req_1758098257902: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+Status: 1099 pending, 10 recent
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098257902 from backend-api
+⏳ Pending approval request req_1758098258976: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098258976 from instagram
+⏳ Pending approval request req_1758098260025: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758098260025 from testing
+Status: 1101 pending, 10 recent
+🔍 Agent Request Monitor stopped

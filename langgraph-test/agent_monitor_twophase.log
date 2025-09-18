@@ -1,0 +1,57 @@
+📋 Loaded notification configs for 11 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 430 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔍 Starting Agent Request Monitor Test
+🔍 Agent Request Monitor started
+⏳ Pending approval request req_1758096827571: task-complete
+📤 Phase 1: Sent command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758096827571 from backend-api
+Status: 430 pending, 10 recent
+⏳ Pending approval request req_1758096833756: task-complete
+📤 Phase 1: Sent command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758096833756 from backend-api
+Status: 431 pending, 10 recent
+⏳ Pending approval request req_1758096839818: task-complete
+📤 Phase 1: Sent command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758096839818 from backend-api
+⏳ Pending approval request req_1758096840873: task-complete
+📤 Phase 1: Sent command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758096840873 from frontend-ui
+Status: 433 pending, 10 recent
+⏳ Pending approval request req_1758096846940: task-complete
+📤 Phase 1: Sent command to supervisor terminal
+Status: 434 pending, 10 recent
+📡 Phase 2: Executed command - Notified supervisor about request req_1758096846940 from backend-api
+⏳ Pending approval request req_1758096847986: task-complete
+📤 Phase 1: Sent command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758096847986 from frontend-ui
+Status: 435 pending, 10 recent
+⏳ Pending approval request req_1758096854058: task-complete
+📤 Phase 1: Sent command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758096854058 from backend-api
+⏳ Pending approval request req_1758096855123: task-complete
+📤 Phase 1: Sent command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758096855123 from frontend-ui
+Status: 437 pending, 10 recent
+🔍 Agent Request Monitor stopped

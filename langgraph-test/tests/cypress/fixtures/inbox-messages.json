@@ -1,0 +1,72 @@
+{
+  "agent_id": "ui-test-agent",
+  "messages": [
+    {
+      "message_id": "msg-001",
+      "from_agent": "backend-api",
+      "to_agent": "ui-test-agent",
+      "content": "System notification: New user registration completed",
+      "priority": "normal",
+      "status": "delivered",
+      "category": "information",
+      "timestamp": "2024-09-17T08:30:00Z",
+      "tags": ["system", "notification"],
+      "read": false
+    },
+    {
+      "message_id": "msg-002",
+      "from_agent": "supervisor",
+      "to_agent": "ui-test-agent",
+      "content": "Please review and process the pending authentication requests",
+      "priority": "high",
+      "status": "delivered",
+      "category": "tasks",
+      "timestamp": "2024-09-17T09:15:00Z",
+      "tags": ["task", "auth"],
+      "read": false
+    },
+    {
+      "message_id": "msg-003",
+      "from_agent": "database",
+      "to_agent": "ui-test-agent",
+      "content": "URGENT: Database connection pool exhausted, immediate attention required",
+      "priority": "urgent",
+      "status": "delivered",
+      "category": "urgent",
+      "timestamp": "2024-09-17T10:00:00Z",
+      "tags": ["urgent", "database", "alert"],
+      "read": false
+    },
+    {
+      "message_id": "msg-004",
+      "from_agent": "frontend-ui",
+      "to_agent": "ui-test-agent",
+      "content": "What is the current status of the user profile update feature?",
+      "priority": "normal",
+      "status": "delivered",
+      "category": "questions",
+      "timestamp": "2024-09-17T10:30:00Z",
+      "tags": ["question", "feature"],
+      "read": true
+    },
+    {
+      "message_id": "msg-005",
+      "from_agent": "testing",
+      "to_agent": "ui-test-agent",
+      "content": "Test suite execution completed. 45/50 tests passed, 5 failures detected.",
+      "priority": "normal",
+      "status": "acknowledged",
+      "category": "information",
+      "timestamp": "2024-09-17T11:00:00Z",
+      "tags": ["testing", "results"],
+      "read": true
+    }
+  ],
+  "total_count": 5,
+  "unread_count": 3,
+  "pagination": {
+    "page": 1,
+    "per_page": 20,
+    "total_pages": 1
+  }
+}

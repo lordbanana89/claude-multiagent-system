@@ -1,0 +1,39 @@
+{
+  "current_task": {
+    "task_id": "task_f3f7073c",
+    "description": "Test database integration",
+    "priority": 3,
+    "created_at": "2025-09-17T10:43:13.964501",
+    "assigned_agents": [
+      "test_agent"
+    ],
+    "status": "in_progress",
+    "progress": 0.0,
+    "results": {},
+    "error_message": null,
+    "started_at": "2025-09-17T10:43:13.964725",
+    "completed_at": null
+  },
+  "task_queue": [],
+  "task_history": [],
+  "agents": {
+    "test_agent": {
+      "agent_id": "test_agent",
+      "name": "Test Agent",
+      "status": "busy",
+      "current_task": "task_f3f7073c",
+      "last_activity": "2025-09-17T10:43:13.963994",
+      "session_id": "",
+      "port": 0,
+      "capabilities": [
+        "testing"
+      ],
+      "error_message": null
+    }
+  },
+  "messages": [],
+  "shared_variables": {},
+  "system_status": "busy",
+  "last_updated": "2025-09-17T10:43:13.964727",
+  "settings": {}
+}

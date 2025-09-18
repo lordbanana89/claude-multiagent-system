@@ -1,0 +1,35 @@
+📋 Loaded notification configs for 11 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔍 Starting Agent Request Monitor Test
+🔍 Agent Request Monitor started
+🧹 Cleaned up 0 old requests
+Status: 400 pending, 10 recent
+🧹 Cleaned up 0 old requests
+Status: 400 pending, 10 recent
+Status: 400 pending, 10 recent
+Status: 400 pending, 10 recent
+Status: 400 pending, 10 recent
+Status: 400 pending, 10 recent
+🔍 Agent Request Monitor stopped

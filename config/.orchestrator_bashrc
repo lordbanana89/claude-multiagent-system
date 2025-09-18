@@ -1,0 +1,20 @@
+# Riona AI Orchestrator Terminal Configuration
+# Source this file in your orchestrator terminal
+
+# Custom prompt for orchestrator terminal
+export PS1="🎯 \[\033[1;35m\]ORCHESTRATOR\[\033[0m\] \[\033[0;36m\]\W\[\033[0m\] $ "
+
+# Load orchestrator profile
+source "/Users/erik/Desktop/riona_ai/riona-ai/orchestrator-profile.sh"
+
+# Auto-complete per comandi orchestrator
+complete -W "status monitor start restart stop" agents
+complete -W "feature-development api-endpoint frontend-component database-setup testing-suite deployment" workflow
+complete -W "task-coordinator backend-api database frontend-ui instagram queue-manager testing deployment" agent
+
+# Messaggio di benvenuto quando la shell si avvia
+echo "🎯 Orchestrator Terminal Ready!"
+echo "Current directory: $(pwd)"
+
+# Auto-check status ogni 60 secondi in background (opzionale)
+# (sleep 60; while true; do echo -e "\n⏰ Auto-check: $(date '+%H:%M:%S')"; status; sleep 300; done) &

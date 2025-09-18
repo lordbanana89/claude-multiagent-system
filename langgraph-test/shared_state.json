@@ -1,0 +1,327 @@
+{
+  "current_task": null,
+  "task_queue": [],
+  "task_history": [
+    {
+      "task_id": "task_a00c23e4",
+      "description": "test",
+      "priority": 2,
+      "created_at": "2025-09-16T17:37:44.864986",
+      "assigned_agents": [
+        "backend-api",
+        "database",
+        "frontend-ui",
+        "instagram",
+        "testing"
+      ],
+      "status": "completed",
+      "progress": 100.0,
+      "results": {
+        "backend-api": "Task completed via emergency reset - agents were stuck in BUSY state",
+        "database": "Task completed via emergency reset - agents were stuck in BUSY state",
+        "frontend-ui": "Task completed via emergency reset - agents were stuck in BUSY state",
+        "instagram": "Task completed via emergency reset - agents were stuck in BUSY state",
+        "testing": "Task completed via emergency reset - agents were stuck in BUSY state"
+      },
+      "error_message": null,
+      "started_at": "2025-09-16T17:37:44.865841",
+      "completed_at": "2025-09-16T17:50:46.022519"
+    },
+    {
+      "task_id": "task_0b594fc8",
+      "description": "Test task lifecycle - respond with 'task complete' when done",
+      "priority": 3,
+      "created_at": "2025-09-16T17:53:11.841277",
+      "assigned_agents": [
+        "backend-api"
+      ],
+      "status": "completed",
+      "progress": 100.0,
+      "results": {
+        "backend-api": "Task completed via emergency reset - agents were stuck in BUSY state"
+      },
+      "error_message": null,
+      "started_at": "2025-09-16T17:53:11.841685",
+      "completed_at": "2025-09-16T17:53:47.792562"
+    },
+    {
+      "task_id": "task_6b94e7ae",
+      "description": "DEMO TEST 17:55:36 - Rispondi con 'DEMO COMPLETATO' quando fatto",
+      "priority": 3,
+      "created_at": "2025-09-16T17:55:36.192322",
+      "assigned_agents": [
+        "backend-api"
+      ],
+      "status": "completed",
+      "progress": 100.0,
+      "results": {
+        "backend-api": "DEMO COMPLETATO - Completamento manuale per test"
+      },
+      "error_message": null,
+      "started_at": "2025-09-16T17:55:36.192822",
+      "completed_at": "2025-09-16T17:56:06.971552"
+    },
+    {
+      "task_id": "task_332aac4b",
+      "description": "FINAL TEST - Usa task-complete per completare",
+      "priority": 3,
+      "created_at": "2025-09-16T17:57:05.198440",
+      "assigned_agents": [
+        "backend-api"
+      ],
+      "status": "completed",
+      "progress": 100.0,
+      "results": {
+        "backend-api": "Task completed via emergency reset - agents were stuck in BUSY state"
+      },
+      "error_message": null,
+      "started_at": "2025-09-16T17:57:05.199065",
+      "completed_at": "2025-09-16T17:58:09.309703"
+    },
+    {
+      "task_id": "task_96bfda00",
+      "description": "Write 'Hello from Supervisor!' to the terminal",
+      "priority": 2,
+      "created_at": "2025-09-16T18:22:49.689004",
+      "assigned_agents": [
+        "backend-api"
+      ],
+      "status": "completed",
+      "progress": 100.0,
+      "results": {
+        "backend-api": "Task completed via supervisor"
+      },
+      "error_message": null,
+      "started_at": "2025-09-16T18:22:49.689489",
+      "completed_at": "2025-09-16T18:23:01.948899"
+    },
+    {
+      "task_id": "task_1e2695e8",
+      "description": "Write 'Hello from Supervisor!' to the terminal",
+      "priority": 2,
+      "created_at": "2025-09-16T18:31:52.543987",
+      "assigned_agents": [
+        "backend-api"
+      ],
+      "status": "completed",
+      "progress": 100.0,
+      "results": {
+        "backend-api": "Task completed via supervisor"
+      },
+      "error_message": null,
+      "started_at": "2025-09-16T18:31:52.544573",
+      "completed_at": "2025-09-16T18:32:04.804671"
+    },
+    {
+      "task_id": "task_ee0b311f",
+      "description": "Test delay logic fix",
+      "priority": 2,
+      "created_at": "2025-09-17T00:25:26.238733",
+      "assigned_agents": [
+        "backend-api"
+      ],
+      "status": "completed",
+      "progress": 100.0,
+      "results": {
+        "backend-api": "Task completed via emergency reset - agents were stuck in BUSY state"
+      },
+      "error_message": null,
+      "started_at": "2025-09-17T00:25:26.239273",
+      "completed_at": "2025-09-17T00:36:37.535283"
+    },
+    {
+      "task_id": "task_928952fe",
+      "description": "Test task lifecycle - respond with 'task complete' when done",
+      "priority": 3,
+      "created_at": "2025-09-17T00:48:38.287139",
+      "assigned_agents": [
+        "backend-api"
+      ],
+      "status": "completed",
+      "progress": 100.0,
+      "results": {
+        "backend-api": "task complete"
+      },
+      "error_message": null,
+      "started_at": "2025-09-17T00:48:38.288346",
+      "completed_at": "2025-09-17T00:51:08.471686"
+    },
+    {
+      "task_id": "task_1916a562",
+      "description": "test",
+      "priority": 2,
+      "created_at": "2025-09-17T09:04:24.445860",
+      "assigned_agents": [
+        "supervisor",
+        "master",
+        "backend-api",
+        "database",
+        "frontend-ui",
+        "instagram",
+        "testing"
+      ],
+      "status": "completed",
+      "progress": 100.0,
+      "results": {
+        "supervisor": "Core inbox infrastructure implemented - message storage, routing, and API endpoints with authentication completed successfully",
+        "master": "Core inbox infrastructure implemented - message storage, routing, and API endpoints with authentication completed successfully",
+        "backend-api": "Core inbox infrastructure implemented - message storage, routing, and API endpoints with authentication completed successfully",
+        "database": "Core inbox infrastructure implemented - message storage, routing, and API endpoints with authentication completed successfully",
+        "frontend-ui": "Core inbox infrastructure implemented - message storage, routing, and API endpoints with authentication completed successfully",
+        "instagram": "Core inbox infrastructure implemented - message storage, routing, and API endpoints with authentication completed successfully",
+        "testing": "Core inbox infrastructure implemented - message storage, routing, and API endpoints with authentication completed successfully"
+      },
+      "error_message": null,
+      "started_at": "2025-09-17T09:04:24.447118",
+      "completed_at": "2025-09-17T10:15:40.610082"
+    }
+  ],
+  "agents": {
+    "backend-api": {
+      "agent_id": "backend-api",
+      "name": "Backend API Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T21:32:14.461930",
+      "session_id": "claude-backend-api",
+      "port": 8090,
+      "capabilities": [
+        "API development and server-side logic"
+      ],
+      "error_message": null
+    },
+    "database": {
+      "agent_id": "database",
+      "name": "Database Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T21:32:14.462675",
+      "session_id": "claude-database",
+      "port": 8091,
+      "capabilities": [
+        "Database design and optimization"
+      ],
+      "error_message": null
+    },
+    "frontend-ui": {
+      "agent_id": "frontend-ui",
+      "name": "Frontend UI Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T21:32:14.463446",
+      "session_id": "claude-frontend-ui",
+      "port": 8092,
+      "capabilities": [
+        "User interface and UX design"
+      ],
+      "error_message": null
+    },
+    "instagram": {
+      "agent_id": "instagram",
+      "name": "Instagram Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T21:32:14.464085",
+      "session_id": "claude-instagram",
+      "port": 8093,
+      "capabilities": [
+        "Social media automation"
+      ],
+      "error_message": null
+    },
+    "testing": {
+      "agent_id": "testing",
+      "name": "Testing Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T21:32:14.464688",
+      "session_id": "claude-testing",
+      "port": 8094,
+      "capabilities": [
+        "QA and test automation"
+      ],
+      "error_message": null
+    },
+    "supervisor": {
+      "agent_id": "supervisor",
+      "name": "👨‍💼 Supervisor Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T21:32:14.459948",
+      "session_id": "claude-supervisor",
+      "port": 8089,
+      "capabilities": [
+        "Coordinates and manages all other agents"
+      ],
+      "error_message": null
+    },
+    "master": {
+      "agent_id": "master",
+      "name": "🎖️ Master Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T21:32:14.461160",
+      "session_id": "claude-master",
+      "port": 8088,
+      "capabilities": [
+        "Supreme command and strategic oversight"
+      ],
+      "error_message": null
+    },
+    "test1": {
+      "agent_id": "test1",
+      "name": "test1",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-16T19:58:26.614337",
+      "session_id": "claude-test1",
+      "port": 8095,
+      "capabilities": [
+        "RESTful API development",
+        "Database integration",
+        "Authentication & authorization",
+        "Performance optimization",
+        "Error handling & logging"
+      ],
+      "error_message": null
+    },
+    "test-security-agent": {
+      "agent_id": "test-security-agent",
+      "name": "Test Security Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T02:21:05.977447",
+      "session_id": "claude-test-security-agent",
+      "port": 8096,
+      "capabilities": [
+        "Vulnerability scanning",
+        "Security analysis"
+      ],
+      "error_message": null
+    }
+  },
+  "messages": [
+    {
+      "message_id": "5aabbbba-cc02-45f6-b836-6e2e4e453d39",
+      "from_agent": "system",
+      "to_agent": "test",
+      "message": "Integration test message",
+      "data": {},
+      "timestamp": "2025-09-17T10:47:52.032100",
+      "read": false
+    },
+    {
+      "message_id": "3bd9e910-252b-4855-962b-d19f9de0bb54",
+      "from_agent": "backend-api",
+      "to_agent": "frontend-ui",
+      "message": "FINAL TEST: Integration working correctly",
+      "data": {},
+      "timestamp": "2025-09-17T10:47:52.033707",
+      "read": false
+    }
+  ],
+  "shared_variables": {},
+  "system_status": "idle",
+  "last_updated": "2025-09-17T21:32:14.464863",
+  "settings": {}
+}

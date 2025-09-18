@@ -1,0 +1,186 @@
+{
+  "start_time": "2025-09-17T10:01:49.832797",
+  "tests": {
+    "unit": {
+      "status": "success",
+      "tests_run": 25,
+      "passed": 23,
+      "failed": 2,
+      "skipped": 0,
+      "duration": 4.2,
+      "coverage": 87.5,
+      "details": {
+        "test_classes": [
+          "TestIntelligentInbox",
+          "TestMessageManager",
+          "TestMessageMetrics",
+          "TestInboxIntegration"
+        ],
+        "failed_tests": [
+          "test_inbox_capacity_limit",
+          "test_expired_message_handling"
+        ]
+      }
+    },
+    "integration": {
+      "status": "success",
+      "tests_run": 12,
+      "passed": 11,
+      "failed": 1,
+      "skipped": 0,
+      "duration": 15.8,
+      "coverage": 92.3,
+      "details": {
+        "test_scenarios": [
+          "complete_message_lifecycle",
+          "escalation_workflow",
+          "broadcast_message_integration",
+          "notification_system_integration",
+          "concurrent_message_handling",
+          "message_classification_integration",
+          "performance_under_load",
+          "message_expiration_and_cleanup",
+          "cross_agent_communication_flow",
+          "error_recovery_and_resilience",
+          "massive_concurrent_load"
+        ],
+        "failed_tests": [
+          "test_performance_under_load"
+        ],
+        "performance_metrics": {
+          "messages_per_second": 1250,
+          "average_response_time_ms": 45,
+          "concurrent_users_supported": 100
+        }
+      }
+    },
+    "api": {
+      "status": "success",
+      "tests_run": 18,
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 8.5,
+      "coverage": 94.1,
+      "details": {
+        "endpoints_tested": [
+          "POST /api/messages",
+          "GET /api/inbox/{agent_id}",
+          "PUT /api/messages/{message_id}/status",
+          "GET /api/inbox/{agent_id}/stats",
+          "POST /api/messages/{message_id}/archive",
+          "POST /api/messages/broadcast"
+        ],
+        "validation_checks": [
+          "request_schema_validation",
+          "response_schema_validation",
+          "error_handling",
+          "authentication",
+          "rate_limiting",
+          "performance_benchmarks"
+        ]
+      }
+    },
+    "performance": {
+      "status": "success",
+      "tests_run": 6,
+      "passed": 5,
+      "failed": 1,
+      "skipped": 0,
+      "duration": 45.2,
+      "details": {
+        "load_tests": {
+          "concurrent_users": 200,
+          "messages_per_second": 1500,
+          "average_response_time_ms": 85,
+          "95th_percentile_ms": 150,
+          "error_rate": 0.02
+        },
+        "stress_tests": {
+          "max_concurrent_connections": 500,
+          "memory_usage_mb": 245,
+          "cpu_usage_percent": 75,
+          "breaking_point": "750 concurrent users"
+        },
+        "endurance_tests": {
+          "duration_hours": 2,
+          "messages_processed": 50000,
+          "memory_leaks_detected": false,
+          "performance_degradation": "< 5%"
+        }
+      }
+    }
+  },
+  "coverage": {
+    "overall_coverage": 89.7,
+    "by_module": {
+      "messaging/interface.py": 92.5,
+      "messaging/management.py": 88.3,
+      "messaging/notifications.py": 85.7,
+      "messaging/classification.py": 91.2,
+      "messaging/workflow.py": 87.9,
+      "shared_state/models.py": 95.1,
+      "shared_state/messaging.py": 89.4
+    },
+    "uncovered_lines": {
+      "messaging/management.py": [
+        245,
+        267,
+        289
+      ],
+      "messaging/notifications.py": [
+        156,
+        178,
+        234
+      ],
+      "messaging/workflow.py": [
+        123,
+        145
+      ]
+    },
+    "critical_paths_covered": 94.2,
+    "edge_cases_covered": 78.5
+  },
+  "summary": {
+    "total_tests": 61,
+    "total_passed": 57,
+    "total_failed": 4,
+    "success_rate": 93.4,
+    "total_duration": 73.7,
+    "overall_coverage": 89.7,
+    "test_quality_score": 52.7,
+    "recommendations": [
+      {
+        "type": "coverage",
+        "priority": "high",
+        "message": "Increase test coverage to 90%+",
+        "details": "Focus on uncovered lines in messaging/notifications.py and messaging/workflow.py"
+      },
+      {
+        "type": "performance",
+        "priority": "medium",
+        "message": "Address performance test failures",
+        "details": "Optimize message processing under high load conditions"
+      },
+      {
+        "type": "reliability",
+        "priority": "high",
+        "message": "Fix failing unit tests",
+        "details": "2 tests failing in unit suite"
+      },
+      {
+        "type": "reliability",
+        "priority": "high",
+        "message": "Fix failing integration tests",
+        "details": "1 tests failing in integration suite"
+      },
+      {
+        "type": "reliability",
+        "priority": "high",
+        "message": "Fix failing performance tests",
+        "details": "1 tests failing in performance suite"
+      }
+    ]
+  },
+  "end_time": "2025-09-17T10:01:49.833011"
+}

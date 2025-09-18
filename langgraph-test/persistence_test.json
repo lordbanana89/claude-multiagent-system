@@ -1,0 +1,43 @@
+{
+  "current_task": {
+    "task_id": "task_dc7c131b",
+    "description": "Test persistence functionality",
+    "priority": 3,
+    "created_at": "2025-09-17T10:46:08.371085",
+    "assigned_agents": [
+      "persistence_test_agent"
+    ],
+    "status": "in_progress",
+    "progress": 0.0,
+    "results": {},
+    "error_message": null,
+    "started_at": "2025-09-17T10:46:08.371339",
+    "completed_at": null
+  },
+  "task_queue": [],
+  "task_history": [],
+  "agents": {
+    "persistence_test_agent": {
+      "agent_id": "persistence_test_agent",
+      "name": "Persistence Test Agent",
+      "status": "busy",
+      "current_task": "task_dc7c131b",
+      "last_activity": "2025-09-17T10:46:08.370535",
+      "session_id": "",
+      "port": 0,
+      "capabilities": [
+        "testing",
+        "persistence"
+      ],
+      "error_message": null
+    }
+  },
+  "messages": [],
+  "shared_variables": {
+    "test_key": "test_value",
+    "timestamp": "2025-09-17T10:46:08.601162"
+  },
+  "system_status": "busy",
+  "last_updated": "2025-09-17T10:46:08.601391",
+  "settings": {}
+}

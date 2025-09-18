@@ -1,0 +1,78 @@
+📋 Loaded notification configs for 11 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 561 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔍 Starting Agent Request Monitor Test
+🔍 Agent Request Monitor started
+⏳ Pending approval request req_1758097323634: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097323634 from backend-api
+⏳ Pending approval request req_1758097324821: create_file deploy.sql                                                                           │
+🔍 Detected file creation request from database: deploy.sql                                                                           │
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097324821 from database
+⏳ Pending approval request req_1758097325867: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097325867 from testing
+Status: 563 pending, 10 recent
+⏳ Pending approval request req_1758097331906: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097331906 from backend-api
+⏳ Pending approval request req_1758097332940: create_file deploy.sql                                                                           │
+🔍 Detected file creation request from database: deploy.sql                                                                           │
+📤 Phase 1: Sent detailed command to supervisor terminal
+Status: 565 pending, 10 recent
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097332940 from database
+⏳ Pending approval request req_1758097333974: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097333974 from instagram
+⏳ Pending approval request req_1758097335023: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097335023 from testing
+Status: 567 pending, 10 recent
+⏳ Pending approval request req_1758097341060: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097341060 from backend-api
+⏳ Pending approval request req_1758097342106: create_file deploy.sql                                                                           │
+🔍 Detected file creation request from database: deploy.sql                                                                           │
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097342106 from database
+⏳ Pending approval request req_1758097343145: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+Status: 570 pending, 10 recent
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097343145 from instagram
+⏳ Pending approval request req_1758097344180: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097344180 from testing
+Status: 571 pending, 10 recent
+⏳ Pending approval request req_1758097350224: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097350224 from backend-api
+⏳ Pending approval request req_1758097351267: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097351267 from instagram
+⏳ Pending approval request req_1758097352302: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097352302 from testing
+Status: 574 pending, 10 recent
+🔍 Agent Request Monitor stopped

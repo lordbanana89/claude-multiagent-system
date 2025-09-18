@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-09-17T10:46:32.201590",
+  "tests": {
+    "model_creation": "PASS",
+    "agent_model": "PASS",
+    "model_structure": "FAIL: NORMAL",
+    "json_save": "PASS",
+    "json_load": "PASS",
+    "json_corruption_handling": "PASS",
+    "sqlite_save": "PASS",
+    "sqlite_load": "PASS",
+    "sqlite_history": "PASS",
+    "manager_init": "PASS",
+    "manager_functionality": "FAIL: SharedStateManager.register_agent() takes 2 positional arguments but 3 were given",
+    "concurrent_access": "PARTIAL: 0/5",
+    "performance": "FAIL: SharedStateManager.register_agent() takes 2 positional arguments but 3 were given",
+    "existing_file_load": "PASS"
+  },
+  "critical_issues": [
+    "Model structure error: NORMAL",
+    "Manager functionality error: SharedStateManager.register_agent() takes 2 positional arguments but 3 were given",
+    "Performance test error: SharedStateManager.register_agent() takes 2 positional arguments but 3 were given"
+  ],
+  "warnings": [
+    "Concurrent access partially failed: 0/5"
+  ],
+  "performance_metrics": {
+    "json_save_time": 0.00015616416931152344,
+    "json_load_time": 5.507469177246094e-05,
+    "sqlite_save_time": 0.0005130767822265625,
+    "sqlite_load_time": 0.0001571178436279297,
+    "existing_agents": 9,
+    "existing_tasks": 9,
+    "file_size_kb": 9.701171875
+  }
+}

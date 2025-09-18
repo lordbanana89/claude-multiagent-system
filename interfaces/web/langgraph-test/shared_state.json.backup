@@ -1,0 +1,103 @@
+{
+  "current_task": null,
+  "task_queue": [],
+  "task_history": [],
+  "agents": {
+    "supervisor": {
+      "agent_id": "supervisor",
+      "name": "👨‍💼 Supervisor Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T01:09:34.648816",
+      "session_id": "claude-supervisor",
+      "port": 8089,
+      "capabilities": [
+        "Coordinates and manages all other agents"
+      ],
+      "error_message": null
+    },
+    "master": {
+      "agent_id": "master",
+      "name": "🎖️ Master Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T01:09:34.649284",
+      "session_id": "claude-master",
+      "port": 8088,
+      "capabilities": [
+        "Supreme command and strategic oversight"
+      ],
+      "error_message": null
+    },
+    "backend-api": {
+      "agent_id": "backend-api",
+      "name": "Backend API Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T01:09:34.649565",
+      "session_id": "claude-backend-api",
+      "port": 8090,
+      "capabilities": [
+        "API development and server-side logic"
+      ],
+      "error_message": null
+    },
+    "database": {
+      "agent_id": "database",
+      "name": "Database Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T01:09:34.649901",
+      "session_id": "claude-database",
+      "port": 8091,
+      "capabilities": [
+        "Database design and optimization"
+      ],
+      "error_message": null
+    },
+    "frontend-ui": {
+      "agent_id": "frontend-ui",
+      "name": "Frontend UI Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T01:09:34.650161",
+      "session_id": "claude-frontend-ui",
+      "port": 8092,
+      "capabilities": [
+        "User interface and UX design"
+      ],
+      "error_message": null
+    },
+    "instagram": {
+      "agent_id": "instagram",
+      "name": "Instagram Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T01:09:34.650404",
+      "session_id": "claude-instagram",
+      "port": 8093,
+      "capabilities": [
+        "Social media automation"
+      ],
+      "error_message": null
+    },
+    "testing": {
+      "agent_id": "testing",
+      "name": "Testing Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T01:09:12.110804",
+      "session_id": "claude-testing",
+      "port": 8094,
+      "capabilities": [
+        "QA and test automation"
+      ],
+      "error_message": null
+    }
+  },
+  "messages": [],
+  "shared_variables": {},
+  "system_status": "idle",
+  "last_updated": "2025-09-17T01:09:34.650405",
+  "settings": {}
+}

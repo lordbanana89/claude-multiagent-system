@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inbox System Test Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { background: #2c3e50; color: white; padding: 20px; border-radius: 5px; }
+        .summary { background: #ecf0f1; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { color: #27ae60; }
+        .error { color: #e74c3c; }
+        .warning { color: #f39c12; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #34495e; color: white; }
+        .progress-bar { width: 100%; height: 20px; background: #ecf0f1; border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background: #27ae60; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🧪 Inbox System Test Report</h1>
+        <p>Generated: 2025-09-17 11:02:27</p>
+    </div>
+
+    <div class="summary">
+        <h2>📊 Executive Summary</h2>
+        <p><strong>Total Tests:</strong> 61</p>
+        <p><strong>Success Rate:</strong> <span class="success">93.4%</span></p>
+        <p><strong>Coverage:</strong> <span class="success">89.7%</span></p>
+        <p><strong>Quality Score:</strong> <span class="success">52.7/100</span></p>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 93.4%"></div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔬 Test Results by Category</h2>
+        <table>
+            <tr><th>Test Suite</th><th>Tests Run</th><th>Passed</th><th>Failed</th><th>Duration (s)</th><th>Status</th></tr>
+
+            <tr>
+                <td>Unit</td>
+                <td>25</td>
+                <td class="success">23</td>
+                <td class="error">2</td>
+                <td>4.2</td>
+                <td class="error">Success</td>
+            </tr>
+            <tr>
+                <td>Integration</td>
+                <td>12</td>
+                <td class="success">11</td>
+                <td class="error">1</td>
+                <td>15.8</td>
+                <td class="error">Success</td>
+            </tr>
+            <tr>
+                <td>Api</td>
+                <td>18</td>
+                <td class="success">18</td>
+                <td class="error">0</td>
+                <td>8.5</td>
+                <td class="success">Success</td>
+            </tr>
+            <tr>
+                <td>Performance</td>
+                <td>6</td>
+                <td class="success">5</td>
+                <td class="error">1</td>
+                <td>45.2</td>
+                <td class="error">Success</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="test-section">
+        <h2>📈 Coverage Analysis</h2>
+        <table>
+            <tr><th>Module</th><th>Coverage %</th></tr>
+
+            <tr><td>messaging/interface.py</td><td class="success">92.5%</td></tr>
+            <tr><td>messaging/management.py</td><td class="warning">88.3%</td></tr>
+            <tr><td>messaging/notifications.py</td><td class="warning">85.7%</td></tr>
+            <tr><td>messaging/classification.py</td><td class="success">91.2%</td></tr>
+            <tr><td>messaging/workflow.py</td><td class="warning">87.9%</td></tr>
+            <tr><td>shared_state/models.py</td><td class="success">95.1%</td></tr>
+            <tr><td>shared_state/messaging.py</td><td class="warning">89.4%</td></tr>
+        </table>
+    </div>
+
+    <div class="test-section">
+        <h2>🚀 Performance Metrics</h2>
+
+        <p><strong>Messages/Second:</strong> 1500</p>
+        <p><strong>Response Time:</strong> 85ms</p>
+        <p><strong>Concurrent Users:</strong> 200</p>
+
+    </div>
+
+    <div class="test-section">
+        <h2>💡 Recommendations</h2>
+        <ul>
+
+            <li class="error">
+                <strong>[HIGH]</strong> Increase test coverage to 90%+
+                <br><small>Focus on uncovered lines in messaging/notifications.py and messaging/workflow.py</small>
+            </li>
+            <li class="warning">
+                <strong>[MEDIUM]</strong> Address performance test failures
+                <br><small>Optimize message processing under high load conditions</small>
+            </li>
+            <li class="error">
+                <strong>[HIGH]</strong> Fix failing unit tests
+                <br><small>2 tests failing in unit suite</small>
+            </li>
+            <li class="error">
+                <strong>[HIGH]</strong> Fix failing integration tests
+                <br><small>1 tests failing in integration suite</small>
+            </li>
+            <li class="error">
+                <strong>[HIGH]</strong> Fix failing performance tests
+                <br><small>1 tests failing in performance suite</small>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

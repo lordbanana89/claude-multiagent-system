@@ -1,0 +1,3503 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.33:8501
+  External URL: http://2.36.217.91:8501
+
+2025-09-17 09:03:59.944 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:03:59.951 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:00.208 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:00.233 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:17.345 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:17.349 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:17.590 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:17.609 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:24.332 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:24.338 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:47.760 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:47.771 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:47.989 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:04:48.014 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:06:06.252 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:06:06.258 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:06:06.575 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:06:06.598 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:06:12.485 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:06:12.491 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:06:12.775 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:06:12.799 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+✅ Messaging system imported successfully
+📋 Loaded notification configs for 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+📡 Sending to 👨‍💼 Supervisor Agent (1/7)
+⏳ Waiting 2s before sending to next agent (1/7)
+📡 Sending to 🎖️ Master Agent (2/7)
+⏳ Waiting 2s before sending to next agent (2/7)
+📡 Sending to Backend API Agent (3/7)
+⏳ Waiting 2s before sending to next agent (3/7)
+📡 Sending to Database Agent (4/7)
+⏳ Waiting 2s before sending to next agent (4/7)
+📡 Sending to Frontend UI Agent (5/7)
+⏳ Waiting 2s before sending to next agent (5/7)
+📡 Sending to Instagram Agent (6/7)
+⏳ Waiting 2s before sending to next agent (6/7)
+📡 Sending to Testing Agent (7/7)
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+📡 Sending to 👨‍💼 Supervisor Agent (1/7)
+⏳ Waiting 2s before sending to next agent (1/7)
+📡 Sending to 🎖️ Master Agent (2/7)
+⏳ Waiting 2s before sending to next agent (2/7)
+📡 Sending to Backend API Agent (3/7)
+⏳ Waiting 2s before sending to next agent (3/7)
+📡 Sending to Database Agent (4/7)
+⏳ Waiting 2s before sending to next agent (4/7)
+📡 Sending to Frontend UI Agent (5/7)
+⏳ Waiting 2s before sending to next agent (5/7)
+📡 Sending to Instagram Agent (6/7)
+⏳ Waiting 2s before sending to next agent (6/7)
+📡 Sending to Testing Agent (7/7)
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+2025-09-17 09:13:30.579 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:13:30.583 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:13:30.854 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:13:30.881 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:34:29.057 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:34:29.061 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:34:29.311 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:34:29.331 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:40:16.823 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:40:16.828 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:40:17.082 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:40:17.106 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+2025-09-17 09:49:02.374 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:49:02.378 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:49:02.645 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 09:49:02.666 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:02:50.182 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:02:50.500 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:02:50.504 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:02:50.786 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:02:50.811 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:03:12.662 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:03:12.946 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:03:12.950 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:03:13.267 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:03:13.287 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:07:18.006 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:07:18.022 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:07:18.317 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:07:18.321 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:07:18.603 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:07:18.623 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:09:15.431 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:09:15.442 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:09:15.720 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:09:15.747 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 401 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+✅ Messaging system imported successfully
+🤖 Task Completion Monitor started
+✅ Messaging system imported successfully
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+✅ Messaging system imported successfully
+🔍 Agent Request Monitor started
+✅ Messaging system imported successfully
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+✅ Messaging system imported successfully
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+🧹 Cleaned up 0 old requests
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096680955: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096686027: task-complete
+⏳ Pending approval request req_1758096691104: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096696180: task-complete
+⏳ Pending approval request req_1758096701241: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096706303: task-complete
+⏳ Pending approval request req_1758096711374: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096716443: task-complete
+⏳ Pending approval request req_1758096721499: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096726566: task-complete
+⏳ Pending approval request req_1758096731634: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096736712: task-complete
+⏳ Pending approval request req_1758096741779: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096746856: task-complete
+⏳ Pending approval request req_1758096751913: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096756974: task-complete
+⏳ Pending approval request req_1758096762032: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096767096: task-complete
+⏳ Pending approval request req_1758096772159: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096777212: task-complete
+⏳ Pending approval request req_1758096782262: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096787322: task-complete
+⏳ Pending approval request req_1758096792380: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096797438: task-complete
+⏳ Pending approval request req_1758096802488: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096807553: task-complete
+⏳ Pending approval request req_1758096812611: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096817674: task-complete
+⏳ Pending approval request req_1758096822749: task-complete
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096827806: task-complete
+⏳ Pending approval request req_1758096832874: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096837940: task-complete
+⏳ Pending approval request req_1758096843013: task-complete
+⏳ Pending approval request req_1758096843046: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096848083: task-complete
+⏳ Pending approval request req_1758096848109: task-complete
+⏳ Pending approval request req_1758096853150: task-complete
+⏳ Pending approval request req_1758096853179: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096858219: task-complete
+⏳ Pending approval request req_1758096858246: task-complete
+⏳ Pending approval request req_1758096863284: task-complete
+⏳ Pending approval request req_1758096863316: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096868358: task-complete
+⏳ Pending approval request req_1758096868391: task-complete
+⏳ Pending approval request req_1758096873439: task-complete
+⏳ Pending approval request req_1758096873464: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096878520: task-complete
+⏳ Pending approval request req_1758096878543: task-complete
+⏳ Pending approval request req_1758096883583: task-complete
+⏳ Pending approval request req_1758096883614: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096888657: task-complete
+⏳ Pending approval request req_1758096888681: task-complete
+⏳ Pending approval request req_1758096893725: task-complete
+⏳ Pending approval request req_1758096893753: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096898808: task-complete
+⏳ Pending approval request req_1758096898841: task-complete
+⏳ Pending approval request req_1758096903899: task-complete
+⏳ Pending approval request req_1758096903929: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096908982: task-complete
+⏳ Pending approval request req_1758096909014: task-complete
+⏳ Pending approval request req_1758096914060: task-complete
+⏳ Pending approval request req_1758096914088: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096919147: task-complete
+⏳ Pending approval request req_1758096919180: task-complete
+⏳ Pending approval request req_1758096924230: task-complete
+⏳ Pending approval request req_1758096924253: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096929306: task-complete
+⏳ Pending approval request req_1758096929341: task-complete
+⏳ Pending approval request req_1758096934393: task-complete
+⏳ Pending approval request req_1758096934425: task-complete
+✅ Detected completion for agent supervisor
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent supervisor status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 1/7 agents completed
+✅ Detected completion for agent backend-api
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent backend-api status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 2/7 agents completed
+✅ Detected completion for agent frontend-ui
+Error saving state to JSON: 'str' object has no attribute 'value'
+Error updating agent frontend-ui status: 'str' object has no attribute 'value'
+Error saving state to JSON: 'str' object has no attribute 'value'
+📊 Task task_1916a562 progress: 3/7 agents completed
+❌ Error checking task timeout: 'str' object cannot be interpreted as an integer
+⏳ Pending approval request req_1758096939473: task-complete
+⏳ Pending approval request req_1758096939502: task-complete
+⏳ Pending approval request req_1758096944556: task-complete
+⏳ Pending approval request req_1758096944588: task-complete
+⏳ Pending approval request req_1758096949646: task-complete
+⏳ Pending approval request req_1758096949680: task-complete
+⏳ Pending approval request req_1758096954732: task-complete
+⏳ Pending approval request req_1758096954764: task-complete
+⏳ Pending approval request req_1758096959806: task-complete
+⏳ Pending approval request req_1758096964861: task-complete
+⏳ Pending approval request req_1758096969934: task-complete
+⏳ Pending approval request req_1758096975003: task-complete
+⏳ Pending approval request req_1758096980062: task-complete
+⏳ Pending approval request req_1758096985133: task-complete
+⏳ Pending approval request req_1758096990203: task-complete
+⏳ Pending approval request req_1758096995269: task-complete
+⏳ Pending approval request req_1758097000339: task-complete
+⏳ Pending approval request req_1758097005413: task-complete
+⏳ Pending approval request req_1758097010484: task-complete
+⏳ Pending approval request req_1758097015539: task-complete
+⏳ Pending approval request req_1758097020605: task-complete
+⏳ Pending approval request req_1758097025656: task-complete
+⏳ Pending approval request req_1758097030714: task-complete
+⏳ Pending approval request req_1758097035772: task-complete
+⏳ Pending approval request req_1758097040827: task-complete
+⏳ Pending approval request req_1758097045902: task-complete
+⏳ Pending approval request req_1758097050972: task-complete
+⏳ Pending approval request req_1758097056037: task-complete
+⏳ Pending approval request req_1758097061098: task-complete
+⏳ Pending approval request req_1758097066154: task-complete
+⏳ Pending approval request req_1758097071223: task-complete
+⏳ Pending approval request req_1758097076281: task-complete
+⏳ Pending approval request req_1758097081341: task-complete
+⏳ Pending approval request req_1758097086411: task-complete
+⏳ Pending approval request req_1758097091481: task-complete
+⏳ Pending approval request req_1758097096543: task-complete
+⏳ Pending approval request req_1758097101596: task-complete
+⏳ Pending approval request req_1758097106664: task-complete
+⏳ Pending approval request req_1758097111747: task-complete
+⏳ Pending approval request req_1758097116820: task-complete
+⏳ Pending approval request req_1758097121895: task-complete
+⏳ Pending approval request req_1758097126973: task-complete
+⏳ Pending approval request req_1758097132046: task-complete
+⏳ Pending approval request req_1758097137120: task-complete
+⏳ Pending approval request req_1758097142199: task-complete
+⏳ Pending approval request req_1758097147274: task-complete
+⏳ Pending approval request req_1758097152345: task-complete
+⏳ Pending approval request req_1758097157421: task-complete
+⏳ Pending approval request req_1758097162489: task-complete
+⏳ Pending approval request req_1758097167567: task-complete
+⏳ Pending approval request req_1758097172642: task-complete
+⏳ Pending approval request req_1758097177725: task-complete
+⏳ Pending approval request req_1758097182794: task-complete
+⏳ Pending approval request req_1758097187844: task-complete
+⏳ Pending approval request req_1758097192919: task-complete
+⏳ Pending approval request req_1758097197992: task-complete
+⏳ Pending approval request req_1758097203067: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097208156: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097213243: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097218338: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097223427: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097228512: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097233601: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097238691: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097243770: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097248833: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097253919: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097259004: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097264074: task-complete
+⏳ Pending approval request req_1758097269131: task-complete
+⏳ Pending approval request req_1758097274204: task-complete
+⏳ Pending approval request req_1758097274248: task-complete
+⏳ Pending approval request req_1758097279288: task-complete
+⏳ Pending approval request req_1758097279338: task-complete
+⏳ Pending approval request req_1758097284363: task-complete
+⏳ Pending approval request req_1758097284407: task-complete
+⏳ Pending approval request req_1758097289435: task-complete
+⏳ Pending approval request req_1758097289487: task-complete
+⏳ Pending approval request req_1758097294513: task-complete
+⏳ Pending approval request req_1758097294552: task-complete
+⏳ Pending approval request req_1758097299577: task-complete
+⏳ Pending approval request req_1758097299620: task-complete
+⏳ Pending approval request req_1758097304665: task-complete
+⏳ Pending approval request req_1758097304714: task-complete
+⏳ Pending approval request req_1758097309757: task-complete
+⏳ Pending approval request req_1758097309805: task-complete
+⏳ Pending approval request req_1758097314834: task-complete
+⏳ Pending approval request req_1758097314880: task-complete
+⏳ Pending approval request req_1758097319921: task-complete
+⏳ Pending approval request req_1758097319962: task-complete
+⏳ Pending approval request req_1758097324987: task-complete
+⏳ Pending approval request req_1758097325031: task-complete
+⏳ Pending approval request req_1758097330066: task-complete
+⏳ Pending approval request req_1758097330119: task-complete
+⏳ Pending approval request req_1758097335147: task-complete
+⏳ Pending approval request req_1758097335183: task-complete
+⏳ Pending approval request req_1758097335205: task-complete
+⏳ Pending approval request req_1758097340252: task-complete
+⏳ Pending approval request req_1758097340296: task-complete
+⏳ Pending approval request req_1758097340316: task-complete
+⏳ Pending approval request req_1758097345342: task-complete
+⏳ Pending approval request req_1758097345378: task-complete
+⏳ Pending approval request req_1758097345400: task-complete
+⏳ Pending approval request req_1758097350427: task-complete
+⏳ Pending approval request req_1758097350463: task-complete
+⏳ Pending approval request req_1758097350484: task-complete
+⏳ Pending approval request req_1758097355517: task-complete
+⏳ Pending approval request req_1758097355559: task-complete
+⏳ Pending approval request req_1758097355581: task-complete
+⏳ Pending approval request req_1758097360625: task-complete
+⏳ Pending approval request req_1758097360671: task-complete
+⏳ Pending approval request req_1758097360693: task-complete
+⏳ Pending approval request req_1758097365724: task-complete
+⏳ Pending approval request req_1758097365769: task-complete
+⏳ Pending approval request req_1758097365789: task-complete
+⏳ Pending approval request req_1758097370816: task-complete
+⏳ Pending approval request req_1758097370853: task-complete
+⏳ Pending approval request req_1758097370874: task-complete
+⏳ Pending approval request req_1758097375913: task-complete
+⏳ Pending approval request req_1758097375951: task-complete
+⏳ Pending approval request req_1758097375973: task-complete
+⏳ Pending approval request req_1758097381016: task-complete
+⏳ Pending approval request req_1758097381058: task-complete
+⏳ Pending approval request req_1758097381078: task-complete
+⏳ Pending approval request req_1758097386119: task-complete
+⏳ Pending approval request req_1758097386160: task-complete
+⏳ Pending approval request req_1758097386180: task-complete
+⏳ Pending approval request req_1758097391223: task-complete
+⏳ Pending approval request req_1758097391268: task-complete
+⏳ Pending approval request req_1758097391289: task-complete
+⏳ Pending approval request req_1758097396317: task-complete
+⏳ Pending approval request req_1758097396357: task-complete
+⏳ Pending approval request req_1758097396377: task-complete
+⏳ Pending approval request req_1758097401420: task-complete
+⏳ Pending approval request req_1758097401466: task-complete
+⏳ Pending approval request req_1758097401486: task-complete
+⏳ Pending approval request req_1758097406516: task-complete
+⏳ Pending approval request req_1758097406559: task-complete
+⏳ Pending approval request req_1758097406581: task-complete
+⏳ Pending approval request req_1758097411608: task-complete
+⏳ Pending approval request req_1758097411647: task-complete
+⏳ Pending approval request req_1758097411667: task-complete
+⏳ Pending approval request req_1758097416703: task-complete
+⏳ Pending approval request req_1758097416742: task-complete
+⏳ Pending approval request req_1758097416762: task-complete
+⏳ Pending approval request req_1758097421798: task-complete
+⏳ Pending approval request req_1758097421839: task-complete
+⏳ Pending approval request req_1758097421860: task-complete
+⏳ Pending approval request req_1758097426903: task-complete
+⏳ Pending approval request req_1758097426944: task-complete
+⏳ Pending approval request req_1758097426964: task-complete
+⏳ Pending approval request req_1758097432009: task-complete
+⏳ Pending approval request req_1758097432054: task-complete
+⏳ Pending approval request req_1758097432074: task-complete
+⏳ Pending approval request req_1758097437100: task-complete
+⏳ Pending approval request req_1758097437139: task-complete
+⏳ Pending approval request req_1758097437161: task-complete
+⏳ Pending approval request req_1758097442202: task-complete
+⏳ Pending approval request req_1758097442239: task-complete
+⏳ Pending approval request req_1758097442260: task-complete
+⏳ Pending approval request req_1758097447305: task-complete
+⏳ Pending approval request req_1758097447350: task-complete
+⏳ Pending approval request req_1758097447372: task-complete
+⏳ Pending approval request req_1758097452409: task-complete
+⏳ Pending approval request req_1758097452448: task-complete
+⏳ Pending approval request req_1758097452468: task-complete
+⏳ Pending approval request req_1758097457507: task-complete
+⏳ Pending approval request req_1758097457551: task-complete
+⏳ Pending approval request req_1758097457571: task-complete
+⏳ Pending approval request req_1758097462600: task-complete
+⏳ Pending approval request req_1758097462642: task-complete
+⏳ Pending approval request req_1758097462665: task-complete
+⏳ Pending approval request req_1758097467695: task-complete
+⏳ Pending approval request req_1758097467733: task-complete
+⏳ Pending approval request req_1758097467753: task-complete
+⏳ Pending approval request req_1758097472798: task-complete
+⏳ Pending approval request req_1758097472835: task-complete
+⏳ Pending approval request req_1758097472856: task-complete
+⏳ Pending approval request req_1758097477880: task-complete
+⏳ Pending approval request req_1758097477916: task-complete
+⏳ Pending approval request req_1758097477936: task-complete
+⏳ Pending approval request req_1758097482972: task-complete
+⏳ Pending approval request req_1758097483007: task-complete
+⏳ Pending approval request req_1758097483028: task-complete
+⏳ Pending approval request req_1758097488060: task-complete
+⏳ Pending approval request req_1758097488101: task-complete
+⏳ Pending approval request req_1758097488123: task-complete
+⏳ Pending approval request req_1758097493166: task-complete
+⏳ Pending approval request req_1758097493207: task-complete
+⏳ Pending approval request req_1758097493229: task-complete
+⏳ Pending approval request req_1758097498262: task-complete
+⏳ Pending approval request req_1758097498300: task-complete
+⏳ Pending approval request req_1758097498322: task-complete
+⏳ Pending approval request req_1758097503359: task-complete
+⏳ Pending approval request req_1758097503406: task-complete
+⏳ Pending approval request req_1758097503430: task-complete
+⏳ Pending approval request req_1758097508462: task-complete
+⏳ Pending approval request req_1758097508504: task-complete
+⏳ Pending approval request req_1758097508526: task-complete
+⏳ Pending approval request req_1758097513569: task-complete
+⏳ Pending approval request req_1758097513613: task-complete
+⏳ Pending approval request req_1758097513635: task-complete
+⏳ Pending approval request req_1758097518665: task-complete
+⏳ Pending approval request req_1758097518700: task-complete
+⏳ Pending approval request req_1758097518724: task-complete
+⏳ Pending approval request req_1758097523759: task-complete
+⏳ Pending approval request req_1758097523801: task-complete
+⏳ Pending approval request req_1758097523825: task-complete
+⏳ Pending approval request req_1758097528867: task-complete
+⏳ Pending approval request req_1758097528909: task-complete
+⏳ Pending approval request req_1758097528932: task-complete
+⏳ Pending approval request req_1758097533968: task-complete
+⏳ Pending approval request req_1758097534014: task-complete
+⏳ Pending approval request req_1758097534038: task-complete
+⏳ Pending approval request req_1758097539073: task-complete
+⏳ Pending approval request req_1758097539118: task-complete
+⏳ Pending approval request req_1758097539143: task-complete
+⏳ Pending approval request req_1758097544190: task-complete
+⏳ Pending approval request req_1758097544230: task-complete
+⏳ Pending approval request req_1758097544252: task-complete
+⏳ Pending approval request req_1758097549282: task-complete
+⏳ Pending approval request req_1758097549329: task-complete
+⏳ Pending approval request req_1758097549353: task-complete
+⏳ Pending approval request req_1758097554387: task-complete
+⏳ Pending approval request req_1758097554428: task-complete
+⏳ Pending approval request req_1758097554451: task-complete
+⏳ Pending approval request req_1758097559479: task-complete
+⏳ Pending approval request req_1758097559519: task-complete
+⏳ Pending approval request req_1758097559541: task-complete
+⏳ Pending approval request req_1758097564582: task-complete
+⏳ Pending approval request req_1758097564624: task-complete
+⏳ Pending approval request req_1758097564648: task-complete
+⏳ Pending approval request req_1758097569688: task-complete
+⏳ Pending approval request req_1758097569727: task-complete
+⏳ Pending approval request req_1758097569751: task-complete
+⏳ Pending approval request req_1758097574797: task-complete
+⏳ Pending approval request req_1758097574847: task-complete
+⏳ Pending approval request req_1758097574871: task-complete
+⏳ Pending approval request req_1758097579899: task-complete
+⏳ Pending approval request req_1758097579940: task-complete
+⏳ Pending approval request req_1758097579966: task-complete
+⏳ Pending approval request req_1758097585009: task-complete
+⏳ Pending approval request req_1758097585045: task-complete
+⏳ Pending approval request req_1758097585071: task-complete
+⏳ Pending approval request req_1758097590096: task-complete
+⏳ Pending approval request req_1758097590133: task-complete
+⏳ Pending approval request req_1758097590158: task-complete
+⏳ Pending approval request req_1758097595187: task-complete
+⏳ Pending approval request req_1758097595230: task-complete
+⏳ Pending approval request req_1758097595252: task-complete
+⏳ Pending approval request req_1758097600291: task-complete
+⏳ Pending approval request req_1758097600330: task-complete
+⏳ Pending approval request req_1758097600357: task-complete
+⏳ Pending approval request req_1758097605406: task-complete
+⏳ Pending approval request req_1758097605460: task-complete
+⏳ Pending approval request req_1758097605484: task-complete
+⏳ Pending approval request req_1758097610525: task-complete
+⏳ Pending approval request req_1758097610572: task-complete
+⏳ Pending approval request req_1758097610596: task-complete
+⏳ Pending approval request req_1758097615627: task-complete
+⏳ Pending approval request req_1758097615667: task-complete
+⏳ Pending approval request req_1758097615689: task-complete
+⏳ Pending approval request req_1758097620736: task-complete
+⏳ Pending approval request req_1758097620784: task-complete
+⏳ Pending approval request req_1758097620809: task-complete
+⏳ Pending approval request req_1758097625849: task-complete
+⏳ Pending approval request req_1758097625895: task-complete
+⏳ Pending approval request req_1758097625919: task-complete
+⏳ Pending approval request req_1758097630965: task-complete
+⏳ Pending approval request req_1758097631011: task-complete
+⏳ Pending approval request req_1758097631034: task-complete
+⏳ Pending approval request req_1758097636066: task-complete
+⏳ Pending approval request req_1758097636113: task-complete
+⏳ Pending approval request req_1758097636139: task-complete
+⏳ Pending approval request req_1758097641176: task-complete
+⏳ Pending approval request req_1758097641218: task-complete
+⏳ Pending approval request req_1758097641241: task-complete
+⏳ Pending approval request req_1758097646274: task-complete
+⏳ Pending approval request req_1758097646313: task-complete
+⏳ Pending approval request req_1758097646337: task-complete
+⏳ Pending approval request req_1758097651368: task-complete
+⏳ Pending approval request req_1758097651410: task-complete
+⏳ Pending approval request req_1758097651434: task-complete
+⏳ Pending approval request req_1758097656482: task-complete
+⏳ Pending approval request req_1758097656523: task-complete
+⏳ Pending approval request req_1758097656546: task-complete
+⏳ Pending approval request req_1758097661588: task-complete
+⏳ Pending approval request req_1758097661627: task-complete
+⏳ Pending approval request req_1758097661650: task-complete
+⏳ Pending approval request req_1758097666692: task-complete
+⏳ Pending approval request req_1758097666744: task-complete
+⏳ Pending approval request req_1758097666771: task-complete
+⏳ Pending approval request req_1758097671814: task-complete
+⏳ Pending approval request req_1758097671856: task-complete
+⏳ Pending approval request req_1758097671882: task-complete
+⏳ Pending approval request req_1758097676925: task-complete
+⏳ Pending approval request req_1758097676973: task-complete
+⏳ Pending approval request req_1758097676999: task-complete
+⏳ Pending approval request req_1758097682049: task-complete
+⏳ Pending approval request req_1758097682098: task-complete
+⏳ Pending approval request req_1758097682124: task-complete
+⏳ Pending approval request req_1758097687156: task-complete
+⏳ Pending approval request req_1758097687197: task-complete
+⏳ Pending approval request req_1758097687222: task-complete
+⏳ Pending approval request req_1758097692251: task-complete
+⏳ Pending approval request req_1758097692289: task-complete
+⏳ Pending approval request req_1758097692314: task-complete
+⏳ Pending approval request req_1758097697351: task-complete
+⏳ Pending approval request req_1758097697394: task-complete
+⏳ Pending approval request req_1758097697421: task-complete
+⏳ Pending approval request req_1758097702466: task-complete
+⏳ Pending approval request req_1758097702513: task-complete
+⏳ Pending approval request req_1758097702539: task-complete
+⏳ Pending approval request req_1758097707575: task-complete
+⏳ Pending approval request req_1758097707622: task-complete
+⏳ Pending approval request req_1758097707647: task-complete
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+2025-09-17 10:28:36.129 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:28:36.132 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:28:36.681 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:28:36.712 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 787 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 787 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+⏳ Pending approval request req_1758097712684: task-complete
+⏳ Pending approval request req_1758097712734: task-complete
+⏳ Pending approval request req_1758097712762: task-complete
+⏳ Pending approval request req_1758097717794: task-complete
+⏳ Pending approval request req_1758097717840: task-complete
+⏳ Pending approval request req_1758097717868: task-complete
+⏳ Pending approval request req_1758097722901: task-complete
+⏳ Pending approval request req_1758097722944: task-complete
+⏳ Pending approval request req_1758097722971: task-complete
+⏳ Pending approval request req_1758097728021: task-complete
+⏳ Pending approval request req_1758097728069: task-complete
+⏳ Pending approval request req_1758097728093: task-complete
+⏳ Pending approval request req_1758097733133: task-complete
+⏳ Pending approval request req_1758097733216: task-complete
+⏳ Pending approval request req_1758097733249: task-complete
+⏳ Pending approval request req_1758097738294: task-complete
+⏳ Pending approval request req_1758097738333: task-complete
+⏳ Pending approval request req_1758097738358: task-complete
+⏳ Pending approval request req_1758097743404: task-complete
+⏳ Pending approval request req_1758097743447: task-complete
+⏳ Pending approval request req_1758097743471: task-complete
+⏳ Pending approval request req_1758097748506: task-complete
+⏳ Pending approval request req_1758097748554: task-complete
+⏳ Pending approval request req_1758097748580: task-complete
+⏳ Pending approval request req_1758097753624: task-complete
+⏳ Pending approval request req_1758097753674: task-complete
+⏳ Pending approval request req_1758097753698: task-complete
+⏳ Pending approval request req_1758097758748: task-complete
+⏳ Pending approval request req_1758097758796: task-complete
+⏳ Pending approval request req_1758097758821: task-complete
+⏳ Pending approval request req_1758097763861: task-complete
+⏳ Pending approval request req_1758097763906: task-complete
+⏳ Pending approval request req_1758097763930: task-complete
+⏳ Pending approval request req_1758097768977: task-complete
+⏳ Pending approval request req_1758097769036: task-complete
+⏳ Pending approval request req_1758097769060: task-complete
+⏳ Pending approval request req_1758097774110: task-complete
+⏳ Pending approval request req_1758097774161: task-complete
+⏳ Pending approval request req_1758097774188: task-complete
+⏳ Pending approval request req_1758097779219: task-complete
+⏳ Pending approval request req_1758097779271: task-complete
+⏳ Pending approval request req_1758097779296: task-complete
+⏳ Pending approval request req_1758097784341: task-complete
+⏳ Pending approval request req_1758097784388: task-complete
+⏳ Pending approval request req_1758097784416: task-complete
+⏳ Pending approval request req_1758097789460: task-complete
+⏳ Pending approval request req_1758097789515: task-complete
+⏳ Pending approval request req_1758097789542: task-complete
+⏳ Pending approval request req_1758097794585: task-complete
+⏳ Pending approval request req_1758097794637: task-complete
+⏳ Pending approval request req_1758097794666: task-complete
+⏳ Pending approval request req_1758097799710: task-complete
+⏳ Pending approval request req_1758097799760: task-complete
+⏳ Pending approval request req_1758097799788: task-complete
+⏳ Pending approval request req_1758097804825: task-complete
+⏳ Pending approval request req_1758097804880: task-complete
+⏳ Pending approval request req_1758097804908: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097809973: task-complete
+⏳ Pending approval request req_1758097810028: task-complete
+⏳ Pending approval request req_1758097810056: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097815125: task-complete
+⏳ Pending approval request req_1758097815174: task-complete
+⏳ Pending approval request req_1758097815199: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097820259: task-complete
+⏳ Pending approval request req_1758097820311: task-complete
+⏳ Pending approval request req_1758097820338: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097825401: task-complete
+⏳ Pending approval request req_1758097825448: task-complete
+⏳ Pending approval request req_1758097825474: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097830530: task-complete
+⏳ Pending approval request req_1758097830577: task-complete
+⏳ Pending approval request req_1758097830605: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097835671: task-complete
+⏳ Pending approval request req_1758097835718: task-complete
+⏳ Pending approval request req_1758097835746: task-complete
+🧹 Cleaned up 0 old requests
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+2025-09-17 10:30:44.573 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:30:44.576 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:30:45.080 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:30:45.110 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:30:59.292 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:30:59.301 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:31:00.051 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:31:00.112 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:31:07.175 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:31:07.186 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:31:07.884 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 10:31:07.926 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 862 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 862 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+⏳ Pending approval request req_1758097843080: task-complete
+⏳ Pending approval request req_1758097844314: task-complete
+⏳ Pending approval request req_1758097844375: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097849460: task-complete
+⏳ Pending approval request req_1758097849515: task-complete
+⏳ Pending approval request req_1758097849542: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758097854610: task-complete
+⏳ Pending approval request req_1758097854657: task-complete
+⏳ Pending approval request req_1758097854683: task-complete
+🧹 Cleaned up 0 old requests
+✅ Messaging system imported successfully
+⏳ Pending approval request req_1758097859754: task-complete
+⏳ Pending approval request req_1758097860143: task-complete
+⏳ Pending approval request req_1758097860198: task-complete
+✅ Messaging system imported successfully
+⏳ Pending approval request req_1758097865294: task-complete
+⏳ Pending approval request req_1758097865344: task-complete
+⏳ Pending approval request req_1758097865370: task-complete
+⏳ Pending approval request req_1758097870410: task-complete
+⏳ Pending approval request req_1758097870467: task-complete
+⏳ Pending approval request req_1758097870496: task-complete
+⏳ Pending approval request req_1758097875527: task-complete
+⏳ Pending approval request req_1758097875582: task-complete
+⏳ Pending approval request req_1758097875611: task-complete
+⏳ Pending approval request req_1758097880662: task-complete
+⏳ Pending approval request req_1758097880712: task-complete
+⏳ Pending approval request req_1758097880737: task-complete
+⏳ Pending approval request req_1758097885768: task-complete
+⏳ Pending approval request req_1758097885820: task-complete
+⏳ Pending approval request req_1758097885849: task-complete
+⏳ Pending approval request req_1758097890897: task-complete
+⏳ Pending approval request req_1758097890936: task-complete
+⏳ Pending approval request req_1758097890963: task-complete
+⏳ Pending approval request req_1758097896008: task-complete
+⏳ Pending approval request req_1758097896052: task-complete
+⏳ Pending approval request req_1758097896078: task-complete
+⏳ Pending approval request req_1758097901122: task-complete
+⏳ Pending approval request req_1758097901171: task-complete
+⏳ Pending approval request req_1758097901200: task-complete
+⏳ Pending approval request req_1758097906234: task-complete
+⏳ Pending approval request req_1758097906275: task-complete
+⏳ Pending approval request req_1758097906301: task-complete
+⏳ Pending approval request req_1758097911332: task-complete
+⏳ Pending approval request req_1758097911375: task-complete
+⏳ Pending approval request req_1758097911402: task-complete
+⏳ Pending approval request req_1758097916454: task-complete
+⏳ Pending approval request req_1758097916502: task-complete
+⏳ Pending approval request req_1758097916527: task-complete
+⏳ Pending approval request req_1758097921565: task-complete
+⏳ Pending approval request req_1758097921611: task-complete
+⏳ Pending approval request req_1758097921640: task-complete
+⏳ Pending approval request req_1758097926692: task-complete
+⏳ Pending approval request req_1758097926735: task-complete
+⏳ Pending approval request req_1758097926765: task-complete
+⏳ Pending approval request req_1758097931804: task-complete
+⏳ Pending approval request req_1758097931844: task-complete
+⏳ Pending approval request req_1758097931870: task-complete
+⏳ Pending approval request req_1758097936907: task-complete
+⏳ Pending approval request req_1758097936959: task-complete
+⏳ Pending approval request req_1758097936990: task-complete
+⏳ Pending approval request req_1758097942032: task-complete
+⏳ Pending approval request req_1758097942088: task-complete
+⏳ Pending approval request req_1758097942119: task-complete
+⏳ Pending approval request req_1758097947162: task-complete
+⏳ Pending approval request req_1758097947213: task-complete
+⏳ Pending approval request req_1758097947242: task-complete
+⏳ Pending approval request req_1758097952292: task-complete
+⏳ Pending approval request req_1758097952345: task-complete
+⏳ Pending approval request req_1758097952374: task-complete
+⏳ Pending approval request req_1758097957427: task-complete
+⏳ Pending approval request req_1758097957478: task-complete
+⏳ Pending approval request req_1758097957505: task-complete
+⏳ Pending approval request req_1758097962535: task-complete
+⏳ Pending approval request req_1758097962582: task-complete
+⏳ Pending approval request req_1758097962612: task-complete
+⏳ Pending approval request req_1758097967664: task-complete
+⏳ Pending approval request req_1758097967707: task-complete
+⏳ Pending approval request req_1758097967734: task-complete
+⏳ Pending approval request req_1758097972786: task-complete
+⏳ Pending approval request req_1758097972836: task-complete
+⏳ Pending approval request req_1758097972863: task-complete
+⏳ Pending approval request req_1758097977913: task-complete
+⏳ Pending approval request req_1758097977961: task-complete
+⏳ Pending approval request req_1758097977989: task-complete
+⏳ Pending approval request req_1758097983071: task-complete
+⏳ Pending approval request req_1758097983123: task-complete
+⏳ Pending approval request req_1758097983150: task-complete
+⏳ Pending approval request req_1758097988185: task-complete
+⏳ Pending approval request req_1758097988226: task-complete
+⏳ Pending approval request req_1758097988254: task-complete
+⏳ Pending approval request req_1758097993287: task-complete
+⏳ Pending approval request req_1758097993339: task-complete
+⏳ Pending approval request req_1758097993367: task-complete
+⏳ Pending approval request req_1758097998406: task-complete
+⏳ Pending approval request req_1758097998456: task-complete
+⏳ Pending approval request req_1758097998484: task-complete
+⏳ Pending approval request req_1758098003519: task-complete
+⏳ Pending approval request req_1758098003571: task-complete
+⏳ Pending approval request req_1758098003598: task-complete
+⏳ Pending approval request req_1758098008648: task-complete
+⏳ Pending approval request req_1758098008706: task-complete
+⏳ Pending approval request req_1758098008738: task-complete
+⏳ Pending approval request req_1758098013779: task-complete
+⏳ Pending approval request req_1758098013833: task-complete
+⏳ Pending approval request req_1758098013864: task-complete
+⏳ Pending approval request req_1758098018914: task-complete
+⏳ Pending approval request req_1758098018964: task-complete
+⏳ Pending approval request req_1758098018993: task-complete
+⏳ Pending approval request req_1758098024028: task-complete
+⏳ Pending approval request req_1758098024077: task-complete
+⏳ Pending approval request req_1758098024108: task-complete
+⏳ Pending approval request req_1758098029139: task-complete
+⏳ Pending approval request req_1758098029183: task-complete
+⏳ Pending approval request req_1758098029214: task-complete
+⏳ Pending approval request req_1758098034247: task-complete
+⏳ Pending approval request req_1758098034290: task-complete
+⏳ Pending approval request req_1758098034318: task-complete
+⏳ Pending approval request req_1758098039367: task-complete
+⏳ Pending approval request req_1758098039412: task-complete
+⏳ Pending approval request req_1758098039444: task-complete
+⏳ Pending approval request req_1758098044488: task-complete
+⏳ Pending approval request req_1758098044544: task-complete
+⏳ Pending approval request req_1758098044575: task-complete
+⏳ Pending approval request req_1758098049629: task-complete
+⏳ Pending approval request req_1758098049685: task-complete
+⏳ Pending approval request req_1758098049715: task-complete
+⏳ Pending approval request req_1758098054747: task-complete
+⏳ Pending approval request req_1758098054793: task-complete
+⏳ Pending approval request req_1758098054822: task-complete
+⏳ Pending approval request req_1758098059863: task-complete
+⏳ Pending approval request req_1758098059917: task-complete
+⏳ Pending approval request req_1758098059949: task-complete
+⏳ Pending approval request req_1758098065001: task-complete
+⏳ Pending approval request req_1758098065049: task-complete
+⏳ Pending approval request req_1758098065080: task-complete
+⏳ Pending approval request req_1758098070127: task-complete
+⏳ Pending approval request req_1758098070180: task-complete
+⏳ Pending approval request req_1758098070209: task-complete
+⏳ Pending approval request req_1758098075248: task-complete
+⏳ Pending approval request req_1758098075297: task-complete
+⏳ Pending approval request req_1758098075327: task-complete
+⏳ Pending approval request req_1758098080380: task-complete
+⏳ Pending approval request req_1758098080438: task-complete
+⏳ Pending approval request req_1758098080469: task-complete
+⏳ Pending approval request req_1758098085520: task-complete
+⏳ Pending approval request req_1758098085577: task-complete
+⏳ Pending approval request req_1758098085622: task-complete
+⏳ Pending approval request req_1758098090662: task-complete
+⏳ Pending approval request req_1758098090714: task-complete
+⏳ Pending approval request req_1758098090746: task-complete
+⏳ Pending approval request req_1758098095797: task-complete
+⏳ Pending approval request req_1758098095854: task-complete
+⏳ Pending approval request req_1758098095884: task-complete
+⏳ Pending approval request req_1758098100928: task-complete
+⏳ Pending approval request req_1758098100976: task-complete
+⏳ Pending approval request req_1758098101007: task-complete
+⏳ Pending approval request req_1758098106043: task-complete
+⏳ Pending approval request req_1758098106087: task-complete
+⏳ Pending approval request req_1758098106117: task-complete
+⏳ Pending approval request req_1758098111169: task-complete
+⏳ Pending approval request req_1758098111228: task-complete
+⏳ Pending approval request req_1758098111259: task-complete
+⏳ Pending approval request req_1758098116326: task-complete
+⏳ Pending approval request req_1758098116383: task-complete
+⏳ Pending approval request req_1758098116412: task-complete
+⏳ Pending approval request req_1758098121447: task-complete
+⏳ Pending approval request req_1758098121505: task-complete
+⏳ Pending approval request req_1758098121536: task-complete
+⏳ Pending approval request req_1758098126583: task-complete
+⏳ Pending approval request req_1758098126639: task-complete
+⏳ Pending approval request req_1758098126671: task-complete
+⏳ Pending approval request req_1758098131708: task-complete
+⏳ Pending approval request req_1758098131759: task-complete
+⏳ Pending approval request req_1758098131792: task-complete
+⏳ Pending approval request req_1758098136842: task-complete
+⏳ Pending approval request req_1758098136894: task-complete
+⏳ Pending approval request req_1758098136924: task-complete
+⏳ Pending approval request req_1758098141979: task-complete
+⏳ Pending approval request req_1758098142039: task-complete
+⏳ Pending approval request req_1758098142070: task-complete
+⏳ Pending approval request req_1758098147105: task-complete
+⏳ Pending approval request req_1758098147152: task-complete
+⏳ Pending approval request req_1758098147183: task-complete
+⏳ Pending approval request req_1758098152235: task-complete
+⏳ Pending approval request req_1758098152291: task-complete
+⏳ Pending approval request req_1758098152322: task-complete
+⏳ Pending approval request req_1758098157369: task-complete
+⏳ Pending approval request req_1758098157422: task-complete
+⏳ Pending approval request req_1758098157456: task-complete
+⏳ Pending approval request req_1758098162500: task-complete
+⏳ Pending approval request req_1758098162554: task-complete
+⏳ Pending approval request req_1758098162586: task-complete
+⏳ Pending approval request req_1758098167627: task-complete
+⏳ Pending approval request req_1758098167684: task-complete
+⏳ Pending approval request req_1758098167714: task-complete
+⏳ Pending approval request req_1758098172751: task-complete
+⏳ Pending approval request req_1758098172807: task-complete
+⏳ Pending approval request req_1758098172838: task-complete
+⏳ Pending approval request req_1758098177887: task-complete
+⏳ Pending approval request req_1758098177941: task-complete
+⏳ Pending approval request req_1758098177972: task-complete
+⏳ Pending approval request req_1758098183024: task-complete
+⏳ Pending approval request req_1758098183073: task-complete
+⏳ Pending approval request req_1758098183103: task-complete
+⏳ Pending approval request req_1758098188139: task-complete
+⏳ Pending approval request req_1758098188186: task-complete
+⏳ Pending approval request req_1758098188217: task-complete
+⏳ Pending approval request req_1758098193266: task-complete
+⏳ Pending approval request req_1758098193321: task-complete
+⏳ Pending approval request req_1758098193352: task-complete
+⏳ Pending approval request req_1758098198406: task-complete
+⏳ Pending approval request req_1758098198458: task-complete
+⏳ Pending approval request req_1758098198490: task-complete
+⏳ Pending approval request req_1758098203526: task-complete
+⏳ Pending approval request req_1758098203571: task-complete
+⏳ Pending approval request req_1758098203604: task-complete
+⏳ Pending approval request req_1758098208645: task-complete
+⏳ Pending approval request req_1758098208691: task-complete
+⏳ Pending approval request req_1758098208744: task-complete
+⏳ Pending approval request req_1758098213783: task-complete
+⏳ Pending approval request req_1758098213841: task-complete
+⏳ Pending approval request req_1758098213872: task-complete
+⏳ Pending approval request req_1758098218912: task-complete
+⏳ Pending approval request req_1758098218960: task-complete
+⏳ Pending approval request req_1758098218993: task-complete
+⏳ Pending approval request req_1758098224042: task-complete
+⏳ Pending approval request req_1758098224094: task-complete
+⏳ Pending approval request req_1758098224123: task-complete
+⏳ Pending approval request req_1758098229173: task-complete
+⏳ Pending approval request req_1758098229221: task-complete
+⏳ Pending approval request req_1758098229255: task-complete
+⏳ Pending approval request req_1758098234288: task-complete
+⏳ Pending approval request req_1758098234337: task-complete
+⏳ Pending approval request req_1758098234369: task-complete
+⏳ Pending approval request req_1758098239406: task-complete
+⏳ Pending approval request req_1758098239454: task-complete
+⏳ Pending approval request req_1758098239487: task-complete
+⏳ Pending approval request req_1758098244523: task-complete
+⏳ Pending approval request req_1758098244573: task-complete
+⏳ Pending approval request req_1758098244606: task-complete
+⏳ Pending approval request req_1758098249645: task-complete
+⏳ Pending approval request req_1758098249697: task-complete
+⏳ Pending approval request req_1758098249729: task-complete
+⏳ Pending approval request req_1758098254784: task-complete
+⏳ Pending approval request req_1758098254839: task-complete
+⏳ Pending approval request req_1758098254872: task-complete
+⏳ Pending approval request req_1758098259918: task-complete
+⏳ Pending approval request req_1758098259969: task-complete
+⏳ Pending approval request req_1758098260001: task-complete
+⏳ Pending approval request req_1758098265056: task-complete
+⏳ Pending approval request req_1758098265113: task-complete
+⏳ Pending approval request req_1758098265145: task-complete
+⏳ Pending approval request req_1758098270192: task-complete
+⏳ Pending approval request req_1758098270240: task-complete
+⏳ Pending approval request req_1758098270271: task-complete
+⏳ Pending approval request req_1758098275325: task-complete
+⏳ Pending approval request req_1758098275382: task-complete
+⏳ Pending approval request req_1758098275414: task-complete
+⏳ Pending approval request req_1758098280468: task-complete
+⏳ Pending approval request req_1758098280523: task-complete
+⏳ Pending approval request req_1758098280554: task-complete
+⏳ Pending approval request req_1758098285603: task-complete
+⏳ Pending approval request req_1758098285662: task-complete
+⏳ Pending approval request req_1758098285697: task-complete
+⏳ Pending approval request req_1758098290751: task-complete
+⏳ Pending approval request req_1758098290808: task-complete
+⏳ Pending approval request req_1758098290840: task-complete
+⏳ Pending approval request req_1758098295889: task-complete
+⏳ Pending approval request req_1758098295943: task-complete
+⏳ Pending approval request req_1758098295974: task-complete
+⏳ Pending approval request req_1758098301025: task-complete
+⏳ Pending approval request req_1758098301073: task-complete
+⏳ Pending approval request req_1758098301104: task-complete
+⏳ Pending approval request req_1758098306161: task-complete
+⏳ Pending approval request req_1758098306217: task-complete
+⏳ Pending approval request req_1758098306247: task-complete
+⏳ Pending approval request req_1758098311303: task-complete
+⏳ Pending approval request req_1758098311360: task-complete
+⏳ Pending approval request req_1758098311391: task-complete
+⏳ Pending approval request req_1758098316445: task-complete
+⏳ Pending approval request req_1758098316499: task-complete
+⏳ Pending approval request req_1758098316530: task-complete
+⏳ Pending approval request req_1758098321586: task-complete
+⏳ Pending approval request req_1758098321641: task-complete
+⏳ Pending approval request req_1758098321672: task-complete
+⏳ Pending approval request req_1758098326728: task-complete
+⏳ Pending approval request req_1758098326776: task-complete
+⏳ Pending approval request req_1758098326807: task-complete
+⏳ Pending approval request req_1758098331862: task-complete
+⏳ Pending approval request req_1758098331917: task-complete
+⏳ Pending approval request req_1758098331948: task-complete
+⏳ Pending approval request req_1758098336986: task-complete
+⏳ Pending approval request req_1758098337036: task-complete
+⏳ Pending approval request req_1758098337067: task-complete
+⏳ Pending approval request req_1758098342118: task-complete
+⏳ Pending approval request req_1758098342171: task-complete
+⏳ Pending approval request req_1758098342202: task-complete
+⏳ Pending approval request req_1758098347258: task-complete
+⏳ Pending approval request req_1758098347313: task-complete
+⏳ Pending approval request req_1758098347344: task-complete
+⏳ Pending approval request req_1758098352401: task-complete
+⏳ Pending approval request req_1758098352457: task-complete
+⏳ Pending approval request req_1758098352487: task-complete
+⏳ Pending approval request req_1758098357538: task-complete
+⏳ Pending approval request req_1758098357596: task-complete
+⏳ Pending approval request req_1758098357627: task-complete
+⏳ Pending approval request req_1758098362670: task-complete
+⏳ Pending approval request req_1758098362728: task-complete
+⏳ Pending approval request req_1758098362763: task-complete
+⏳ Pending approval request req_1758098367818: task-complete
+⏳ Pending approval request req_1758098367875: task-complete
+⏳ Pending approval request req_1758098367906: task-complete
+⏳ Pending approval request req_1758098372958: task-complete
+⏳ Pending approval request req_1758098373004: task-complete
+⏳ Pending approval request req_1758098373035: task-complete
+⏳ Pending approval request req_1758098378088: task-complete
+⏳ Pending approval request req_1758098378145: task-complete
+⏳ Pending approval request req_1758098378182: task-complete
+⏳ Pending approval request req_1758098383237: task-complete
+⏳ Pending approval request req_1758098383294: task-complete
+⏳ Pending approval request req_1758098383325: task-complete
+⏳ Pending approval request req_1758098388371: task-complete
+⏳ Pending approval request req_1758098388421: task-complete
+⏳ Pending approval request req_1758098388455: task-complete
+⏳ Pending approval request req_1758098393507: task-complete
+⏳ Pending approval request req_1758098393555: task-complete
+⏳ Pending approval request req_1758098393588: task-complete
+⏳ Pending approval request req_1758098398627: task-complete
+⏳ Pending approval request req_1758098398684: task-complete
+⏳ Pending approval request req_1758098398730: task-complete
+⏳ Pending approval request req_1758098403790: task-complete
+⏳ Pending approval request req_1758098403845: task-complete
+⏳ Pending approval request req_1758098403876: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098408951: task-complete
+⏳ Pending approval request req_1758098408996: task-complete
+⏳ Pending approval request req_1758098409028: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098414093: task-complete
+⏳ Pending approval request req_1758098414151: task-complete
+⏳ Pending approval request req_1758098414184: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098419264: task-complete
+⏳ Pending approval request req_1758098419314: task-complete
+⏳ Pending approval request req_1758098419346: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098424412: task-complete
+⏳ Pending approval request req_1758098424469: task-complete
+⏳ Pending approval request req_1758098424502: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098429570: task-complete
+⏳ Pending approval request req_1758098429628: task-complete
+⏳ Pending approval request req_1758098429662: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098434741: task-complete
+⏳ Pending approval request req_1758098434793: task-complete
+⏳ Pending approval request req_1758098434826: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098439907: task-complete
+⏳ Pending approval request req_1758098439962: task-complete
+⏳ Pending approval request req_1758098439994: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098445066: task-complete
+⏳ Pending approval request req_1758098445128: task-complete
+⏳ Pending approval request req_1758098445162: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098450235: task-complete
+⏳ Pending approval request req_1758098450295: task-complete
+⏳ Pending approval request req_1758098450328: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098455397: task-complete
+⏳ Pending approval request req_1758098455458: task-complete
+⏳ Pending approval request req_1758098455492: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758098460567: task-complete
+⏳ Pending approval request req_1758098460621: task-complete
+⏳ Pending approval request req_1758098460654: task-complete
+⏳ Pending approval request req_1758098465700: task-complete
+⏳ Pending approval request req_1758098465754: task-complete
+⏳ Pending approval request req_1758098465788: task-complete
+⏳ Pending approval request req_1758098470839: task-complete
+⏳ Pending approval request req_1758098470889: task-complete
+⏳ Pending approval request req_1758098470923: task-complete
+⏳ Pending approval request req_1758098475965: task-complete
+⏳ Pending approval request req_1758098476030: task-complete
+⏳ Pending approval request req_1758098476066: task-complete
+⏳ Pending approval request req_1758098481126: task-complete
+⏳ Pending approval request req_1758098481185: task-complete
+⏳ Pending approval request req_1758098481219: task-complete
+⏳ Pending approval request req_1758098486260: task-complete
+⏳ Pending approval request req_1758098486321: task-complete
+⏳ Pending approval request req_1758098486356: task-complete
+⏳ Pending approval request req_1758098491397: task-complete
+⏳ Pending approval request req_1758098491447: task-complete
+⏳ Pending approval request req_1758098491481: task-complete
+⏳ Pending approval request req_1758098496533: task-complete
+⏳ Pending approval request req_1758098496590: task-complete
+⏳ Pending approval request req_1758098496623: task-complete
+⏳ Pending approval request req_1758098501665: task-complete
+⏳ Pending approval request req_1758098501723: task-complete
+⏳ Pending approval request req_1758098501756: task-complete
+⏳ Pending approval request req_1758098506811: task-complete
+⏳ Pending approval request req_1758098506873: task-complete
+⏳ Pending approval request req_1758098506908: task-complete
+⏳ Pending approval request req_1758098511962: task-complete
+⏳ Pending approval request req_1758098512016: task-complete
+⏳ Pending approval request req_1758098512051: task-complete
+⏳ Pending approval request req_1758098517104: task-complete
+⏳ Pending approval request req_1758098517163: task-complete
+⏳ Pending approval request req_1758098517197: task-complete
+⏳ Pending approval request req_1758098522242: task-complete
+⏳ Pending approval request req_1758098522304: task-complete
+⏳ Pending approval request req_1758098522341: task-complete
+⏳ Pending approval request req_1758098527397: task-complete
+⏳ Pending approval request req_1758098527456: task-complete
+⏳ Pending approval request req_1758098527489: task-complete
+⏳ Pending approval request req_1758098532541: task-complete
+⏳ Pending approval request req_1758098532600: task-complete
+⏳ Pending approval request req_1758098532635: task-complete
+⏳ Pending approval request req_1758098537680: task-complete
+⏳ Pending approval request req_1758098537744: task-complete
+⏳ Pending approval request req_1758098537788: task-complete
+⏳ Pending approval request req_1758098542857: task-complete
+⏳ Pending approval request req_1758098542892: task-complete
+⏳ Pending approval request req_1758098547961: task-complete
+⏳ Pending approval request req_1758098547999: task-complete
+⏳ Pending approval request req_1758098553092: task-complete
+⏳ Pending approval request req_1758098553131: task-complete
+⏳ Pending approval request req_1758098558206: task-complete
+⏳ Pending approval request req_1758098558241: task-complete
+⏳ Pending approval request req_1758098563316: task-complete
+⏳ Pending approval request req_1758098563357: task-complete
+⏳ Pending approval request req_1758098568419: task-complete
+⏳ Pending approval request req_1758098568457: task-complete
+⏳ Pending approval request req_1758098573516: task-complete
+⏳ Pending approval request req_1758098578604: task-complete
+⏳ Pending approval request req_1758098583683: task-complete
+⏳ Pending approval request req_1758098588748: task-complete
+⏳ Pending approval request req_1758098593828: task-complete
+⏳ Pending approval request req_1758098598907: task-complete
+⏳ Pending approval request req_1758098603990: task-complete
+⏳ Pending approval request req_1758098609075: task-complete
+⏳ Pending approval request req_1758098614166: task-complete
+⏳ Pending approval request req_1758098619250: task-complete
+⏳ Pending approval request req_1758098624324: task-complete
+⏳ Pending approval request req_1758098629407: task-complete
+⏳ Pending approval request req_1758098634496: task-complete
+⏳ Pending approval request req_1758098639576: task-complete
+⏳ Pending approval request req_1758098644659: task-complete
+⏳ Pending approval request req_1758098649733: task-complete
+⏳ Pending approval request req_1758098654826: task-complete
+⏳ Pending approval request req_1758098659925: task-complete
+⏳ Pending approval request req_1758098665018: task-complete
+⏳ Pending approval request req_1758098670099: task-complete
+⏳ Pending approval request req_1758098675176: task-complete
+⏳ Pending approval request req_1758098680256: task-complete
+⏳ Pending approval request req_1758098685345: task-complete
+⏳ Pending approval request req_1758098690424: task-complete
+⏳ Pending approval request req_1758098695507: task-complete
+⏳ Pending approval request req_1758098700581: task-complete
+⏳ Pending approval request req_1758098705663: task-complete
+⏳ Pending approval request req_1758098710738: task-complete
+⏳ Pending approval request req_1758098715819: task-complete
+⏳ Pending approval request req_1758098720893: task-complete
+⏳ Pending approval request req_1758098725966: task-complete
+⏳ Pending approval request req_1758098731044: task-complete
+⏳ Pending approval request req_1758098736118: task-complete
+⏳ Pending approval request req_1758098741186: task-complete
+⏳ Pending approval request req_1758098746272: task-complete
+⏳ Pending approval request req_1758098751345: task-complete
+⏳ Pending approval request req_1758098756415: task-complete
+⏳ Pending approval request req_1758098761492: task-complete
+⏳ Pending approval request req_1758098766566: task-complete
+⏳ Pending approval request req_1758098771639: task-complete
+⏳ Pending approval request req_1758098776708: task-complete
+⏳ Pending approval request req_1758098781783: task-complete
+⏳ Pending approval request req_1758098786854: task-complete
+⏳ Pending approval request req_1758098791922: task-complete
+⏳ Pending approval request req_1758098796996: task-complete
+⏳ Pending approval request req_1758098802071: task-complete
+⏳ Pending approval request req_1758098807144: task-complete
+⏳ Pending approval request req_1758098812221: task-complete
+⏳ Pending approval request req_1758098817295: task-complete
+⏳ Pending approval request req_1758098822371: task-complete
+⏳ Pending approval request req_1758098827448: task-complete
+⏳ Pending approval request req_1758098832524: task-complete
+⏳ Pending approval request req_1758098837599: task-complete
+⏳ Pending approval request req_1758098842677: task-complete
+⏳ Pending approval request req_1758098847755: task-complete
+⏳ Pending approval request req_1758098852831: task-complete
+⏳ Pending approval request req_1758098857905: task-complete
+⏳ Pending approval request req_1758098862985: task-complete
+⏳ Pending approval request req_1758098868056: task-complete
+⏳ Pending approval request req_1758098873135: task-complete
+⏳ Pending approval request req_1758098878209: task-complete
+⏳ Pending approval request req_1758098883286: task-complete
+⏳ Pending approval request req_1758098888370: task-complete
+⏳ Pending approval request req_1758098893472: task-complete
+⏳ Pending approval request req_1758098898545: task-complete
+⏳ Pending approval request req_1758098903625: task-complete
+⏳ Pending approval request req_1758098908707: task-complete
+⏳ Pending approval request req_1758098913791: task-complete
+⏳ Pending approval request req_1758098918883: task-complete
+⏳ Pending approval request req_1758098923968: task-complete
+⏳ Pending approval request req_1758098929055: task-complete
+⏳ Pending approval request req_1758098934127: task-complete
+⏳ Pending approval request req_1758098939225: task-complete
+⏳ Pending approval request req_1758098944327: task-complete
+⏳ Pending approval request req_1758098949417: task-complete
+⏳ Pending approval request req_1758098954505: task-complete
+⏳ Pending approval request req_1758098959580: task-complete
+⏳ Pending approval request req_1758098964674: task-complete
+⏳ Pending approval request req_1758098969773: task-complete
+⏳ Pending approval request req_1758098974872: task-complete
+⏳ Pending approval request req_1758098979957: task-complete
+⏳ Pending approval request req_1758098985047: task-complete
+⏳ Pending approval request req_1758098990129: task-complete
+⏳ Pending approval request req_1758098995233: task-complete
+⏳ Pending approval request req_1758099000334: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099005462: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099010584: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099015696: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099020825: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099025949: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099031059: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099036186: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099041308: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099046446: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099051579: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099056705: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099061816: task-complete
+⏳ Pending approval request req_1758099066919: task-complete
+⏳ Pending approval request req_1758099072008: task-complete
+⏳ Pending approval request req_1758099077096: task-complete
+⏳ Pending approval request req_1758099082181: task-complete
+⏳ Pending approval request req_1758099087262: task-complete
+⏳ Pending approval request req_1758099092363: task-complete
+⏳ Pending approval request req_1758099097468: task-complete
+⏳ Pending approval request req_1758099102556: task-complete
+⏳ Pending approval request req_1758099107662: task-complete
+⏳ Pending approval request req_1758099112760: task-complete
+⏳ Pending approval request req_1758099117862: task-complete
+⏳ Pending approval request req_1758099122964: task-complete
+⏳ Pending approval request req_1758099128069: task-complete
+⏳ Pending approval request req_1758099133172: task-complete
+⏳ Pending approval request req_1758099138264: task-complete
+⏳ Pending approval request req_1758099143352: task-complete
+⏳ Pending approval request req_1758099148449: task-complete
+⏳ Pending approval request req_1758099153541: task-complete
+⏳ Pending approval request req_1758099158636: task-complete
+⏳ Pending approval request req_1758099163733: task-complete
+⏳ Pending approval request req_1758099168811: task-complete
+⏳ Pending approval request req_1758099173911: task-complete
+⏳ Pending approval request req_1758099179008: task-complete
+⏳ Pending approval request req_1758099184082: task-complete
+⏳ Pending approval request req_1758099189170: task-complete
+⏳ Pending approval request req_1758099194265: task-complete
+⏳ Pending approval request req_1758099199360: task-complete
+⏳ Pending approval request req_1758099204459: task-complete
+⏳ Pending approval request req_1758099209532: task-complete
+⏳ Pending approval request req_1758099214630: task-complete
+⏳ Pending approval request req_1758099219731: task-complete
+⏳ Pending approval request req_1758099224822: task-complete
+⏳ Pending approval request req_1758099229909: task-complete
+⏳ Pending approval request req_1758099235009: task-complete
+⏳ Pending approval request req_1758099240089: task-complete
+⏳ Pending approval request req_1758099245180: task-complete
+⏳ Pending approval request req_1758099250265: task-complete
+⏳ Pending approval request req_1758099255359: task-complete
+⏳ Pending approval request req_1758099260463: task-complete
+⏳ Pending approval request req_1758099265544: task-complete
+⏳ Pending approval request req_1758099270628: task-complete
+⏳ Pending approval request req_1758099275717: task-complete
+⏳ Pending approval request req_1758099280797: task-complete
+⏳ Pending approval request req_1758099285881: task-complete
+⏳ Pending approval request req_1758099290968: task-complete
+⏳ Pending approval request req_1758099296063: task-complete
+⏳ Pending approval request req_1758099301185: task-complete
+⏳ Pending approval request req_1758099306289: task-complete
+⏳ Pending approval request req_1758099311386: task-complete
+⏳ Pending approval request req_1758099316478: task-complete
+⏳ Pending approval request req_1758099321581: task-complete
+⏳ Pending approval request req_1758099326677: task-complete
+⏳ Pending approval request req_1758099331781: task-complete
+⏳ Pending approval request req_1758099336874: task-complete
+⏳ Pending approval request req_1758099341981: task-complete
+⏳ Pending approval request req_1758099347057: task-complete
+⏳ Pending approval request req_1758099352153: task-complete
+⏳ Pending approval request req_1758099357236: task-complete
+⏳ Pending approval request req_1758099362336: task-complete
+⏳ Pending approval request req_1758099367439: task-complete
+⏳ Pending approval request req_1758099372536: task-complete
+⏳ Pending approval request req_1758099377637: task-complete
+⏳ Pending approval request req_1758099382726: task-complete
+⏳ Pending approval request req_1758099387824: task-complete
+⏳ Pending approval request req_1758099392915: task-complete
+⏳ Pending approval request req_1758099398016: task-complete
+⏳ Pending approval request req_1758099403098: task-complete
+⏳ Pending approval request req_1758099408193: task-complete
+⏳ Pending approval request req_1758099413294: task-complete
+⏳ Pending approval request req_1758099418386: task-complete
+⏳ Pending approval request req_1758099423460: task-complete
+⏳ Pending approval request req_1758099428553: task-complete
+⏳ Pending approval request req_1758099433643: task-complete
+⏳ Pending approval request req_1758099438724: task-complete
+⏳ Pending approval request req_1758099443816: task-complete
+⏳ Pending approval request req_1758099448919: task-complete
+⏳ Pending approval request req_1758099454013: task-complete
+⏳ Pending approval request req_1758099459116: task-complete
+⏳ Pending approval request req_1758099464213: task-complete
+⏳ Pending approval request req_1758099469302: task-complete
+⏳ Pending approval request req_1758099474386: task-complete
+⏳ Pending approval request req_1758099479482: task-complete
+⏳ Pending approval request req_1758099484571: task-complete
+⏳ Pending approval request req_1758099489671: task-complete
+⏳ Pending approval request req_1758099494755: task-complete
+⏳ Pending approval request req_1758099499862: task-complete
+⏳ Pending approval request req_1758099504962: task-complete
+⏳ Pending approval request req_1758099510062: task-complete
+⏳ Pending approval request req_1758099515165: task-complete
+⏳ Pending approval request req_1758099520265: task-complete
+⏳ Pending approval request req_1758099525363: task-complete
+⏳ Pending approval request req_1758099530465: task-complete
+⏳ Pending approval request req_1758099535557: task-complete
+⏳ Pending approval request req_1758099540658: task-complete
+⏳ Pending approval request req_1758099545743: task-complete
+⏳ Pending approval request req_1758099550843: task-complete
+⏳ Pending approval request req_1758099555944: task-complete
+⏳ Pending approval request req_1758099561030: task-complete
+⏳ Pending approval request req_1758099566115: task-complete
+⏳ Pending approval request req_1758099571217: task-complete
+⏳ Pending approval request req_1758099576318: task-complete
+⏳ Pending approval request req_1758099581399: task-complete
+⏳ Pending approval request req_1758099586491: task-complete
+⏳ Pending approval request req_1758099591589: task-complete
+⏳ Pending approval request req_1758099596696: task-complete
+⏳ Pending approval request req_1758099601795: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099606921: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099612060: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099617210: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099622332: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099627460: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099632598: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099637733: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099642874: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099648017: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099653130: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099658265: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758099663375: task-complete
+⏳ Pending approval request req_1758099668474: task-complete
+⏳ Pending approval request req_1758099673561: task-complete
+⏳ Pending approval request req_1758099678640: task-complete
+⏳ Pending approval request req_1758099683728: task-complete
+⏳ Pending approval request req_1758099688829: task-complete
+⏳ Pending approval request req_1758099693933: task-complete
+⏳ Pending approval request req_1758099699021: task-complete
+⏳ Pending approval request req_1758099704108: task-complete
+⏳ Pending approval request req_1758099709195: task-complete
+⏳ Pending approval request req_1758099714289: task-complete
+⏳ Pending approval request req_1758099719390: task-complete
+⏳ Pending approval request req_1758099724487: task-complete
+⏳ Pending approval request req_1758099729577: task-complete
+⏳ Pending approval request req_1758099734664: task-complete
+⏳ Pending approval request req_1758099739749: task-complete
+⏳ Pending approval request req_1758099744848: task-complete
+⏳ Pending approval request req_1758099749937: task-complete
+⏳ Pending approval request req_1758099755017: task-complete
+⏳ Pending approval request req_1758099760114: task-complete
+⏳ Pending approval request req_1758099765221: task-complete
+⏳ Pending approval request req_1758099770301: task-complete
+⏳ Pending approval request req_1758099775389: task-complete
+⏳ Pending approval request req_1758099780467: task-complete
+⏳ Pending approval request req_1758099785544: task-complete
+⏳ Pending approval request req_1758099790639: task-complete
+⏳ Pending approval request req_1758099795732: task-complete
+⏳ Pending approval request req_1758099800830: task-complete
+⏳ Pending approval request req_1758099805931: task-complete
+⏳ Pending approval request req_1758099811031: task-complete
+⏳ Pending approval request req_1758099816114: task-complete
+⏳ Pending approval request req_1758099821207: task-complete
+⏳ Pending approval request req_1758099826300: task-complete
+⏳ Pending approval request req_1758099831392: task-complete
+⏳ Pending approval request req_1758099836497: task-complete
+⏳ Pending approval request req_1758099841591: task-complete
+⏳ Pending approval request req_1758099846688: task-complete
+⏳ Pending approval request req_1758099851788: task-complete
+⏳ Pending approval request req_1758099856882: task-complete
+⏳ Pending approval request req_1758099861987: task-complete
+⏳ Pending approval request req_1758099867073: task-complete
+⏳ Pending approval request req_1758099872161: task-complete
+⏳ Pending approval request req_1758099877251: task-complete
+⏳ Pending approval request req_1758099882345: task-complete
+⏳ Pending approval request req_1758099887438: task-complete
+⏳ Pending approval request req_1758099892536: task-complete
+⏳ Pending approval request req_1758099897624: task-complete
+⏳ Pending approval request req_1758099902722: task-complete
+⏳ Pending approval request req_1758099907804: task-complete
+⏳ Pending approval request req_1758099912905: task-complete
+⏳ Pending approval request req_1758099918005: task-complete
+⏳ Pending approval request req_1758099923092: task-complete
+⏳ Pending approval request req_1758099928198: task-complete
+⏳ Pending approval request req_1758099933283: task-complete
+⏳ Pending approval request req_1758099938389: task-complete
+⏳ Pending approval request req_1758099943486: task-complete
+⏳ Pending approval request req_1758099948567: task-complete
+⏳ Pending approval request req_1758099953653: task-complete
+⏳ Pending approval request req_1758099958741: task-complete
+⏳ Pending approval request req_1758099963841: task-complete
+⏳ Pending approval request req_1758099968915: task-complete
+⏳ Pending approval request req_1758099974005: task-complete
+⏳ Pending approval request req_1758099979115: task-complete
+⏳ Pending approval request req_1758099984220: task-complete
+⏳ Pending approval request req_1758099989309: task-complete
+⏳ Pending approval request req_1758099994397: task-complete
+⏳ Pending approval request req_1758099999507: task-complete
+⏳ Pending approval request req_1758100004597: task-complete
+⏳ Pending approval request req_1758100009693: task-complete
+⏳ Pending approval request req_1758100014769: task-complete
+⏳ Pending approval request req_1758100019861: task-complete
+⏳ Pending approval request req_1758100024941: task-complete
+⏳ Pending approval request req_1758100030039: task-complete
+⏳ Pending approval request req_1758100035144: task-complete
+⏳ Pending approval request req_1758100040224: task-complete
+⏳ Pending approval request req_1758100045330: task-complete
+⏳ Pending approval request req_1758100050441: task-complete
+⏳ Pending approval request req_1758100055539: task-complete
+⏳ Pending approval request req_1758100060625: task-complete
+⏳ Pending approval request req_1758100065715: task-complete
+⏳ Pending approval request req_1758100070825: task-complete
+⏳ Pending approval request req_1758100075928: task-complete
+⏳ Pending approval request req_1758100081034: task-complete
+⏳ Pending approval request req_1758100086135: task-complete
+⏳ Pending approval request req_1758100091219: task-complete
+⏳ Pending approval request req_1758100096331: task-complete
+⏳ Pending approval request req_1758100101415: task-complete
+⏳ Pending approval request req_1758100106517: task-complete
+⏳ Pending approval request req_1758100111604: task-complete
+⏳ Pending approval request req_1758100116702: task-complete
+⏳ Pending approval request req_1758100121810: task-complete
+⏳ Pending approval request req_1758100126903: task-complete
+⏳ Pending approval request req_1758100131995: task-complete
+⏳ Pending approval request req_1758100137098: task-complete
+⏳ Pending approval request req_1758100142185: task-complete
+⏳ Pending approval request req_1758100147282: task-complete
+⏳ Pending approval request req_1758100152381: task-complete
+⏳ Pending approval request req_1758100157476: task-complete
+⏳ Pending approval request req_1758100162567: task-complete
+⏳ Pending approval request req_1758100167665: task-complete
+⏳ Pending approval request req_1758100172769: task-complete
+⏳ Pending approval request req_1758100177853: task-complete
+⏳ Pending approval request req_1758100182942: task-complete
+⏳ Pending approval request req_1758100188025: task-complete
+⏳ Pending approval request req_1758100193115: task-complete
+⏳ Pending approval request req_1758100198207: task-complete
+⏳ Pending approval request req_1758100203296: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100208422: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100213546: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100218658: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100223775: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100228909: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100234035: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100239180: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100244306: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100249425: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100254555: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100259663: task-complete
+🧹 Cleaned up 0 old requests
+⏳ Pending approval request req_1758100264787: task-complete
+⏳ Pending approval request req_1758100269881: task-complete
+⏳ Pending approval request req_1758100274971: task-complete
+⏳ Pending approval request req_1758100280050: task-complete
+⏳ Pending approval request req_1758100285143: task-complete
+⏳ Pending approval request req_1758100290230: task-complete
+⏳ Pending approval request req_1758100295312: task-complete
+⏳ Pending approval request req_1758100300419: task-complete
+⏳ Pending approval request req_1758100305505: task-complete
+⏳ Pending approval request req_1758100310592: task-complete
+⏳ Pending approval request req_1758100315691: task-complete
+⏳ Pending approval request req_1758100320797: task-complete
+⏳ Pending approval request req_1758100325888: task-complete
+⏳ Pending approval request req_1758100330978: task-complete
+⏳ Pending approval request req_1758100336071: task-complete
+⏳ Pending approval request req_1758100341150: task-complete
+⏳ Pending approval request req_1758100346233: task-complete
+⏳ Pending approval request req_1758100351310: task-complete
+⏳ Pending approval request req_1758100356401: task-complete
+⏳ Pending approval request req_1758100361503: task-complete
+⏳ Pending approval request req_1758100366582: task-complete
+⏳ Pending approval request req_1758100371682: task-complete
+⏳ Pending approval request req_1758100376786: task-complete
+⏳ Pending approval request req_1758100381899: task-complete
+⏳ Pending approval request req_1758100387004: task-complete
+⏳ Pending approval request req_1758100392078: task-complete
+⏳ Pending approval request req_1758100397183: task-complete
+⏳ Pending approval request req_1758100402291: task-complete
+⏳ Pending approval request req_1758100407380: task-complete
+⏳ Pending approval request req_1758100412470: task-complete
+⏳ Pending approval request req_1758100417548: task-complete
+⏳ Pending approval request req_1758100422636: task-complete
+⏳ Pending approval request req_1758100427722: task-complete
+⏳ Pending approval request req_1758100432821: task-complete
+⏳ Pending approval request req_1758100437897: task-complete
+⏳ Pending approval request req_1758100442981: task-complete
+⏳ Pending approval request req_1758100448072: task-complete
+⏳ Pending approval request req_1758100453156: task-complete
+⏳ Pending approval request req_1758100458238: task-complete
+⏳ Pending approval request req_1758100463314: task-complete
+⏳ Pending approval request req_1758100468419: task-complete
+⏳ Pending approval request req_1758100473496: task-complete
+⏳ Pending approval request req_1758100478576: task-complete
+⏳ Pending approval request req_1758100483655: task-complete
+⏳ Pending approval request req_1758100488738: task-complete
+⏳ Pending approval request req_1758100493822: task-complete
+⏳ Pending approval request req_1758100498901: task-complete
+⏳ Pending approval request req_1758100503979: task-complete
+⏳ Pending approval request req_1758100509059: task-complete
+⏳ Pending approval request req_1758100514139: task-complete
+⏳ Pending approval request req_1758100519224: task-complete
+⏳ Pending approval request req_1758100524311: task-complete
+⏳ Pending approval request req_1758100529389: task-complete
+⏳ Pending approval request req_1758100534471: task-complete
+⏳ Pending approval request req_1758100539549: task-complete
+⏳ Pending approval request req_1758100544629: task-complete
+⏳ Pending approval request req_1758100549703: task-complete
+⏳ Pending approval request req_1758100554788: task-complete
+⏳ Pending approval request req_1758100559877: task-complete
+⏳ Pending approval request req_1758100564975: task-complete
+⏳ Pending approval request req_1758100570059: task-complete
+⏳ Pending approval request req_1758100575148: task-complete
+⏳ Pending approval request req_1758100580231: task-complete
+⏳ Pending approval request req_1758100585314: task-complete
+⏳ Pending approval request req_1758100590392: task-complete
+⏳ Pending approval request req_1758100595473: task-complete
+⏳ Pending approval request req_1758100600558: task-complete
+⏳ Pending approval request req_1758100605636: task-complete
+⏳ Pending approval request req_1758100610723: task-complete
+⏳ Pending approval request req_1758100615810: task-complete
+⏳ Pending approval request req_1758100620897: task-complete
+⏳ Pending approval request req_1758100625977: task-complete
+⏳ Pending approval request req_1758100631063: task-complete
+⏳ Pending approval request req_1758100636143: task-complete
+⏳ Pending approval request req_1758100641222: task-complete
+⏳ Pending approval request req_1758100646306: task-complete
+⏳ Pending approval request req_1758100651383: task-complete
+⏳ Pending approval request req_1758100656469: task-complete
+⏳ Pending approval request req_1758100661548: task-complete
+⏳ Pending approval request req_1758100666624: task-complete
+⏳ Pending approval request req_1758100671703: task-complete
+⏳ Pending approval request req_1758100676776: task-complete
+⏳ Pending approval request req_1758100681879: task-complete
+⏳ Pending approval request req_1758100686968: task-complete
+⏳ Pending approval request req_1758100692049: task-complete
+⏳ Pending approval request req_1758100697130: task-complete
+⏳ Pending approval request req_1758100702209: task-complete
+⏳ Pending approval request req_1758100707293: task-complete
+⏳ Pending approval request req_1758100712378: task-complete
+⏳ Pending approval request req_1758100717466: task-complete
+⏳ Pending approval request req_1758100722580: task-complete
+⏳ Pending approval request req_1758100727671: task-complete
+⏳ Pending approval request req_1758100732761: task-complete
+⏳ Pending approval request req_1758100737846: task-complete
+⏳ Pending approval request req_1758100742934: task-complete
+⏳ Pending approval request req_1758100748019: task-complete
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+2025-09-17 11:19:20.105 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:20.108 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:21.404 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:21.458 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:24.549 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:24.551 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:25.885 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:25.938 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:37.475 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:37.478 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:38.894 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:38.951 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:39.430 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:39.438 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:40.810 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:19:40.887 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:21:21.579 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:21:21.583 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:21:22.891 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:21:22.942 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1710 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1710 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1710 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1710 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+⏳ Pending approval request req_1758100966292: task-complete
+✅ Auto-approved request req_1758100966336: task-progress
+⏳ Pending approval request req_1758100971447: task-complete
+✅ Auto-approved request req_1758100971489: task-progress
+⏳ Pending approval request req_1758100976621: task-complete
+✅ Auto-approved request req_1758100976669: task-progress
+⏳ Pending approval request req_1758100981797: task-complete
+✅ Auto-approved request req_1758100981843: task-progress
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+2025-09-17 11:23:06.953 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:06.957 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:08.498 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:08.549 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:15.056 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:15.063 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:16.574 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:16.648 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:35.039 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:35.042 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:36.433 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:36.496 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:44.271 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:44.274 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:45.659 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:23:45.721 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:24:03.242 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:24:03.252 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:24:04.681 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:24:04.797 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:24:21.455 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:24:21.464 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:24:22.863 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 11:24:22.933 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:04:16.742 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:04:16.746 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:04:17.851 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:04:17.903 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+SharedStateManager initialized with 9 agents
+📋 Loaded 1718 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1718 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+⏳ Pending approval request req_1758100987020: task-complete
+✅ Auto-approved request req_1758100987188: task-progress
+⏳ Pending approval request req_1758100992896: task-complete
+✅ Auto-approved request req_1758100992935: task-progress
+✅ Messaging system imported successfully
+⏳ Pending approval request req_1758100998064: task-complete
+✅ Auto-approved request req_1758100998103: task-progress
+⏳ Pending approval request req_1758101003231: task-complete
+✅ Auto-approved request req_1758101003271: task-progress
+⏳ Pending approval request req_1758101008412: task-complete
+✅ Auto-approved request req_1758101008453: task-progress
+✅ Messaging system imported successfully
+⏳ Pending approval request req_1758101013575: task-complete
+✅ Auto-approved request req_1758101013624: task-progress
+✅ Messaging system imported successfully
+⏳ Pending approval request req_1758101018744: task-complete
+✅ Auto-approved request req_1758101018786: task-progress
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+⏳ Pending approval request req_1758101023918: task-complete
+✅ Auto-approved request req_1758101023978: task-progress
+⏳ Pending approval request req_1758101029157: task-complete
+✅ Auto-approved request req_1758101029195: task-progress
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+⏳ Pending approval request req_1758101034326: task-complete
+✅ Auto-approved request req_1758101034374: task-progress
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+✅ Messaging system imported successfully
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+2025-09-17 12:28:43.756 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:28:43.759 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:28:44.827 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:28:44.894 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:41:40.843 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:41:40.846 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:41:41.942 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 12:41:41.995 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+2025-09-17 13:01:46.876 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 13:01:46.879 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 13:01:47.940 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 13:01:48.011 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING:dramatiq.broker.RedisBroker:You're adding a middleware of the same type twice: <dramatiq.middleware.callbacks.Callbacks object at 0x1317cfdd0>. It may have unexpected results.
+WARNING:dramatiq.broker.RedisBroker:You're adding a middleware of the same type twice: <dramatiq.middleware.pipelines.Pipelines object at 0x1315e4bd0>. It may have unexpected results.
+INFO:task_queue.broker:✅ Dramatiq broker configured with Redis at redis://localhost:6379/0
+2025-09-17 13:06:11.689 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 13:06:11.692 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 13:06:12.806 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2025-09-17 13:06:12.863 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+✅ Messaging system imported successfully
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 1738 requests from storage
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+🧹 Cleaned up 0 old requests
+  Stopping...

@@ -1,0 +1,83 @@
+{
+  "current_task": {
+    "task_id": "task_851ece1d",
+    "description": "Fix database connection pool exhaustion",
+    "priority": 4,
+    "created_at": "2025-09-17T10:46:44.101882",
+    "assigned_agents": [
+      "database_agent",
+      "backend_agent"
+    ],
+    "status": "in_progress",
+    "progress": 0.0,
+    "results": {},
+    "error_message": null,
+    "started_at": "2025-09-17T10:46:44.102237",
+    "completed_at": null
+  },
+  "task_queue": [],
+  "task_history": [],
+  "agents": {
+    "backend_agent": {
+      "agent_id": "backend_agent",
+      "name": "Backend Agent",
+      "status": "busy",
+      "current_task": "task_851ece1d",
+      "last_activity": "2025-09-17T10:46:43.258231",
+      "session_id": "",
+      "port": 0,
+      "capabilities": [
+        "api",
+        "database"
+      ],
+      "error_message": null
+    },
+    "frontend_agent": {
+      "agent_id": "frontend_agent",
+      "name": "Frontend Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T10:46:43.258896",
+      "session_id": "",
+      "port": 0,
+      "capabilities": [
+        "ui",
+        "react"
+      ],
+      "error_message": null
+    },
+    "database_agent": {
+      "agent_id": "database_agent",
+      "name": "Database Agent",
+      "status": "busy",
+      "current_task": "task_851ece1d",
+      "last_activity": "2025-09-17T10:46:43.259371",
+      "session_id": "",
+      "port": 0,
+      "capabilities": [
+        "sql",
+        "optimization"
+      ],
+      "error_message": null
+    },
+    "testing_agent": {
+      "agent_id": "testing_agent",
+      "name": "Testing Agent",
+      "status": "idle",
+      "current_task": null,
+      "last_activity": "2025-09-17T10:46:43.259875",
+      "session_id": "",
+      "port": 0,
+      "capabilities": [
+        "unit_tests",
+        "integration"
+      ],
+      "error_message": null
+    }
+  },
+  "messages": [],
+  "shared_variables": {},
+  "system_status": "busy",
+  "last_updated": "2025-09-17T10:46:44.957316",
+  "settings": {}
+}

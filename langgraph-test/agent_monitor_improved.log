@@ -1,0 +1,70 @@
+📋 Loaded notification configs for 11 agents
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+📋 Loaded 540 requests from storage
+🔔 Enhanced notification system integrated
+🔔 Notification system registered for agent: backend-api
+🔔 Notification system registered for agent: database
+🔔 Notification system registered for agent: frontend-ui
+🔔 Notification system registered for agent: instagram
+🔔 Notification system registered for agent: testing
+🔔 Notification system registered for agent: supervisor
+🔔 Notification system registered for agent: master
+🔔 Notification system registered for agent: test1
+🔔 Notification system registered for agent: test-security-agent
+SharedStateManager initialized with 9 agents
+🔍 Starting Agent Request Monitor Test
+🔍 Agent Request Monitor started
+⏳ Pending approval request req_1758097266378: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097266378 from backend-api
+⏳ Pending approval request req_1758097267411: create_file deploy.sql                                                                           │
+🔍 Detected file creation request from database: deploy.sql                                                                           │
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097267411 from database
+Status: 541 pending, 10 recent
+⏳ Pending approval request req_1758097273484: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097273484 from backend-api
+⏳ Pending approval request req_1758097274532: create_file deploy.sql                                                                           │
+🔍 Detected file creation request from database: deploy.sql                                                                           │
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097274532 from database
+⏳ Pending approval request req_1758097275590: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+Status: 544 pending, 10 recent
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097275590 from testing
+Status: 544 pending, 10 recent
+⏳ Pending approval request req_1758097281640: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097281640 from backend-api
+⏳ Pending approval request req_1758097282713: create_file deploy.sql                                                                           │
+🔍 Detected file creation request from database: deploy.sql                                                                           │
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097282713 from database
+⏳ Pending approval request req_1758097283760: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097283760 from testing
+Status: 547 pending, 10 recent
+⏳ Pending approval request req_1758097289801: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097289801 from backend-api
+⏳ Pending approval request req_1758097290847: create_file deploy.sql                                                                           │
+🔍 Detected file creation request from database: deploy.sql                                                                           │
+📤 Phase 1: Sent detailed command to supervisor terminal
+Status: 549 pending, 10 recent
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097290847 from database
+⏳ Pending approval request req_1758097291888: task-complete
+📤 Phase 1: Sent detailed command to supervisor terminal
+📡 Phase 2: Executed command - Notified supervisor about request req_1758097291888 from testing
+Status: 550 pending, 10 recent
+🔍 Agent Request Monitor stopped

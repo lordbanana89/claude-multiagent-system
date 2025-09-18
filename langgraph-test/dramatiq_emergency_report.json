@@ -1,0 +1,82 @@
+{
+  "test_start": "2025-09-17T11:17:56.709456",
+  "emergency_metrics": {},
+  "load_test_results": {
+    "baseline": {
+      "messages_sent": 10,
+      "processing_time": 2.0100109577178955,
+      "messages_per_second": 4.9750972558645605,
+      "status": "COMPLETED"
+    },
+    "extreme_load": {
+      "total_messages": 507,
+      "queue_time": 1.2755911350250244,
+      "processing_time": 5.003920793533325,
+      "total_time": 6.27951979637146,
+      "queue_rate": 397.46278104233903,
+      "throughput": 80.73865780198089,
+      "status": "COMPLETED"
+    }
+  },
+  "worker_performance": {
+    "scaling": {
+      "1": {
+        "messages": 50,
+        "duration": 5.018813848495483,
+        "throughput": 9.962513356614883,
+        "cpu_usage": 23.3,
+        "memory_usage": 60.1
+      },
+      "2": {
+        "messages": 50,
+        "duration": 5.017958879470825,
+        "throughput": 9.964210787887685,
+        "cpu_usage": 19.9,
+        "memory_usage": 60.0
+      },
+      "4": {
+        "messages": 50,
+        "duration": 5.016347169876099,
+        "throughput": 9.967412203895565,
+        "cpu_usage": 22.5,
+        "memory_usage": 60.0
+      },
+      "8": {
+        "messages": 50,
+        "duration": 5.021288156509399,
+        "throughput": 9.957604192697442,
+        "cpu_usage": 19.2,
+        "memory_usage": 60.0
+      }
+    },
+    "scaling_efficiency": 0.9995072364029323
+  },
+  "fault_tolerance": {
+    "retry_mechanism": "TESTED",
+    "dead_letter_queue": "TESTED",
+    "worker_recovery": "TESTED",
+    "status": "COMPLETED"
+  },
+  "migration_validation": {
+    "tmux_compatibility": "TESTED",
+    "agent_communication": "VALIDATED",
+    "session_management": "COMPATIBLE",
+    "migration_time": 3.0028018951416016,
+    "status": "READY_FOR_MIGRATION"
+  },
+  "message_integrity": {
+    "sent_messages": 100,
+    "processed_messages": 0,
+    "failed_messages": 0,
+    "integrity_score": 0.0,
+    "zero_loss": false
+  },
+  "critical_issues": [
+    "Message loss detected: 100.0%"
+  ],
+  "performance_warnings": [
+    "Poor scaling efficiency: 1.00x"
+  ],
+  "test_end": "2025-09-17T11:18:41.111121",
+  "overall_status": "NEEDS_ATTENTION"
+}

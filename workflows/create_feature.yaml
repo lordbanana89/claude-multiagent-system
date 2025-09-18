@@ -1,0 +1,100 @@
+name: "Create Full-Stack Feature"
+description: "End-to-end implementation of a new feature"
+metadata:
+  category: "development"
+  complexity: "medium"
+  estimated_duration: 2400
+
+steps:
+  - id: design_api
+    name: "Design API Endpoints"
+    agent: backend-api
+    action: "design_rest_api"
+    params:
+      feature_name: "${feature_name}"
+      requirements: "${requirements}"
+      auth_required: true
+    timeout: 600
+
+  - id: create_schema
+    name: "Design Database Schema"
+    agent: database
+    action: "create_schema"
+    params:
+      tables: "${tables}"
+      relationships: "${relationships}"
+      indexes: true
+    timeout: 600
+
+  - id: implement_backend
+    name: "Implement Backend Logic"
+    agent: backend-api
+    action: "implement_endpoints"
+    params:
+      api_design: "${step_design_api_result}"
+      database_schema: "${step_create_schema_result}"
+    depends_on: [design_api, create_schema]
+    timeout: 1200
+
+  - id: create_ui_components
+    name: "Build UI Components"
+    agent: frontend-ui
+    action: "create_components"
+    params:
+      feature_name: "${feature_name}"
+      design_system: "material-ui"
+      responsive: true
+    depends_on: [design_api]
+    timeout: 900
+
+  - id: integrate_frontend
+    name: "Integrate Frontend with API"
+    agent: frontend-ui
+    action: "integrate_api"
+    params:
+      api_endpoints: "${step_design_api_result}"
+      state_management: "redux"
+    depends_on: [implement_backend, create_ui_components]
+    timeout: 600
+
+  - id: write_tests
+    name: "Write Test Suite"
+    agent: testing
+    action: "generate_tests"
+    params:
+      test_types: ["unit", "integration", "e2e"]
+      coverage_target: 90
+    depends_on: [integrate_frontend]
+    timeout: 900
+
+  - id: run_tests
+    name: "Execute All Tests"
+    agent: testing
+    action: "run_test_suite"
+    params:
+      parallel: true
+      fail_fast: false
+    depends_on: [write_tests]
+    timeout: 600
+
+  - id: document_feature
+    name: "Generate Documentation"
+    agent: master
+    action: "generate_documentation"
+    params:
+      include_api_docs: true
+      include_user_guide: true
+      format: "markdown"
+    depends_on: [run_tests]
+    timeout: 300
+
+  - id: create_pr
+    name: "Create Pull Request"
+    agent: deployment
+    action: "create_pull_request"
+    params:
+      branch_name: "feature/${feature_name}"
+      title: "feat: ${feature_name}"
+      reviewers: "${reviewers}"
+    depends_on: [document_feature]
+    timeout: 120

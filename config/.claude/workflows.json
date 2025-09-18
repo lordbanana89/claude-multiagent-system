@@ -1,0 +1,80 @@
+{
+  "workflows": {
+    "full_feature": {
+      "description": "Build complete feature with backend and frontend",
+      "steps": [
+        "Analyze requirements and create implementation plan",
+        "Design database schema if needed",
+        "Implement backend API endpoints",
+        "Create frontend components",
+        "Add state management",
+        "Write unit tests",
+        "Integration testing",
+        "Update documentation"
+      ]
+    },
+    "backend_api": {
+      "description": "Create REST API endpoint",
+      "steps": [
+        "Define route in Express",
+        "Implement controller logic",
+        "Add validation middleware",
+        "Create service layer",
+        "Add database queries",
+        "Write API tests",
+        "Update API documentation"
+      ]
+    },
+    "frontend_component": {
+      "description": "Build React component",
+      "steps": [
+        "Create component structure",
+        "Implement TypeScript interfaces",
+        "Add Tailwind styling",
+        "Connect to state management",
+        "Add event handlers",
+        "Write component tests",
+        "Add to feature module"
+      ]
+    },
+    "debugging": {
+      "description": "Debug and fix issues",
+      "steps": [
+        "Identify error location",
+        "Analyze stack trace",
+        "Review related code",
+        "Implement fix",
+        "Test solution",
+        "Check for side effects",
+        "Update tests if needed"
+      ]
+    },
+    "refactoring": {
+      "description": "Refactor existing code",
+      "steps": [
+        "Analyze current implementation",
+        "Identify improvement areas",
+        "Plan refactoring approach",
+        "Implement changes incrementally",
+        "Ensure tests still pass",
+        "Update documentation",
+        "Review performance impact"
+      ]
+    }
+  },
+  "aliases": {
+    "build": "full_feature",
+    "api": "backend_api",
+    "component": "frontend_component",
+    "fix": "debugging",
+    "refactor": "refactoring"
+  },
+  "settings": {
+    "auto_test": true,
+    "auto_format": true,
+    "git_commit": false,
+    "verbose_output": true,
+    "max_file_changes": 20,
+    "require_confirmation": true
+  }
+}

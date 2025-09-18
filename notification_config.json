@@ -1,0 +1,110 @@
+{
+  "backend-api": {
+    "agent_id": "backend-api",
+    "enable_visual": true,
+    "enable_audio": true,
+    "enable_terminal": true,
+    "enable_web": true,
+    "audio_on_urgent": true,
+    "terminal_flash": true,
+    "web_popup": true,
+    "quiet_hours_start": null,
+    "quiet_hours_end": null
+  },
+  "database": {
+    "agent_id": "database",
+    "enable_visual": true,
+    "enable_audio": true,
+    "enable_terminal": true,
+    "enable_web": true,
+    "audio_on_urgent": true,
+    "terminal_flash": true,
+    "web_popup": true,
+    "quiet_hours_start": null,
+    "quiet_hours_end": null
+  },
+  "frontend-ui": {
+    "agent_id": "frontend-ui",
+    "enable_visual": true,
+    "enable_audio": true,
+    "enable_terminal": true,
+    "enable_web": true,
+    "audio_on_urgent": true,
+    "terminal_flash": true,
+    "web_popup": true,
+    "quiet_hours_start": null,
+    "quiet_hours_end": null
+  },
+  "instagram": {
+    "agent_id": "instagram",
+    "enable_visual": true,
+    "enable_audio": true,
+    "enable_terminal": true,
+    "enable_web": true,
+    "audio_on_urgent": true,
+    "terminal_flash": true,
+    "web_popup": true,
+    "quiet_hours_start": null,
+    "quiet_hours_end": null
+  },
+  "testing": {
+    "agent_id": "testing",
+    "enable_visual": true,
+    "enable_audio": true,
+    "enable_terminal": true,
+    "enable_web": true,
+    "audio_on_urgent": true,
+    "terminal_flash": true,
+    "web_popup": true,
+    "quiet_hours_start": null,
+    "quiet_hours_end": null
+  },
+  "supervisor": {
+    "agent_id": "supervisor",
+    "enable_visual": true,
+    "enable_audio": true,
+    "enable_terminal": true,
+    "enable_web": true,
+    "audio_on_urgent": true,
+    "terminal_flash": true,
+    "web_popup": true,
+    "quiet_hours_start": null,
+    "quiet_hours_end": null
+  },
+  "master": {
+    "agent_id": "master",
+    "enable_visual": true,
+    "enable_audio": true,
+    "enable_terminal": true,
+    "enable_web": true,
+    "audio_on_urgent": true,
+    "terminal_flash": true,
+    "web_popup": true,
+    "quiet_hours_start": null,
+    "quiet_hours_end": null
+  },
+  "test1": {
+    "agent_id": "test1",
+    "enable_visual": true,
+    "enable_audio": true,
+    "enable_terminal": true,
+    "enable_web": true,
+    "audio_on_urgent": true,
+    "terminal_flash": true,
+    "web_popup": true,
+    "quiet_hours_start": null,
+    "quiet_hours_end": null
+  },
+  "test-security-agent": {
+    "agent_id": "test-security-agent",
+    "enable_visual": true,
+    "enable_audio": true,
+    "enable_terminal": true,
+    "enable_web": true,
+    "audio_on_urgent": true,
+    "terminal_flash": true,
+    "web_popup": true,
+    "quiet_hours_start": null,
+    "quiet_hours_end": null
+  }
+}

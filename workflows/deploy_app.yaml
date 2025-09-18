@@ -1,0 +1,90 @@
+name: "Deploy Full Application"
+description: "Complete deployment workflow for a web application"
+metadata:
+  category: "deployment"
+  complexity: "high"
+  estimated_duration: 1800
+
+steps:
+  - id: analyze_code
+    name: "Analyze Codebase"
+    agent: supervisor
+    action: "analyze_project_structure"
+    params:
+      repo_url: "${repo_url}"
+      branch: "${branch}"
+    timeout: 300
+
+  - id: run_tests
+    name: "Run Test Suite"
+    agent: testing
+    action: "execute_test_suite"
+    params:
+      test_type: "all"
+      coverage_threshold: 80
+    depends_on: [analyze_code]
+    timeout: 600
+
+  - id: build_backend
+    name: "Build Backend Services"
+    agent: backend-api
+    action: "build_docker_image"
+    params:
+      dockerfile: "Dockerfile.backend"
+      tag: "${version}"
+    depends_on: [run_tests]
+    timeout: 600
+
+  - id: build_frontend
+    name: "Build Frontend Assets"
+    agent: frontend-ui
+    action: "build_production"
+    params:
+      optimize: true
+      sourcemaps: false
+    depends_on: [run_tests]
+    timeout: 600
+
+  - id: migrate_database
+    name: "Run Database Migrations"
+    agent: database
+    action: "run_migrations"
+    params:
+      environment: "${environment}"
+      backup_first: true
+    depends_on: [build_backend]
+    timeout: 300
+
+  - id: deploy_services
+    name: "Deploy to Kubernetes"
+    agent: deployment
+    action: "deploy_k8s"
+    params:
+      namespace: "${environment}"
+      replicas: "${replicas}"
+      rolling_update: true
+    depends_on: [build_backend, build_frontend, migrate_database]
+    timeout: 900
+
+  - id: smoke_test
+    name: "Run Smoke Tests"
+    agent: testing
+    action: "run_smoke_tests"
+    params:
+      endpoint: "${deployment_url}"
+      critical_paths:
+        - "/health"
+        - "/api/status"
+        - "/"
+    depends_on: [deploy_services]
+    timeout: 300
+
+  - id: notify_team
+    name: "Send Notifications"
+    agent: supervisor
+    action: "send_notification"
+    params:
+      channels: ["slack", "email"]
+      message: "Deployment completed for ${version} to ${environment}"
+    depends_on: [smoke_test]
+    timeout: 60
