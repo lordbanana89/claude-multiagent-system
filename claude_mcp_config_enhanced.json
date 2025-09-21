@@ -1,0 +1,43 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "node",
+      "args": [
+        "/Users/erik/Desktop/claude-multiagent-system/mcp-servers-official/src/filesystem/dist/index.js"
+      ],
+      "env": {
+        "ALLOWED_DIRECTORIES": "/Users/erik/Desktop/claude-multiagent-system"
+      }
+    },
+    "git": {
+      "command": "mcp-server-git",
+      "args": [],
+      "env": {
+        "REPO_PATH": "/Users/erik/Desktop/claude-multiagent-system"
+      }
+    },
+    "memory": {
+      "command": "node",
+      "args": [
+        "/Users/erik/Desktop/claude-multiagent-system/mcp-servers-official/src/memory/dist/index.js"
+      ],
+      "env": {
+        "DB_PATH": "/Users/erik/Desktop/claude-multiagent-system/data/memory.db"
+      }
+    },
+    "fetch": {
+      "command": "mcp-server-fetch",
+      "args": [],
+      "env": {}
+    },
+    "claude-multiagent": {
+      "command": "python3",
+      "args": [
+        "/Users/erik/Desktop/claude-multiagent-system/mcp_server_v2.py"
+      ],
+      "env": {
+        "PYTHONPATH": "/Users/erik/Desktop/claude-multiagent-system"
+      }
+    }
+  }
+}

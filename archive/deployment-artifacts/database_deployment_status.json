@@ -1,0 +1,13 @@
+{
+  "status": "healthy",
+  "timestamp": "2025-09-19T10:33:43.771597",
+  "snapshot": {
+    "timestamp": "2025-09-19T10:33:43.770859",
+    "integrity": "ok",
+    "tables": 50,
+    "active_sessions": 1,
+    "pending_transactions": 1,
+    "cache_entries": 1,
+    "health_status": "healthy"
+  }
+}

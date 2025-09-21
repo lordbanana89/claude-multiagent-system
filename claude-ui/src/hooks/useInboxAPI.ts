@@ -7,13 +7,11 @@ export const useInboxAPI = () => {
   const reconnectTimeoutRef = useRef<NodeJS.Timeout>();
   const reconnectAttempts = useRef(0);
 
-  const {
-    addMessage,
-    markAsRead,
-    markAsUnread,
-    archiveMessage,
-    clearAllMessages,
-  } = useInboxStore();
+  const addMessage = useInboxStore((state) => state.addMessage);
+  const markAsRead = useInboxStore((state) => state.markAsRead);
+  const markAsUnread = useInboxStore((state) => state.markAsUnread);
+  const archiveMessage = useInboxStore((state) => state.archiveMessage);
+  const clearAllMessages = useInboxStore((state) => state.clearAllMessages);
 
   // Fetch messages from API
   const fetchMessages = async () => {

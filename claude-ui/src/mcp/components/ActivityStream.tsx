@@ -145,7 +145,7 @@ const ActivityStream: React.FC<ActivityStreamProps> = ({
                       <span className="text-sm font-semibold text-gray-200">
                         {activity.agent}
                       </span>
-                      <span className={`ml-2 text-xs ${getCategoryColor(activity.category || activity.type)}`}>
+                      <span className={`ml-2 text-xs ${getCategoryColor((activity.category || activity.type) ?? '')}`}>
                         [{activity.category || activity.type || 'info'}]
                       </span>
                     </div>

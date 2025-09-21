@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { config } from '../../config';
 import { useInboxAPI } from '../../hooks/useInboxAPI';
+import integrationService from '../../services/integration';
 
 const API_URL = config.INBOX_API_URL;
 
@@ -31,7 +32,7 @@ const InboxSystem: React.FC = () => {
   const [selectedAgent, setSelectedAgent] = useState<string>('all');
   const [composeOpen, setComposeOpen] = useState(false);
   const queryClient = useQueryClient();
-  const { sendAction, convertToMCPTask, refreshMessages } = useInboxAPI();
+  const { sendAction } = useInboxAPI();
 
   // Fetch messages
   const { data: messages = [], isLoading: messagesLoading } = useQuery<Message[]>({
@@ -45,9 +46,10 @@ const InboxSystem: React.FC = () => {
 
         const response = await axios.get(`${API_URL}/api/inbox/messages`, { params });
         return response.data;
-      } catch {
-        // Return mock data if API fails
-        return generateMockMessages();
+      } catch (error) {
+        console.error('Failed to fetch messages:', error);
+        // Return empty array instead of mock data
+        return [];
       }
     },
     refetchInterval: 5000,
@@ -254,7 +256,46 @@ const InboxSystem: React.FC = () => {
                   >
                     📁 Archive
                   </button>
-                  <button className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
+                  {selectedMessage.type === 'task' && (
+                    <button
+                      onClick={async () => {
+                        // Execute task through integration service
+                        const result = await integrationService.executeTask(
+                          selectedMessage.to,
+                          {
+                            title: selectedMessage.subject,
+                            command: selectedMessage.content,
+                            priority: selectedMessage.priority,
+                            metadata: selectedMessage.metadata
+                          }
+                        );
+                        if (result) {
+                          alert(`Task executed! ID: ${result.task_id}`);
+                          // Mark as read
+                          markAsReadMutation.mutate(selectedMessage.id);
+                        }
+                      }}
+                      className="px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700"
+                    >
+                      ▶️ Execute
+                    </button>
+                  )}
+                  <button
+                    onClick={async () => {
+                      // Reply through integration
+                      const reply = prompt('Enter your reply:');
+                      if (reply) {
+                        await integrationService.routeMessage({
+                          sender: selectedMessage.to,
+                          recipient: selectedMessage.from,
+                          content: `RE: ${selectedMessage.subject}\n\n${reply}`,
+                          priority: 'normal'
+                        });
+                        alert('Reply sent!');
+                      }
+                    }}
+                    className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+                  >
                     ↩️ Reply
                   </button>
                 </div>
@@ -330,8 +371,20 @@ const ComposeModal: React.FC<{
     type: 'task',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Send through integration service for real routing
+    if (message.to && message.content) {
+      await integrationService.routeMessage({
+        sender: 'UI',
+        recipient: message.to,
+        content: `${message.subject}\n\n${message.content}`,
+        priority: message.priority
+      });
+    }
+
+    // Also save to database
     onSend({
       ...message,
       from: 'UI',
@@ -458,70 +511,6 @@ const ComposeModal: React.FC<{
   );
 };
 
-// Generate mock messages for testing
-const generateMockMessages = (): Message[] => {
-  return [
-    {
-      id: '1',
-      from: 'Supervisor',
-      to: 'Backend API',
-      subject: 'Implement Authentication Endpoints',
-      content: 'Please implement the following authentication endpoints:\n- POST /api/auth/login\n- POST /api/auth/logout\n- POST /api/auth/refresh\n\nUse JWT tokens and ensure proper security measures are in place.',
-      priority: 'high',
-      status: 'unread',
-      timestamp: new Date(Date.now() - 3600000).toISOString(),
-      type: 'task',
-      metadata: { deadline: '2025-09-20', assignee: 'backend-api' }
-    },
-    {
-      id: '2',
-      from: 'Testing Agent',
-      to: 'Frontend UI',
-      subject: 'Test Results: Component Tests Failed',
-      content: '3 component tests failed in the latest test run:\n- UserProfile.test.tsx\n- Navigation.test.tsx\n- DataTable.test.tsx\n\nPlease review and fix the failing tests.',
-      priority: 'urgent',
-      status: 'unread',
-      timestamp: new Date(Date.now() - 7200000).toISOString(),
-      type: 'error',
-      metadata: { testRun: 'TR-2025-001', failedTests: 3 }
-    },
-    {
-      id: '3',
-      from: 'Database Agent',
-      to: 'Supervisor',
-      subject: 'Database Migration Completed',
-      content: 'Successfully completed database migration v2.1.0.\n\nChanges applied:\n- Added user_preferences table\n- Updated indexes on products table\n- Added foreign key constraints',
-      priority: 'normal',
-      status: 'read',
-      timestamp: new Date(Date.now() - 10800000).toISOString(),
-      type: 'success',
-      metadata: { version: '2.1.0', duration: '45s' }
-    },
-    {
-      id: '4',
-      from: 'Master Agent',
-      to: 'All Agents',
-      subject: 'System Maintenance Scheduled',
-      content: 'System maintenance is scheduled for this weekend.\n\nDate: September 21, 2025\nTime: 2:00 AM - 6:00 AM EST\n\nAll services will be temporarily unavailable during this window.',
-      priority: 'high',
-      status: 'read',
-      timestamp: new Date(Date.now() - 86400000).toISOString(),
-      type: 'notification',
-      metadata: { broadcast: true, maintenanceWindow: '4 hours' }
-    },
-    {
-      id: '5',
-      from: 'Queue Manager',
-      to: 'Supervisor',
-      subject: 'Queue Processing Alert',
-      content: 'Queue backlog detected. Current queue size: 1,234 messages.\n\nAverage processing time has increased to 3.5 seconds per message.',
-      priority: 'high',
-      status: 'unread',
-      timestamp: new Date(Date.now() - 1800000).toISOString(),
-      type: 'notification',
-      metadata: { queueSize: 1234, avgProcessingTime: 3.5 }
-    }
-  ];
-};
+// All mock data removed - using real data from API
 
 export default InboxSystem;

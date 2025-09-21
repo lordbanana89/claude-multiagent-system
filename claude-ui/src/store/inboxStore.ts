@@ -161,4 +161,5 @@ const useInboxStore = create<InboxState>()(
   )
 );
 
+export { useInboxStore };
 export default useInboxStore;

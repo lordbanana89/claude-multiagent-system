@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { config } from '../../config';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = config.API_URL;
 
 interface QueueStats {
   queued: number;
@@ -34,15 +35,16 @@ const SystemMonitor: React.FC = () => {
       try {
         const response = await axios.get(`${API_URL}/api/queue/stats`);
         return response.data;
-      } catch {
-        // Return mock data if API fails
+      } catch (error) {
+        console.error('Failed to fetch queue stats:', error);
+        // Return empty stats instead of mock data
         return {
-          queued: Math.floor(Math.random() * 100),
-          processing: Math.floor(Math.random() * 10),
-          completed: Math.floor(Math.random() * 1000),
-          failed: Math.floor(Math.random() * 50),
-          totalMessages: Math.floor(Math.random() * 2000),
-          avgProcessingTime: Math.random() * 5,
+          queued: 0,
+          processing: 0,
+          completed: 0,
+          failed: 0,
+          totalMessages: 0,
+          avgProcessingTime: 0,
         };
       }
     },
@@ -56,37 +58,42 @@ const SystemMonitor: React.FC = () => {
       try {
         const response = await axios.get(`${API_URL}/api/system/health`);
         return response.data;
-      } catch {
-        // Return mock data if API fails
+      } catch (error) {
+        console.error('Failed to fetch system health:', error);
+        // Return empty health data instead of mock data
         return {
-          status: 'healthy',
-          uptime: 86400,
-          cpu_usage: Math.random() * 100,
-          memory_usage: Math.random() * 100,
-          redis_connected: true,
-          agents_online: 7,
-          agents_total: 9,
+          status: 'unknown',
+          uptime: 0,
+          cpu_usage: 0,
+          memory_usage: 0,
+          redis_connected: false,
+          agents_online: 0,
+          agents_total: 0,
         };
       }
     },
     refetchInterval: autoRefresh ? 5000 : false,
   });
 
-  // Generate mock time series data for charts
-  const generateTimeSeriesData = () => {
-    const now = Date.now();
-    const dataPoints = 20;
-    const interval = 60000; // 1 minute
+  // Fetch real performance data
+  const { data: performanceData } = useQuery<{timestamp: number, value: number}[]>({
+    queryKey: ['performanceData', selectedTimeRange],
+    queryFn: async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/analytics/performance`, {
+          params: { timeRange: selectedTimeRange }
+        });
+        return response.data.performance || [];
+      } catch {
+        return [];
+      }
+    },
+    refetchInterval: autoRefresh ? 10000 : false,
+  });
 
-    return Array.from({ length: dataPoints }, (_, i) => ({
-      timestamp: now - (dataPoints - i - 1) * interval,
-      value: Math.random() * 100,
-    }));
-  };
-
-  const [cpuData] = useState(generateTimeSeriesData());
-  const [memoryData] = useState(generateTimeSeriesData());
-  const [queueData] = useState(generateTimeSeriesData());
+  const cpuData = performanceData?.map(d => ({ timestamp: d.timestamp, value: (d as any).cpu || 0 })) || [];
+  const memoryData = performanceData?.map(d => ({ timestamp: d.timestamp, value: (d as any).memory || 0 })) || [];
+  const queueData = performanceData?.map(d => ({ timestamp: d.timestamp, value: (d as any).queueSize || 0 })) || [];
 
   const formatUptime = (seconds: number) => {
     const days = Math.floor(seconds / 86400);
@@ -224,17 +231,7 @@ const SystemMonitor: React.FC = () => {
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
           Recent System Events
         </h3>
-        <div className="space-y-2">
-          {[
-            { level: 'info', message: 'System health check completed', timestamp: new Date() },
-            { level: 'warning', message: 'High memory usage detected', timestamp: new Date(Date.now() - 60000) },
-            { level: 'success', message: 'Agent supervisor task completed', timestamp: new Date(Date.now() - 120000) },
-            { level: 'error', message: 'Failed to connect to agent testing', timestamp: new Date(Date.now() - 180000) },
-            { level: 'info', message: 'Queue worker restarted', timestamp: new Date(Date.now() - 240000) },
-          ].map((log, index) => (
-            <LogEntry key={index} {...log} />
-          ))}
-        </div>
+        <SystemLogs autoRefresh={autoRefresh} />
       </div>
     </div>
   );
@@ -349,6 +346,51 @@ const SimpleLineChart: React.FC<{
         />
       ))}
     </svg>
+  );
+};
+
+// System Logs Component - fetches real logs from database
+const SystemLogs: React.FC<{ autoRefresh: boolean }> = ({ autoRefresh }) => {
+  const { data: logs } = useQuery<Array<{
+    level: string;
+    message: string;
+    timestamp: string;
+  }>>({
+    queryKey: ['systemLogs'],
+    queryFn: async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/system/logs`, {
+          params: { limit: 5 }
+        });
+        return response.data;
+      } catch (error) {
+        console.error('Failed to fetch system logs:', error);
+        // Return empty array instead of mock data
+        return [];
+      }
+    },
+    refetchInterval: autoRefresh ? 5000 : false,
+  });
+
+  if (!logs || logs.length === 0) {
+    return (
+      <div className="text-gray-500 dark:text-gray-400 text-sm">
+        No recent events
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      {logs.map((log, index) => (
+        <LogEntry
+          key={index}
+          level={log.level}
+          message={log.message}
+          timestamp={new Date(log.timestamp)}
+        />
+      ))}
+    </div>
   );
 };
 

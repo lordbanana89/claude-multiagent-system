@@ -19,12 +19,65 @@ import sys
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Import existing components
-from core.claude_orchestrator import ClaudeNativeOrchestrator
-from core.tmux_client import TMUXClient
-from task_queue.client import QueueClient
-from monitoring.health import check_system_health
-from config.settings import AGENT_SESSIONS
+# Import existing components with error handling
+try:
+    from core.claude_orchestrator import ClaudeNativeOrchestrator
+    orchestrator = ClaudeNativeOrchestrator()
+except ImportError:
+    print("Warning: ClaudeNativeOrchestrator not available")
+    orchestrator = None
+
+try:
+    from core.tmux_client import TMUXClient
+    tmux_client = TMUXClient()
+except ImportError:
+    print("Warning: TMUXClient not available")
+    class TMUXClient:
+        def check_session(self, name):
+            return False
+        def capture_pane(self, name, lines=50):
+            return ""
+        def send_keys(self, session, command):
+            return False
+        def get_output(self, session):
+            return ""
+    tmux_client = TMUXClient()
+
+try:
+    from task_queue.client import QueueClient
+    queue_client = QueueClient()
+except ImportError:
+    print("Warning: QueueClient not available")
+    class QueueClient:
+        def send_task(self, task):
+            import time
+            return f"task_{int(time.time())}"
+        def get_stats(self):
+            return {}
+    queue_client = QueueClient()
+
+try:
+    from monitoring.health import check_system_health
+except ImportError:
+    print("Warning: check_system_health not available")
+    def check_system_health():
+        return {"status": "healthy"}
+
+try:
+    from config.settings import AGENT_SESSIONS
+except ImportError:
+    print("Warning: AGENT_SESSIONS not available")
+    AGENT_SESSIONS = {
+        'supervisor': 'claude-supervisor',
+        'master': 'claude-master',
+        'backend-api': 'claude-backend-api',
+        'database': 'claude-database',
+        'frontend-ui': 'claude-frontend-ui',
+        'testing': 'claude-testing',
+        'instagram': 'claude-instagram',
+        'queue-manager': 'claude-queue-manager',
+        'deployment': 'claude-deployment'
+    }
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -49,10 +102,7 @@ sio = socketio.AsyncServer(
 )
 socket_app = socketio.ASGIApp(sio, app)
 
-# Initialize core components
-orchestrator = ClaudeNativeOrchestrator()
-tmux_client = TMUXClient()
-queue_client = QueueClient()
+# Core components initialized above with import handling
 
 # WebSocket connection manager
 class ConnectionManager:
@@ -116,37 +166,83 @@ class TaskRequest(BaseModel):
 async def root():
     return {"message": "Claude Multi-Agent API Gateway", "status": "online"}
 
+@app.get("/health")
+async def health():
+    """Health check endpoint"""
+    return {"status": "healthy", "service": "fastapi_gateway"}
+
 # Agent Operations
 @app.get("/api/agents")
 async def get_agents():
-    """List all available agents with their current status"""
-    agents = []
-    agent_configs = {
-        'supervisor': {'name': 'Supervisor Agent', 'type': 'coordinator'},
-        'master': {'name': 'Master Agent', 'type': 'strategic'},
-        'backend-api': {'name': 'Backend API Agent', 'type': 'development'},
-        'database': {'name': 'Database Agent', 'type': 'database'},
-        'frontend-ui': {'name': 'Frontend UI Agent', 'type': 'ui'},
-        'testing': {'name': 'Testing Agent', 'type': 'qa'},
-        'instagram': {'name': 'Instagram Agent', 'type': 'social'},
-        'queue-manager': {'name': 'Queue Manager Agent', 'type': 'infrastructure'},
-        'deployment': {'name': 'Deployment Agent', 'type': 'devops'}
-    }
+    """List all available agents with their current status from database"""
+    import sqlite3
 
-    for agent_id, config in agent_configs.items():
-        session_name = f"claude-{agent_id}"
-        status = tmux_client.check_session(session_name) if hasattr(tmux_client, 'check_session') else False
+    try:
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
 
-        agents.append({
-            "id": agent_id,
-            "name": config['name'],
-            "type": config['type'],
-            "status": "online" if status else "offline",
-            "sessionId": session_name,
-            "lastActivity": datetime.now().isoformat()
-        })
+        # Get agents from database
+        cursor.execute('''
+        SELECT a.agent, a.status, a.last_seen, a.current_task,
+               COUNT(act.id) as activity_count
+        FROM agent_states a
+        LEFT JOIN activities act ON act.agent = a.agent
+        GROUP BY a.agent
+        ''')
 
-    return agents
+        agents = []
+        for row in cursor.fetchall():
+            agent_id, status, last_seen, current_task, activity_count = row
+
+            # Determine agent type and name based on ID
+            agent_types = {
+                'supervisor': ('Supervisor Agent', 'coordinator'),
+                'master': ('Master Agent', 'strategic'),
+                'backend-api': ('Backend API Agent', 'development'),
+                'database': ('Database Agent', 'database'),
+                'frontend-ui': ('Frontend UI Agent', 'ui'),
+                'testing': ('Testing Agent', 'qa'),
+                'instagram': ('Instagram Agent', 'social'),
+                'queue-manager': ('Queue Manager Agent', 'infrastructure'),
+                'deployment': ('Deployment Agent', 'devops')
+            }
+
+            if agent_id in agent_types:
+                name, agent_type = agent_types[agent_id]
+            else:
+                name = f"{agent_id.replace('-', ' ').title()} Agent"
+                agent_type = 'unknown'
+
+            # Check tmux session status
+            session_name = f"claude-{agent_id}"
+            tmux_status = tmux_client.check_session(session_name) if hasattr(tmux_client, 'check_session') else False
+
+            # Determine final status
+            if tmux_status:
+                final_status = "online"
+            elif status == "active":
+                final_status = "active"
+            else:
+                final_status = "offline"
+
+            agents.append({
+                "id": agent_id,
+                "name": name,
+                "type": agent_type,
+                "status": final_status,
+                "sessionId": session_name,
+                "lastActivity": last_seen or datetime.now().isoformat(),
+                "currentTask": current_task,
+                "activityCount": activity_count
+            })
+
+        conn.close()
+        return agents
+    except Exception as e:
+        print(f"Error getting agents: {e}")
+        return []
 
 @app.get("/api/agents/{agent_id}")
 async def get_agent(agent_id: str):
@@ -165,13 +261,15 @@ async def get_agent(agent_id: str):
         "sessionId": session_name,
         "status": "online",
         "recentOutput": output,
-        "capabilities": orchestrator.get_agent_capabilities(agent_id)
+        "capabilities": orchestrator.get_agent_capabilities(agent_id) if orchestrator and hasattr(orchestrator, 'get_agent_capabilities') else []
     }
 
 @app.post("/api/agents/{agent_id}/command")
 async def send_command(agent_id: str, command: AgentCommand):
     """Send a command to a specific agent"""
     try:
+        if not orchestrator or not hasattr(orchestrator, 'send_task_to_claude'):
+            raise HTTPException(status_code=503, detail="Orchestrator not available")
         result = orchestrator.send_task_to_claude(
             agent_id,
             command.command,
@@ -293,8 +391,58 @@ async def add_task(task: Dict[str, Any]):
 @app.get("/api/queue/tasks")
 async def get_tasks():
     """List queued tasks"""
-    # TODO: Implement task listing
-    return []
+    import sqlite3
+    try:
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT t.id, t.title, t.component as name, t.status, t.priority,
+                   t.created_at, t.started_at, t.completed_at,
+                   t.assigned_to as actor, t.metadata
+            FROM tasks t
+            ORDER BY
+                CASE t.priority
+                    WHEN 'critical' THEN 1
+                    WHEN 'high' THEN 2
+                    WHEN 'normal' THEN 3
+                    WHEN 'low' THEN 4
+                    ELSE 5
+                END,
+                t.created_at DESC
+        ''')
+
+        tasks = []
+        for row in cursor.fetchall():
+            task_data = {
+                'id': row[0],
+                'name': row[1] or row[2] or 'Unnamed task',
+                'status': row[3] or 'pending',
+                'priority': row[4] or 'normal',
+                'created_at': row[5],
+                'started_at': row[6],
+                'completed_at': row[7],
+                'actor': row[8] or 'unassigned',
+                'retries': 0
+            }
+
+            # Add metadata if exists
+            if row[9]:
+                try:
+                    import json
+                    metadata = json.loads(row[9])
+                    task_data['retries'] = metadata.get('retries', 0)
+                except:
+                    pass
+
+            tasks.append(task_data)
+
+        conn.close()
+        return tasks
+    except Exception as e:
+        # Return empty list on error
+        return []
 
 # System Operations
 @app.get("/api/system/health")
@@ -354,7 +502,10 @@ async def handle_agent_command(sid, data):
 
     if agent_id and command:
         try:
-            result = orchestrator.send_task_to_claude(agent_id, command)
+            if orchestrator and hasattr(orchestrator, 'send_task_to_claude'):
+                result = orchestrator.send_task_to_claude(agent_id, command)
+            else:
+                result = None
             await sio.emit('agent:response', {
                 'agentId': agent_id,
                 'command': command,
@@ -372,18 +523,78 @@ async def handle_workflow_execute(sid, data):
     workflow_id = data.get('workflowId')
 
     if workflow_id:
-        # Simulate workflow execution
+        import sqlite3
+        import json
+
+        # Start workflow execution
         await sio.emit('workflow:started', {'workflowId': workflow_id}, to=sid)
 
-        # Simulate progress updates
-        for i in range(1, 101, 20):
-            await asyncio.sleep(1)
-            await sio.emit('workflow:progress', {
+        try:
+            # Create task in database for workflow
+            # Use parent directory's database
+            db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+            conn = sqlite3.connect(db_path)
+            cursor = conn.cursor()
+
+            # Get workflow details
+            workflow = workflows_storage.get(workflow_id, {})
+
+            # Insert workflow task
+            cursor.execute('''
+                INSERT INTO tasks (title, component, status, priority, created_at, metadata)
+                VALUES (?, ?, 'processing', 'normal', datetime('now'), ?)
+            ''', (
+                f"Workflow: {workflow.get('name', workflow_id)}",
+                'workflow',
+                json.dumps({
+                    'workflow_id': workflow_id,
+                    'nodes': len(workflow.get('nodes', [])),
+                    'edges': len(workflow.get('edges', []))
+                })
+            ))
+            task_id = cursor.lastrowid
+
+            # Process workflow nodes
+            nodes = workflow.get('nodes', [])
+            total_nodes = len(nodes)
+
+            for idx, node in enumerate(nodes):
+                progress = int((idx + 1) / total_nodes * 100)
+
+                # Update progress
+                await sio.emit('workflow:progress', {
+                    'workflowId': workflow_id,
+                    'progress': progress,
+                    'currentNode': node.get('id')
+                }, to=sid)
+
+                # Log activity for node execution
+                cursor.execute('''
+                    INSERT INTO activities (agent, timestamp, activity, category, status)
+                    VALUES ('workflow', datetime('now'), ?, 'workflow', 'processing')
+                ''', (f"Executing node: {node.get('id')}",))
+
+                await asyncio.sleep(0.5)  # Process time per node
+
+            # Update task to completed
+            cursor.execute('''
+                UPDATE tasks SET status = 'completed', completed_at = datetime('now')
+                WHERE id = ?
+            ''', (task_id,))
+
+            conn.commit()
+            conn.close()
+
+            await sio.emit('workflow:completed', {
                 'workflowId': workflow_id,
-                'progress': i
+                'taskId': task_id
             }, to=sid)
 
-        await sio.emit('workflow:completed', {'workflowId': workflow_id}, to=sid)
+        except Exception as e:
+            await sio.emit('workflow:error', {
+                'workflowId': workflow_id,
+                'error': str(e)
+            }, to=sid)
 
 # Background task for monitoring
 async def monitor_agents():
@@ -398,71 +609,199 @@ async def monitor_agents():
             })
         await asyncio.sleep(5)  # Check every 5 seconds
 
-# Inbox message storage (in-memory for now)
-inbox_messages = []
-message_counter = 0
-
-# Inbox endpoints
+# Inbox endpoints - Using real database
 @app.get("/api/inbox/messages")
 async def get_inbox_messages(
     status: Optional[str] = None,
     priority: Optional[str] = None,
     agent: Optional[str] = None
 ):
-    """Get inbox messages with optional filters"""
-    filtered = inbox_messages.copy()
+    """Get inbox messages from database with optional filters"""
+    import sqlite3
+    import json
 
-    if status:
-        filtered = [m for m in filtered if m.get('status') == status]
+    try:
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
 
-    if priority:
-        priorities = priority.split(',')
-        filtered = [m for m in filtered if m.get('priority') in priorities]
+        # Build query with filters
+        query = '''
+        SELECT id, sender, recipient, message, timestamp, is_read, metadata
+        FROM messages
+        WHERE 1=1
+        '''
+        params = []
 
-    if agent:
-        filtered = [m for m in filtered if m.get('from') == agent or m.get('to') == agent]
+        if agent:
+            query += " AND (sender = ? OR recipient = ?)"
+            params.extend([agent, agent])
 
-    return filtered
+        query += " ORDER BY timestamp DESC LIMIT 100"
+
+        cursor.execute(query, params)
+
+        messages = []
+        for row in cursor.fetchall():
+            metadata = json.loads(row[6]) if row[6] else {}
+
+            # Apply status and priority filters from metadata
+            msg_status = 'read' if row[5] else 'unread'
+            msg_priority = metadata.get('priority', 'normal')
+
+            if status and msg_status != status:
+                continue
+            if priority and msg_priority not in priority.split(','):
+                continue
+
+            messages.append({
+                'id': str(row[0]),
+                'from': row[1],
+                'to': row[2],
+                'subject': metadata.get('subject', row[3][:50]),
+                'content': row[3],
+                'timestamp': row[4],
+                'status': msg_status,
+                'priority': msg_priority,
+                'type': metadata.get('type', 'message'),
+                'metadata': metadata
+            })
+
+        conn.close()
+        return messages
+    except Exception as e:
+        print(f"Error getting inbox messages: {e}")
+        return []
 
 @app.post("/api/inbox/messages")
 async def create_inbox_message(message: Dict[str, Any]):
-    """Create a new inbox message"""
-    global message_counter
-    message_counter += 1
+    """Create a new inbox message in database"""
+    import sqlite3
+    import json
 
-    new_message = {
-        **message,
-        'id': str(message_counter),
-        'timestamp': datetime.utcnow().isoformat(),
-        'status': message.get('status', 'unread')
-    }
+    try:
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
 
-    inbox_messages.append(new_message)
+        # Extract metadata
+        metadata = {
+            'subject': message.get('subject', ''),
+            'priority': message.get('priority', 'normal'),
+            'type': message.get('type', 'message'),
+            **message.get('metadata', {})
+        }
 
-    # Emit socket.io event for real-time update
-    await sio.emit('inbox:new_message', new_message)
+        # Insert into database
+        cursor.execute('''
+            INSERT INTO messages (sender, recipient, message, timestamp, is_read, metadata)
+            VALUES (?, ?, ?, datetime('now'), 0, ?)
+        ''', (
+            message.get('from', 'system'),
+            message.get('to', 'all'),
+            message.get('content', message.get('message', '')),
+            json.dumps(metadata)
+        ))
 
-    return new_message
+        message_id = cursor.lastrowid
+        conn.commit()
+
+        # Get the created message
+        cursor.execute('''
+            SELECT id, sender, recipient, message, timestamp, is_read, metadata
+            FROM messages WHERE id = ?
+        ''', (message_id,))
+
+        row = cursor.fetchone()
+        conn.close()
+
+        new_message = {
+            'id': str(row[0]),
+            'from': row[1],
+            'to': row[2],
+            'subject': metadata.get('subject'),
+            'content': row[3],
+            'timestamp': row[4],
+            'status': 'unread',
+            'priority': metadata.get('priority'),
+            'type': metadata.get('type'),
+            'metadata': metadata
+        }
+
+        # Emit socket.io event for real-time update
+        await sio.emit('inbox:new_message', new_message)
+
+        return new_message
+    except Exception as e:
+        print(f"Error creating inbox message: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.patch("/api/inbox/messages/{message_id}/read")
 async def mark_message_as_read(message_id: str):
-    """Mark a message as read"""
-    for message in inbox_messages:
-        if message['id'] == message_id:
-            message['status'] = 'read'
-            return {"success": True}
+    """Mark a message as read in database"""
+    import sqlite3
 
-    raise HTTPException(status_code=404, detail="Message not found")
+    try:
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        cursor.execute('''
+            UPDATE messages SET is_read = 1 WHERE id = ?
+        ''', (int(message_id),))
+
+        conn.commit()
+        rows_affected = cursor.rowcount
+        conn.close()
+
+        if rows_affected > 0:
+            return {"success": True}
+        else:
+            raise HTTPException(status_code=404, detail="Message not found")
+    except Exception as e:
+        print(f"Error marking message as read: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.patch("/api/inbox/messages/{message_id}/archive")
 async def archive_message(message_id: str):
-    """Archive a message"""
-    for message in inbox_messages:
-        if message['id'] == message_id:
-            message['status'] = 'archived'
-            return {"success": True}
+    """Archive a message in database"""
+    import sqlite3
+    import json
 
-    raise HTTPException(status_code=404, detail="Message not found")
+    try:
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        # Get current metadata
+        cursor.execute('SELECT metadata FROM messages WHERE id = ?', (int(message_id),))
+        row = cursor.fetchone()
+
+        if not row:
+            conn.close()
+            raise HTTPException(status_code=404, detail="Message not found")
+
+        metadata = json.loads(row[0]) if row[0] else {}
+        metadata['archived'] = True
+
+        # Update with archived status in metadata
+        cursor.execute('''
+            UPDATE messages SET metadata = ? WHERE id = ?
+        ''', (json.dumps(metadata), int(message_id)))
+
+        conn.commit()
+        conn.close()
+
+        return {"success": True}
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"Error archiving message: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 # Terminal management endpoints
 @app.post("/api/agents/{agent_id}/terminal/start")
@@ -581,16 +920,86 @@ async def execute_task(task: dict):
 @app.post("/api/langgraph/execute")
 async def execute_langgraph(request: dict):
     """Execute task via LangGraph"""
+    import sqlite3
+    import json
     try:
         task = request.get("task", "")
-        # Here you would integrate with LangGraph API
-        # For now, return a mock response
+
+        # Create real task in database
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        # Insert task
+        cursor.execute('''
+            INSERT INTO tasks (title, component, status, priority, created_at, metadata)
+            VALUES (?, 'langgraph', 'processing', 'normal', datetime('now'), ?)
+        ''', (
+            task,
+            json.dumps({
+                'type': 'langgraph',
+                'submitted_at': datetime.now().isoformat()
+            })
+        ))
+        task_id = cursor.lastrowid
+
+        # Log activity
+        cursor.execute('''
+            INSERT INTO activities (agent, timestamp, activity, category, status)
+            VALUES ('langgraph', datetime('now'), ?, 'task', 'processing')
+        ''', (f"Executing task: {task}",))
+
+        conn.commit()
+
+        # Check if LangGraph service is available
+        langgraph_available = False
+        try:
+            # Check if langgraph module exists
+            import importlib.util
+            spec = importlib.util.find_spec("langgraph")
+            langgraph_available = spec is not None
+        except:
+            pass
+
+        if langgraph_available:
+            # Execute via actual LangGraph if available
+            try:
+                from langgraph import execute_task
+                result = await execute_task(task)
+
+                # Update task status
+                cursor.execute('''
+                    UPDATE tasks SET status = 'completed', completed_at = datetime('now')
+                    WHERE id = ?
+                ''', (task_id,))
+
+                conn.commit()
+                conn.close()
+
+                return {
+                    "success": True,
+                    "data": {
+                        "task": task,
+                        "taskId": task_id,
+                        "status": "completed",
+                        "result": result,
+                        "message": "Task executed successfully via LangGraph"
+                    }
+                }
+            except ImportError:
+                pass
+
+        conn.close()
+
+        # Return submitted status if LangGraph not available
         return {
             "success": True,
             "data": {
                 "task": task,
+                "taskId": task_id,
                 "status": "submitted",
-                "message": "Task submitted to LangGraph for processing"
+                "message": "Task submitted for processing (LangGraph service pending)"
             }
         }
     except Exception as e:
@@ -627,55 +1036,151 @@ async def get_system_status():
 @app.get("/api/logs")
 async def get_logs(agent: str = None, level: str = None, limit: int = 100):
     """Get system logs"""
+    import sqlite3
+    import json
     try:
-        # Mock logs for now - replace with actual log retrieval
-        logs = []
-        for i in range(10):
-            logs.append({
-                "id": f"log_{i}",
-                "timestamp": datetime.now().isoformat(),
-                "level": "info" if i % 3 == 0 else "warning" if i % 3 == 1 else "error",
-                "agent": agent or "system",
-                "message": f"Sample log message {i}",
-                "details": {}
-            })
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
 
-        # Filter by level if specified
-        if level:
-            logs = [log for log in logs if log["level"] == level]
+        # Build query based on filters
+        query = '''
+            SELECT id, agent, timestamp, activity, category, status, metadata
+            FROM activities
+        '''
+        conditions = []
+        params = []
 
-        # Filter by agent if specified
         if agent:
-            logs = [log for log in logs if log["agent"] == agent]
+            conditions.append("agent = ?")
+            params.append(agent)
 
-        return {"logs": logs[:limit]}
+        if level:
+            # Map level to status/category
+            level_map = {
+                'error': 'failed',
+                'warning': 'warning',
+                'info': 'completed',
+                'debug': 'processing'
+            }
+            if level in level_map:
+                conditions.append("status = ?")
+                params.append(level_map[level])
+
+        if conditions:
+            query += " WHERE " + " AND ".join(conditions)
+
+        query += " ORDER BY timestamp DESC LIMIT ?"
+        params.append(limit)
+
+        cursor.execute(query, params)
+
+        logs = []
+        for row in cursor.fetchall():
+            # Determine log level from status
+            status = row[5]
+            if status == 'failed':
+                log_level = 'error'
+            elif status == 'warning':
+                log_level = 'warning'
+            elif status == 'processing':
+                log_level = 'debug'
+            else:
+                log_level = 'info'
+
+            log_entry = {
+                "id": f"log_{row[0]}",
+                "timestamp": row[2],
+                "level": log_level,
+                "agent": row[1],
+                "message": row[3],
+                "category": row[4],
+                "details": {}
+            }
+
+            # Add metadata as details if exists
+            if row[6]:
+                try:
+                    log_entry["details"] = json.loads(row[6])
+                except:
+                    pass
+
+            logs.append(log_entry)
+
+        conn.close()
+        return {"logs": logs}
+
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        # Fallback to basic logs on error
+        return {"logs": [
+            {
+                "id": "log_error",
+                "timestamp": datetime.now().isoformat(),
+                "level": "error",
+                "agent": "system",
+                "message": f"Error retrieving logs: {str(e)}",
+                "details": {}
+            }
+        ]}
 
 # Messages endpoint (different from inbox)
 @app.get("/api/messages")
 async def get_messages(agent: str = None):
     """Get inter-agent messages"""
+    import sqlite3
+    import json
     try:
-        # Mock messages for now
-        messages = []
-        for i in range(5):
-            messages.append({
-                "id": f"msg_{i}",
-                "timestamp": datetime.now().isoformat(),
-                "from": "supervisor",
-                "to": agent or "backend-api",
-                "type": "task",
-                "status": "delivered",
-                "subject": f"Task assignment {i}",
-                "content": f"Please process task {i}",
-                "priority": "normal"
-            })
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
 
+        # Query messages from database
         if agent:
-            messages = [msg for msg in messages if msg["to"] == agent or msg["from"] == agent]
+            cursor.execute('''
+                SELECT id, sender, recipient, message, timestamp, is_read, metadata
+                FROM messages
+                WHERE sender = ? OR recipient = ?
+                ORDER BY timestamp DESC
+                LIMIT 100
+            ''', (agent, agent))
+        else:
+            cursor.execute('''
+                SELECT id, sender, recipient, message, timestamp, is_read, metadata
+                FROM messages
+                ORDER BY timestamp DESC
+                LIMIT 100
+            ''')
 
+        messages = []
+        for row in cursor.fetchall():
+            msg_data = {
+                "id": f"msg_{row[0]}",
+                "timestamp": row[4],
+                "from": row[1],
+                "to": row[2],
+                "type": "message",
+                "status": "read" if row[5] else "delivered",
+                "subject": row[3][:50] if len(row[3]) > 50 else row[3],
+                "content": row[3],
+                "priority": "normal"
+            }
+
+            # Extract priority from metadata if exists
+            if row[6]:
+                try:
+                    metadata = json.loads(row[6])
+                    msg_data["priority"] = metadata.get("priority", "normal")
+                    msg_data["type"] = metadata.get("type", "message")
+                except:
+                    pass
+
+            messages.append(msg_data)
+
+        conn.close()
         return {"messages": messages}
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -683,23 +1188,72 @@ async def get_messages(agent: str = None):
 @app.get("/api/tasks/pending")
 async def get_pending_tasks(agent: str = None):
     """Get pending tasks"""
+    import sqlite3
+    import json
     try:
-        tasks = []
-        for i in range(3):
-            tasks.append({
-                "id": f"task_{i}",
-                "timestamp": datetime.now().isoformat(),
-                "agent": agent or "any",
-                "command": f"execute_task_{i}",
-                "status": "pending",
-                "priority": "normal" if i % 2 == 0 else "high",
-                "params": {}
-            })
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
 
+        # Query pending tasks
         if agent:
-            tasks = [task for task in tasks if task["agent"] == agent or task["agent"] == "any"]
+            cursor.execute('''
+                SELECT id, title, component, assigned_to, priority, created_at, metadata
+                FROM tasks
+                WHERE status IN ('pending', 'queued')
+                AND (assigned_to = ? OR assigned_to IS NULL OR assigned_to = 'any')
+                ORDER BY
+                    CASE priority
+                        WHEN 'critical' THEN 1
+                        WHEN 'high' THEN 2
+                        WHEN 'normal' THEN 3
+                        WHEN 'low' THEN 4
+                        ELSE 5
+                    END,
+                    created_at ASC
+            ''', (agent,))
+        else:
+            cursor.execute('''
+                SELECT id, title, component, assigned_to, priority, created_at, metadata
+                FROM tasks
+                WHERE status IN ('pending', 'queued')
+                ORDER BY
+                    CASE priority
+                        WHEN 'critical' THEN 1
+                        WHEN 'high' THEN 2
+                        WHEN 'normal' THEN 3
+                        WHEN 'low' THEN 4
+                        ELSE 5
+                    END,
+                    created_at ASC
+            ''')
 
+        tasks = []
+        for row in cursor.fetchall():
+            task_data = {
+                "id": f"task_{row[0]}",
+                "timestamp": row[5],
+                "agent": row[3] or "any",
+                "command": row[1] or f"Task #{row[0]}",
+                "status": "pending",
+                "priority": row[4] or "normal",
+                "params": {}
+            }
+
+            # Add params from metadata if exists
+            if row[6]:
+                try:
+                    metadata = json.loads(row[6])
+                    task_data["params"] = metadata.get("params", {})
+                except:
+                    pass
+
+            tasks.append(task_data)
+
+        conn.close()
         return {"tasks": tasks}
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -764,32 +1318,72 @@ async def get_terminal_output(agent_id: str):
 @app.get("/api/queue/tasks")
 async def get_queue_tasks():
     """Get all tasks in the queue"""
+    import sqlite3
+    import json
     try:
-        # This would connect to the actual queue system (Redis/Dramatiq)
-        # For now, return mock data
-        return [
-            {
-                "id": "task-001",
-                "name": "Process data batch",
-                "status": "processing",
-                "priority": 1,
-                "created_at": datetime.now().isoformat(),
-                "started_at": datetime.now().isoformat(),
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        # Get all tasks that are in queue-related statuses
+        cursor.execute('''
+            SELECT t.id, t.title, t.component, t.status, t.priority,
+                   t.created_at, t.started_at, t.completed_at,
+                   t.assigned_to, t.metadata
+            FROM tasks t
+            WHERE t.status IN ('pending', 'queued', 'processing', 'failed')
+            ORDER BY
+                CASE t.status
+                    WHEN 'processing' THEN 1
+                    WHEN 'queued' THEN 2
+                    WHEN 'pending' THEN 3
+                    WHEN 'failed' THEN 4
+                    ELSE 5
+                END,
+                CASE t.priority
+                    WHEN 'critical' THEN 1
+                    WHEN 'high' THEN 2
+                    WHEN 'normal' THEN 3
+                    WHEN 'low' THEN 4
+                    ELSE 5
+                END,
+                t.created_at DESC
+        ''')
+
+        tasks = []
+        for row in cursor.fetchall():
+            # Map priority to numeric value
+            priority_map = {'critical': 0, 'high': 1, 'normal': 2, 'low': 3}
+            numeric_priority = priority_map.get(row[4], 2)
+
+            task_data = {
+                "id": f"task-{row[0]:03d}",
+                "name": row[1] or row[2] or f"Task #{row[0]}",
+                "status": row[3] or 'pending',
+                "priority": numeric_priority,
+                "created_at": row[5],
+                "started_at": row[6],
                 "retries": 0,
-                "actor": "data_processor"
-            },
-            {
-                "id": "task-002",
-                "name": "Generate report",
-                "status": "pending",
-                "priority": 2,
-                "created_at": datetime.now().isoformat(),
-                "retries": 0,
-                "actor": "report_generator"
+                "actor": row[8] or row[2] or 'unassigned'
             }
-        ]
+
+            # Extract retries from metadata if exists
+            if row[9]:
+                try:
+                    metadata = json.loads(row[9])
+                    task_data["retries"] = metadata.get('retries', 0)
+                except:
+                    pass
+
+            tasks.append(task_data)
+
+        conn.close()
+        return tasks
+
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        # Return empty list on error
+        return []
 
 @app.get("/api/queue/status")
 async def get_queue_status():
@@ -810,8 +1404,9 @@ async def get_queue_status():
 @app.get("/api/queue/stats")
 async def get_queue_stats():
     """Get queue statistics"""
+    import sqlite3
     try:
-        # Check if we can get real stats from the queue client
+        # First try to get real stats from queue client
         if hasattr(queue_client, 'get_stats'):
             real_stats = queue_client.get_stats()
             # Transform to expected format
@@ -823,18 +1418,53 @@ async def get_queue_stats():
                 "failed": real_stats.get('failed', 0),
                 "avgProcessingTime": real_stats.get('avgProcessingTime', 0)
             }
-        else:
-            # Return mock data as fallback
-            return {
-                "total": 10,
-                "pending": 3,
-                "processing": 2,
-                "completed": 4,
-                "failed": 1,
-                "avgProcessingTime": 45.2
-            }
+
+        # Get real stats from database
+        # Use parent directory's database
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mcp_system.db')
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        # Count tasks by status
+        cursor.execute('''
+            SELECT
+                COUNT(*) as total,
+                SUM(CASE WHEN status IN ('pending', 'queued') THEN 1 ELSE 0 END) as pending,
+                SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+                SUM(CASE WHEN status = 'completed' THEN 1 ELSE 0 END) as completed,
+                SUM(CASE WHEN status = 'failed' THEN 1 ELSE 0 END) as failed
+            FROM tasks
+        ''')
+
+        row = cursor.fetchone()
+
+        # Calculate average processing time
+        cursor.execute('''
+            SELECT AVG(
+                CAST((julianday(completed_at) - julianday(started_at)) * 86400 AS REAL)
+            ) as avg_time
+            FROM tasks
+            WHERE status = 'completed'
+            AND started_at IS NOT NULL
+            AND completed_at IS NOT NULL
+        ''')
+
+        avg_time_row = cursor.fetchone()
+        avg_processing_time = avg_time_row[0] if avg_time_row and avg_time_row[0] else 0
+
+        conn.close()
+
+        return {
+            "total": row[0] or 0,
+            "pending": row[1] or 0,
+            "processing": row[2] or 0,
+            "completed": row[3] or 0,
+            "failed": row[4] or 0,
+            "avgProcessingTime": round(avg_processing_time, 2)
+        }
+
     except Exception as e:
-        # Return default values on error
+        # Return zeros on error
         return {
             "total": 0,
             "pending": 0,
@@ -946,10 +1576,12 @@ async def shutdown_event():
 
 if __name__ == "__main__":
     import uvicorn
+    import sys
+    port = 8888 if "--port" in sys.argv else 8000
     uvicorn.run(
         "main:socket_app",  # Use socket_app for Socket.IO support
         host="0.0.0.0",
-        port=8000,
+        port=port,
         reload=True,
         log_level="info"
     )

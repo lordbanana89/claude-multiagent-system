@@ -15,7 +15,7 @@ import axios from 'axios';
 import { config } from '../config';
 import { getErrorMessage, logError } from '../utils/error-handler';
 import AgentNode from './nodes/AgentNode';
-import wsManager from '../services/websocket';
+// import wsManager from '../services/websocket';
 
 // Components
 import TerminalPanel from './panels/TerminalPanel';
@@ -29,6 +29,16 @@ import MetricsPanel from './panels/MetricsPanel';
 import WorkflowCanvas from './workflow/WorkflowCanvas';
 import MultiTerminal from './terminal/MultiTerminal';
 import PerformanceChart from './charts/PerformanceChart';
+
+// Types
+interface Log {
+  id: string;
+  timestamp: string;
+  level: string;
+  agent: string;
+  message: string;
+  details?: Record<string, any>;
+}
 
 const API_URL = config.API_URL;
 
@@ -58,21 +68,21 @@ const CompleteDashboard: React.FC = () => {
   // State Management
   const [activeTab, setActiveTab] = useState('workflow');
   const [agents, setAgents] = useState<any[]>([]);
-  const [nodes, onNodesChange, setNodes] = useNodesState([]);
-  const [edges, onEdgesChange, setEdges] = useEdgesState([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [selectedAgent, setSelectedAgent] = useState<any>(null);
   const [systemHealth, setSystemHealth] = useState<any>(null);
   const [tasks, setTasks] = useState<any[]>([]);
-  const [logs, setLogs] = useState<string[]>([]);
-  const [inboxMessages, setInboxMessages] = useState<any[]>([]);
+  const [logs] = useState<Log[]>([]);
+  const [inboxMessages] = useState<any[]>([]);
   const [queueStatus, setQueueStatus] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   // Fetch all system data
   const fetchSystemData = async () => {
     try {
-      setLoading(true);
+      // setLoading(true);
 
       // Fetch agents
       const [agentsRes, healthRes, tasksRes, queueRes] = await Promise.all([
@@ -96,7 +106,7 @@ const CompleteDashboard: React.FC = () => {
       logError('fetchSystemData', err);
       setError(errorMsg);
     } finally {
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
@@ -177,14 +187,15 @@ const CompleteDashboard: React.FC = () => {
   }, [setEdges]);
 
   // Handle node click
-  const onNodeClick = useCallback((event: React.MouseEvent, node: Node) => {
+  const onNodeClick = useCallback((_event: React.MouseEvent, node: Node) => {
     const agent = agents.find(a => a.id === node.id);
     setSelectedAgent(agent);
   }, [agents]);
 
-  // WebSocket message handler
+  // WebSocket message handler - placeholder for future implementation
   useEffect(() => {
-    const handleWsMessage = (message: any) => {
+    // Will be implemented when WebSocket server is ready
+    /*const handleWsMessage = (message: any) => {
       switch (message.type) {
         case 'agent_update':
           setAgents(prev => prev.map(a =>
@@ -201,12 +212,12 @@ const CompleteDashboard: React.FC = () => {
           setInboxMessages(prev => [...prev, message.data]);
           break;
       }
-    };
+    };*/
 
-    // Subscribe to WebSocket events
-    if (wsManager) {
-      // wsManager.on('message', handleWsMessage);
-    }
+    // Subscribe to WebSocket events (commented for future implementation)
+    // if (wsManager) {
+    //   wsManager.on('message', handleWsMessage);
+    // }
 
     return () => {
       // Cleanup

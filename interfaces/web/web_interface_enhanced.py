@@ -433,21 +433,50 @@ class EnhancedMultiAgentInterface:
         """Render performance analytics charts"""
         st.markdown("### 📈 Performance Analytics")
 
-        # Generate sample data for demonstration
-        dates = pd.date_range(start='2025-01-01', periods=30, freq='D')
-        agents = list(self.claude_agents.keys())[:5]  # Top 5 for chart clarity
+        # Get real data from database
+        conn = sqlite3.connect('mcp_system.db')
+        cursor = conn.cursor()
+
+        # Get task completion data from last 30 days
+        cursor.execute('''
+            SELECT DATE(timestamp) as date, agent, COUNT(*) as task_count
+            FROM activities
+            WHERE type = 'task'
+            AND timestamp >= datetime('now', '-30 days')
+            GROUP BY DATE(timestamp), agent
+            ORDER BY date, agent
+        ''')
+        task_data = cursor.fetchall()
+
+        # Get agent list
+        cursor.execute('SELECT DISTINCT agent FROM agent_states')
+        agents = [row[0] for row in cursor.fetchall()][:5]  # Top 5 for chart clarity
+
+        # Organize data by agent
+        task_by_agent = {}
+        for date, agent, count in task_data:
+            if agent not in task_by_agent:
+                task_by_agent[agent] = []
+            task_by_agent[agent].append((date, count))
 
         # Task completion over time
         fig_tasks = go.Figure()
         for agent in agents:
-            task_counts = [10 + int(5 * (i + hash(agent)) % 7) for i in range(30)]
-            fig_tasks.add_trace(go.Scatter(
-                x=dates,
-                y=task_counts,
-                mode='lines+markers',
-                name=self.claude_agents[agent]["name"],
-                line=dict(color=self.claude_agents[agent]["color"])
-            ))
+            if agent in task_by_agent:
+                dates = [item[0] for item in task_by_agent[agent]]
+                counts = [item[1] for item in task_by_agent[agent]]
+            else:
+                dates = []
+                counts = []
+
+            if agent in self.claude_agents:
+                fig_tasks.add_trace(go.Scatter(
+                    x=dates,
+                    y=counts,
+                    mode='lines+markers',
+                    name=self.claude_agents[agent]["name"],
+                    line=dict(color=self.claude_agents[agent]["color"])
+                ))
 
         fig_tasks.update_layout(
             title="Task Completion Over Time",
@@ -456,17 +485,44 @@ class EnhancedMultiAgentInterface:
         )
         st.plotly_chart(fig_tasks, use_container_width=True)
 
-        # Response time distribution
-        response_times = [2.1, 3.2, 1.8, 4.1, 2.9, 3.5, 2.2, 1.9, 3.8, 2.7]
-        agent_names = [self.claude_agents[agent]["name"] for agent in agents]
+        # Get real response times from database
+        cursor.execute('''
+            SELECT agent, AVG(
+                CAST(
+                    (julianday(timestamp) - julianday(
+                        LAG(timestamp) OVER (PARTITION BY agent ORDER BY timestamp)
+                    )) * 86400 AS REAL
+                )
+            ) as avg_response_time
+            FROM activities
+            WHERE timestamp >= datetime('now', '-24 hours')
+            GROUP BY agent
+            HAVING avg_response_time IS NOT NULL
+            LIMIT 5
+        ''')
+        response_data = cursor.fetchall()
 
-        fig_response = px.bar(
-            x=agent_names,
-            y=response_times[:5],
-            title="Average Response Time by Agent",
-            labels={'x': 'Agent', 'y': 'Response Time (s)'}
-        )
-        st.plotly_chart(fig_response, use_container_width=True)
+        if response_data:
+            agent_names = [row[0] for row in response_data if row[0] in self.claude_agents]
+            response_times = [row[1] for row in response_data if row[0] in self.claude_agents]
+            agent_display_names = [self.claude_agents[name]["name"] for name in agent_names]
+        else:
+            # No data available yet
+            agent_display_names = []
+            response_times = []
+
+        if agent_display_names and response_times:
+            fig_response = px.bar(
+                x=agent_display_names,
+                y=response_times,
+                title="Average Response Time by Agent",
+                labels={'x': 'Agent', 'y': 'Response Time (s)'}
+            )
+            st.plotly_chart(fig_response, use_container_width=True)
+        else:
+            st.info("No response time data available yet")
+
+        conn.close()
 
 def main():
     """Main application with authentication"""

@@ -1,8 +1,11 @@
 // Configuration file for the application
 export const config = {
-  // API Configuration
-  API_URL: import.meta.env.VITE_API_URL || 'http://localhost:8888',
+  // API Configuration - Updated to use correct ports
+  API_URL: import.meta.env.VITE_API_URL || 'http://localhost:8888',  // FastAPI Gateway
+  API_MAIN_URL: import.meta.env.VITE_API_MAIN_URL || 'http://localhost:5001',  // Main routes_api.py
   WS_URL: import.meta.env.VITE_WS_URL || 'ws://localhost:8888',
+  INBOX_API_URL: import.meta.env.VITE_INBOX_API_URL || 'http://localhost:5001',  // For inbox
+  INBOX_WEBSOCKET_URL: import.meta.env.VITE_INBOX_WS_URL || 'ws://localhost:8888/api/inbox/ws',
 
   // WebSocket settings
   WS_RECONNECT_DELAY: 5000,

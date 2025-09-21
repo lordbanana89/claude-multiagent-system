@@ -1,0 +1,40 @@
+{
+  "name": "claude-multiagent-system",
+  "version": "2.0.0",
+  "description": "Multi-agent orchestration system with MCP servers integration",
+  "private": true,
+  "scripts": {
+    "install-mcp": "bash scripts/install_mcp_servers.sh",
+    "start-mcp": "node scripts/start_mcp_servers.js",
+    "test-mcp": "node scripts/test_mcp_servers.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.1",
+    "axios": "^1.12.2",
+    "express": "^5.1.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "debug_mcp_connection.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordbanana89/claude-multiagent-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lordbanana89/claude-multiagent-system/issues"
+  },
+  "homepage": "https://github.com/lordbanana89/claude-multiagent-system#readme"
+}

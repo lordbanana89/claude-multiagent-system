@@ -1,16 +1,17 @@
 // Application Configuration
 export const config = {
-  // API Configuration
-  API_URL: import.meta.env.VITE_API_URL || 'http://localhost:8000',
-  WS_URL: import.meta.env.VITE_WS_URL || 'ws://localhost:8000/ws',
+  // API Configuration - Updated to correct ports
+  API_URL: import.meta.env.VITE_API_URL || 'http://localhost:8888',  // FastAPI Gateway
+  API_MAIN_URL: import.meta.env.VITE_API_MAIN_URL || 'http://localhost:5001',  // Main routes_api.py
+  WS_URL: import.meta.env.VITE_WS_URL || 'ws://localhost:8888/ws',
 
-  // MCP Configuration
-  MCP_API_URL: import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099',
-  MCP_WEBSOCKET_URL: import.meta.env.VITE_MCP_WS_URL || 'ws://localhost:8089/ws',
+  // MCP Configuration - Using main API
+  MCP_API_URL: import.meta.env.VITE_MCP_API_URL || 'http://localhost:5001',
+  MCP_WEBSOCKET_URL: import.meta.env.VITE_MCP_WS_URL || 'ws://localhost:5001/ws',
 
-  // Inbox Configuration
-  INBOX_API_URL: import.meta.env.VITE_INBOX_API_URL || 'http://localhost:8098',
-  INBOX_WEBSOCKET_URL: import.meta.env.VITE_INBOX_WS_URL || 'ws://localhost:8098/ws',
+  // Inbox Configuration - Using FastAPI Gateway
+  INBOX_API_URL: import.meta.env.VITE_INBOX_API_URL || 'http://localhost:8888',
+  INBOX_WEBSOCKET_URL: import.meta.env.VITE_INBOX_WS_URL || 'ws://localhost:8888/ws',
 
   // Terminal Port Mapping (corrected for actual ttyd services)
   TERMINAL_PORTS: {

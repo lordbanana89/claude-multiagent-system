@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 // Terminal controls removed - using TMUX sessions instead
 import { Database, Activity, CheckCircle, XCircle, RefreshCw, Zap, AlertCircle, Settings, Play, Power } from 'lucide-react';
 import mcpCache from '../../services/mcpCache';
+import integrationService from '../../services/integration';
 import './terminal-fix.css';
 
 interface Agent {
@@ -49,33 +50,33 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
 
   // Terminal port mapping - comprehensive for all agents
   const TERMINAL_PORT_MAP: {[key: string]: number} = {
-    'backend-api': 8090,
-    'backend api agent': 8090,
-    'backend-api-agent': 8090,
-    'database': 8091,
-    'database agent': 8091,
-    'database-agent': 8091,
-    'frontend-ui': 8092,
-    'frontend ui agent': 8092,
-    'frontend-ui-agent': 8092,
-    'testing': 8093,
-    'testing agent': 8093,
-    'testing-agent': 8093,
-    'instagram': 8094,
-    'instagram agent': 8094,
-    'instagram-agent': 8094,
-    'supervisor': 8095,
-    'supervisor agent': 8095,
-    'supervisor-agent': 8095,
-    'master': 8096,
-    'master agent': 8096,
-    'master-agent': 8096,
-    'deployment': 8098,
-    'deployment agent': 8098,
-    'deployment-agent': 8098,
-    'queue-manager': 8097,
-    'queue manager agent': 8097,
-    'queue-manager-agent': 8097
+    'supervisor': 8092,
+    'supervisor agent': 8092,
+    'supervisor-agent': 8092,
+    'master': 8093,
+    'master agent': 8093,
+    'master-agent': 8093,
+    'backend-api': 8094,
+    'backend api agent': 8094,
+    'backend-api-agent': 8094,
+    'database': 8095,
+    'database agent': 8095,
+    'database-agent': 8095,
+    'frontend-ui': 8096,
+    'frontend ui agent': 8096,
+    'frontend-ui-agent': 8096,
+    'testing': 8097,
+    'testing agent': 8097,
+    'testing-agent': 8097,
+    'instagram': 8098,
+    'instagram agent': 8098,
+    'instagram-agent': 8098,
+    'queue-manager': 8099,
+    'queue manager agent': 8099,
+    'queue-manager-agent': 8099,
+    'deployment': 8100,
+    'deployment agent': 8100,
+    'deployment-agent': 8100
   };
 
   // Get terminal port for agent - more flexible matching
@@ -197,8 +198,8 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
                   a.agent.toLowerCase().includes(normalizedName))
     );
 
-    // For now, consider connected if we have the agent state and server is running
-    // Since we're using static mock data from the server
+    // Consider connected if we have the agent state and server is running
+    // Using real data from the server API
     const isConnected = agentState && agentState.connected !== false;
 
     // Determine sync status based on agent state
@@ -218,22 +219,33 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
     };
   };
 
-  // Fetch agent states from MCP
+  // Fetch agent states through integration service
   const fetchAgentStates = useCallback(async () => {
     try {
-      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
-      const response = await fetch(`${mcpApiUrl}/api/mcp/agent-states`);
+      // Get system health from integration service
+      const health = await integrationService.getSystemHealth();
+
+      // Convert health data to agent states
+      const states = Object.entries(health.agents || {}).map(([agent, isActive]) => ({
+        agent,
+        status: isActive ? 'active' : 'inactive',
+        connected: isActive,
+        last_seen: new Date().toISOString()
+      }));
+
+      setAgentStates(states);
+
+      // Also fetch from MCP for additional details
+      const response = await fetch('http://localhost:5001/api/mcp/status');
       if (response.ok) {
-        const states = await response.json();
-        // Convert object to array if needed
-        if (!Array.isArray(states)) {
-          const statesArray = Object.entries(states).map(([key, value]: [string, any]) => ({
-            agent: key,
-            ...value
-          }));
-          setAgentStates(statesArray);
-        } else {
-          setAgentStates(states);
+        const data = await response.json();
+        if (data.agent_states) {
+          // Merge MCP data with integration data
+          const mergedStates = states.map(state => {
+            const mcpState = data.agent_states.find((s: any) => s.agent === state.agent);
+            return mcpState ? { ...state, ...mcpState } : state;
+          });
+          setAgentStates(mergedStates);
         }
       }
     } catch (error) {
@@ -244,8 +256,8 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
   // Fetch activities from MCP
   const fetchActivities = useCallback(async () => {
     try {
-      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
-      const response = await fetch(`${mcpApiUrl}/api/mcp/activities?limit=50`);
+      // Use main API for MCP activities
+      const response = await fetch('http://localhost:5001/api/mcp/activities?limit=50');
       if (response.ok) {
         const data = await response.json();
         setMcpActivities(data.activities || data || []);
@@ -259,11 +271,11 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
   const fetchMCPStatus = useCallback(async () => {
     try {
       setLoading(true);
-      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
+      // Use main API for MCP status
 
       // Use cache service to prevent duplicate requests
       const data = await mcpCache.fetch('mcp-status', async () => {
-        const response = await fetch(`${mcpApiUrl}/api/mcp/status`);
+        const response = await fetch('http://localhost:5001/api/mcp/status');
         if (!response.ok) throw new Error('Failed to fetch status');
         return response.json();
       }, 5000); // 5 second cache
@@ -293,8 +305,8 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
     try {
       console.log(`Setting up MCP for ${agentName}`);
       // Setup MCP environment for the agent
-      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
-      const response = await fetch(`${mcpApiUrl}/api/mcp/setup-agent`, {
+      // Use main API for MCP setup
+      const response = await fetch('http://localhost:5001/api/mcp/setup-agent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -332,8 +344,8 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
   // Start terminal ttyd service manually
   const startTerminalService = async (agentName: string) => {
     try {
-      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
-      const response = await fetch(`${mcpApiUrl}/api/mcp/start-terminal`, {
+      // Use main API for terminal start
+      const response = await fetch('http://localhost:5001/api/mcp/start-terminal', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ agent_name: agentName })
@@ -363,8 +375,8 @@ const MultiTerminal: React.FC<MultiTerminalProps> = ({ agents }) => {
       await setupAgentMCP(agentName);
 
       // Then start the agent
-      const mcpApiUrl = import.meta.env.VITE_MCP_API_URL || 'http://localhost:8099';
-      const response = await fetch(`${mcpApiUrl}/api/mcp/start-agent`, {
+      // Use main API for agent start
+      const response = await fetch('http://localhost:5001/api/mcp/start-agent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ agent_name: agentName })

@@ -13,7 +13,7 @@ import type {
   MCPToolExecution,
   MCPToolResult,
   MCPWebSocketMessage,
-  MCPErrorCode,
+  // MCPErrorCode,
 } from './mcpTypes';
 
 class MCPClient {

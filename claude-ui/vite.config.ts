@@ -7,12 +7,22 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8888',
+        target: 'http://localhost:8888',  // Main API Gateway (FastAPI)
+        changeOrigin: true,
+        secure: false,
+      },
+      '/auth': {
+        target: 'http://localhost:5002',  // Auth API
+        changeOrigin: true,
+        secure: false,
+      },
+      '/health': {
+        target: 'http://localhost:5001',  // Health API
         changeOrigin: true,
         secure: false,
       },
       '/ws': {
-        target: 'ws://localhost:8888',
+        target: 'ws://localhost:8888',    // WebSocket on main API
         ws: true,
         changeOrigin: true,
       },

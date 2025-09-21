@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-09-20T14:54:45.558826",
+  "total_servers": 17,
+  "working_servers": 17,
+  "percentage": 100.0,
+  "categories": {
+    "Core Development": [
+      [
+        "Filesystem",
+        true
+      ],
+      [
+        "Git",
+        true
+      ],
+      [
+        "Memory",
+        true
+      ],
+      [
+        "Fetch",
+        true
+      ]
+    ],
+    "Advanced Reasoning": [
+      [
+        "Sequential Thinking",
+        true
+      ],
+      [
+        "Time",
+        true
+      ],
+      [
+        "Everything",
+        true
+      ]
+    ],
+    "Database & Storage": [
+      [
+        "SQLite",
+        true
+      ],
+      [
+        "PostgreSQL",
+        true
+      ],
+      [
+        "Redis",
+        true
+      ]
+    ],
+    "Browser & UI": [
+      [
+        "Puppeteer",
+        true
+      ],
+      [
+        "Playwright",
+        true
+      ]
+    ],
+    "Design & Visual": [
+      [
+        "Figma",
+        true
+      ]
+    ],
+    "Collaboration & DevOps": [
+      [
+        "GitHub",
+        true
+      ],
+      [
+        "Docker",
+        true
+      ],
+      [
+        "Notion",
+        true
+      ]
+    ],
+    "System Orchestration": [
+      [
+        "Multi-Agent",
+        true
+      ]
+    ]
+  }
+}

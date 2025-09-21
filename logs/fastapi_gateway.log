@@ -1,0 +1,1747 @@
+WARNING:dramatiq.broker.RedisBroker:You're adding a middleware of the same type twice: <dramatiq.middleware.callbacks.Callbacks object at 0x1045a6790>. It may have unexpected results.
+WARNING:dramatiq.broker.RedisBroker:You're adding a middleware of the same type twice: <dramatiq.middleware.pipelines.Pipelines object at 0x103b48710>. It may have unexpected results.
+INFO:task_queue.broker:✅ Dramatiq broker configured with Redis at redis://localhost:6379/0
+INFO:     Started server process [4782]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+API Gateway started successfully
+INFO:     127.0.0.1:51349 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51382 - "GET /api/health HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51605 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51612 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51617 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51622 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51644 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51646 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51648 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51649 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51644 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51648 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51651 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51656 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51674 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51700 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51701 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/queue/status HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51727 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51700 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51705 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51760 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51700 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51705 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51794 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51803 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51813 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51859 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51870 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51875 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51895 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51907 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51940 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51983 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51995 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52035 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52080 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52092 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52126 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52160 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52172 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52205 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52235 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52247 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52282 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52312 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52324 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:51705 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52373 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52380 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52389 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52394 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52405 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52410 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52434 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52437 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52434 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52438 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52444 - "GET /health HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52446 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52434 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52471 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52482 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52500 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52434 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52437 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52542 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52437 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52434 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52566 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52586 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52617 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52641 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52661 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52694 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52714 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52737 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52776 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52798 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52822 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52853 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52873 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52897 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52912 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52917 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52941 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52961 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52992 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53039 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53060 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53114 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53137 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53165 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53199 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53220 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53243 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53277 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53299 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53322 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53376 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53399 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53418 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53445 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53465 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53487 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53543 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53567 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53605 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53627 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53654 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53687 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53707 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53766 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53808 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53841 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53862 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53889 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53905 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53910 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53930 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53952 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53974 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54007 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54027 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54049 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54082 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54104 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54127 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54166 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54197 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54219 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54252 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54278 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54303 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54345 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54365 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54388 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54411 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54417 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54453 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52437 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52434 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54473 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54497 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54540 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54573 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54597 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54628 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54654 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54678 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54712 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54732 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54756 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54785 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52446 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52434 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54811 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54829 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54864 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54888 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54910 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54925 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54930 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54951 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54975 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54994 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55027 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55052 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55069 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55102 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55127 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55144 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55177 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55198 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55221 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55252 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55273 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55298 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55329 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55351 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55375 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55391 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55396 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55416 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55438 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55462 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55497 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55519 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55543 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55577 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55599 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55623 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55657 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55679 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55702 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55737 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55759 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55781 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55816 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55837 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55861 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55877 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55882 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55904 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55924 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55946 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55979 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55999 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56021 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56054 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56074 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56131 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56153 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56177 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56208 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56230 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56287 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56310 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56332 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56343 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56353 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56373 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56395 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56417 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56448 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56470 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56492 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56525 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56547 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56572 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56605 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56626 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56647 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56680 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56701 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56722 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56753 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56777 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56796 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56814 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56819 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56841 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56865 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56885 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56916 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56940 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56960 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56993 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57019 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57037 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57068 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57090 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57114 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57147 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57167 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57191 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57222 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57242 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57266 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57282 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57287 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57307 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57327 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57351 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57382 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:52434 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57404 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57436 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57443 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57448 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57453 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57470 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57471 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57470 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57474 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57475 - "GET /api/queue/status HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57477 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57471 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57470 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57503 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57533 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57535 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57533 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57537 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/status HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57540 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57535 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57537 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57551 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57561 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57570 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57537 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57535 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57633 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57535 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57537 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57668 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57678 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57535 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57537 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57714 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57537 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57535 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57745 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57763 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57537 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57535 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57815 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57537 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57535 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57846 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57856 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57879 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57884 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57537 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57535 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57906 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57535 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57537 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57940 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57954 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57535 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57537 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57984 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57537 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57535 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58080 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58099 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57537 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57535 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58128 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57535 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57537 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58163 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58177 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57535 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:57537 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57540 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58205 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58243 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58271 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58276 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58281 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58291 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58324 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58344 - "GET /api/system/logs?limit=5 HTTP/1.1" 404 Not Found
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:58345 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58346 - "GET /api/queue/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58348 - "GET /api/analytics/performance?timeRange=1h HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58357 - "WebSocket /ws" [accepted]
+INFO:     127.0.0.1:58348 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58346 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:58359 - "WebSocket /ws" [accepted]
+INFO:     127.0.0.1:58348 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     connection open
+INFO:     127.0.0.1:58346 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58373 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58396 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58397 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58412 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58431 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58433 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58450 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58460 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58467 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58481 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58482 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58497 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58520 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58522 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58536 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58560 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58561 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58575 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58561 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58561 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58594 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58607 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58629 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58630 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58646 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58666 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58668 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58682 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58704 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58705 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58714 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58737 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58739 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58750 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58777 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58778 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58788 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58778 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58778 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58813 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58822 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58850 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58851 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58861 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58887 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58889 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58898 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58908 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58913 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58934 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58935 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58944 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58969 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58971 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58980 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59006 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59007 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59016 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59007 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59007 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59041 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59050 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59076 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59077 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59093 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59118 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59120 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59129 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59172 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59173 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59178 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59213 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59215 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59220 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59265 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59266 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59274 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59266 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59266 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59313 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59318 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59355 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59356 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59361 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59391 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59393 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59398 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59407 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59413 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59440 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59441 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59446 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59478 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59480 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59484 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59519 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59520 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59524 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59520 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59520 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59552 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59558 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59591 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59592 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59598 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59638 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59640 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59644 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59677 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59678 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59701 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59729 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59731 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59776 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59777 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59781 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59777 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59777 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59814 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59818 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59858 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59859 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59863 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59902 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59905 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59908 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59918 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59929 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59955 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59958 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59959 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59996 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59998 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60000 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60044 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60048 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60049 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60049 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60078 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60049 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60081 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60126 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60130 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60131 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60172 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60175 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60177 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60218 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60222 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60223 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60256 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60259 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60261 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60304 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60308 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60309 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60309 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60352 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60309 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60356 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60394 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60398 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60399 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60446 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60449 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60451 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60460 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60465 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60515 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60519 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60520 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60565 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60569 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60571 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60615 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60622 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60623 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60623 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60658 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60623 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60670 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60710 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60711 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60752 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60756 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60758 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60794 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60801 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60802 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60834 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60839 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60841 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60877 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60882 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60883 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60883 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60911 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60883 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60917 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60956 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60967 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60968 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60999 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61009 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61011 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61013 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61018 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61049 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61058 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61059 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61094 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61102 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61104 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61132 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61151 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61152 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61152 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61178 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61152 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61186 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61221 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61230 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61231 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61258 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61270 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61272 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61303 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61316 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61317 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61338 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61359 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61361 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61381 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61400 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61401 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61401 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61421 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61401 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61436 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61465 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61479 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61480 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61500 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61509 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61515 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61522 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61524 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61546 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61558 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61560 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61581 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61596 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:61623 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61631 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61636 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61645 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61596 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61656 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61657 - "GET /api/queue/status HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61659 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61596 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61682 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61596 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61598 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61659 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61657 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61710 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61715 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61657 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61659 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61596 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61659 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61732 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61735 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61742 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61735 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61659 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61732 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61596 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61735 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61657 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61659 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61657 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61659 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61735 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61596 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61732 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61657 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61659 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61776 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61781 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61803 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61598 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61659 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61657 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61732 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61735 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61732 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61657 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61659 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61732 - "GET /api/system/logs?limit=5 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61657 - "GET /api/queue/stats HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61732 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61659 - "GET /api/analytics/performance?timeRange=1h HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61659 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61732 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61657 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61840 - "WebSocket /ws" [accepted]
+INFO:     connection closed
+INFO:     127.0.0.1:61842 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:61732 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61848 - "GET /health HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:61732 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61657 - "GET /api/queue/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61867 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61878 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61901 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61914 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61926 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61936 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:61948 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61951 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61952 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61948 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61954 - "GET /api/queue/status HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61952 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61956 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61951 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61975 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61951 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:61956 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61952 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61948 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62006 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62020 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62031 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62062 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61959 - "GET /api/system/logs?limit=5 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62092 - "GET /api/queue/stats HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:62092 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61959 - "GET /api/analytics/performance?timeRange=1h HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62106 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62117 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61959 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62092 - "GET /api/queue/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62124 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62092 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61959 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62092 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62127 - "WebSocket /ws" [accepted]
+INFO:     connection closed
+INFO:     127.0.0.1:62131 - "WebSocket /ws" [accepted]
+INFO:     127.0.0.1:61959 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:61959 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:62092 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62129 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61959 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62150 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62092 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:62152 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62129 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62160 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62165 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62182 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62190 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62199 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62204 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62225 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62249 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62271 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62281 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62295 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62323 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62155 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:62332 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62155 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62334 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62335 - "GET /api/queue/status HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:62337 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62332 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62334 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62334 - "GET /api/system/logs?limit=5 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62332 - "GET /api/queue/stats HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:62337 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62332 - "GET /api/analytics/performance?timeRange=1h HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62332 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62337 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62334 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62358 - "WebSocket /ws" [accepted]
+INFO:     connection closed
+INFO:     127.0.0.1:62360 - "WebSocket /ws" [accepted]
+INFO:     127.0.0.1:62337 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     connection open
+INFO:     127.0.0.1:62383 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62337 - "OPTIONS /api/inbox/messages/6/read HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62337 - "POST /api/inbox/messages/6/read HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:62337 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62337 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62414 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62337 - "GET /api/inbox/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62337 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:62337 - "GET /api/system/logs?limit=5 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62446 - "GET /api/queue/stats HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:62337 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62446 - "GET /api/analytics/performance?timeRange=1h HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62456 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62494 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62499 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62504 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62512 - "GET /api/agents HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:62515 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62516 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+🔔 Enhanced notification system integrated
+SharedStateManager initialized with 0 agents
+INFO:     127.0.0.1:62515 - "GET /api/system/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62512 - "GET /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62518 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /api/queue/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /api/queue/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62538 - "WebSocket /ws" [accepted]
+INFO:     connection open

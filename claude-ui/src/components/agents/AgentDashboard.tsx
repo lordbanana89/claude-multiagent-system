@@ -43,12 +43,12 @@ const AgentDashboard: React.FC = () => {
       });
       return response.data;
     },
-    onSuccess: (data, variables) => {
+    onSuccess: (_, variables) => {
       setCommandHistory(prev => [{
         agentId: variables.agentId,
         command: variables.command,
         timestamp: new Date().toISOString(),
-        status: 'sent'
+        status: 'sent' as const
       }, ...prev].slice(0, 20)); // Keep last 20 commands
       refetch();
     },
@@ -57,7 +57,7 @@ const AgentDashboard: React.FC = () => {
         agentId: variables.agentId,
         command: variables.command,
         timestamp: new Date().toISOString(),
-        status: 'error'
+        status: 'error' as const
       }, ...prev].slice(0, 20));
       console.error('Failed to send command:', error);
     },

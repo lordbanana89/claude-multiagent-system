@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MCP Connection Test</title>
+</head>
+<body>
+    <h1>MCP Connection Test</h1>
+    <div id="result">Testing...</div>
+    <script>
+        async function testMCP() {
+            try {
+                const response = await fetch('http://localhost:5001/api/mcp/status');
+                const data = await response.json();
+
+                document.getElementById('result').innerHTML = `
+                    <h2>✅ MCP Connected!</h2>
+                    <p>Server Running: ${data.server_running}</p>
+                    <p>Active Agents: ${data.stats.active_agents}</p>
+                    <p>Total Activities: ${data.stats.total_activities}</p>
+                    <p>TMUX Sessions: ${data.tmux_sessions.length}</p>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                document.getElementById('result').innerHTML = `
+                    <h2>❌ Connection Failed</h2>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+
+        testMCP();
+
+        // Refresh every 2 seconds
+        setInterval(testMCP, 2000);
+    </script>
+</body>
+</html>

@@ -316,31 +316,89 @@ async def get_logs(
     offset: int = 0
 ):
     """Get system logs"""
+    import sqlite3
+    import json
+
     try:
-        # For now, return mock logs until we implement proper log aggregation
-        mock_logs = [
-            {
-                "id": f"log_{i}",
-                "timestamp": datetime.now().isoformat(),
-                "level": "INFO" if i % 3 == 0 else "DEBUG" if i % 3 == 1 else "WARNING",
-                "agent": agent or f"agent_{i % 3}",
-                "message": f"Sample log message {i}",
-                "details": {"task_id": f"task_{i}", "duration": i * 100}
-            }
-            for i in range(offset, min(offset + limit, 50))
-        ]
+        conn = sqlite3.connect('../mcp_system.db')
+        cursor = conn.cursor()
 
-        # Filter by agent if specified
+        # Build query with filters
+        query = '''
+            SELECT id, agent, timestamp, activity as message, category, status
+            FROM activities
+            WHERE 1=1
+        '''
+        params = []
+
         if agent:
-            mock_logs = [log for log in mock_logs if log["agent"] == agent]
+            query += ' AND agent = ?'
+            params.append(agent)
 
-        # Filter by level if specified
+        # Map level to status
         if level:
-            mock_logs = [log for log in mock_logs if log["level"] == level.upper()]
+            if level.upper() == 'ERROR':
+                query += ' AND status = ?'
+                params.append('failed')
+            elif level.upper() == 'WARNING':
+                query += ' AND status = ?'
+                params.append('warning')
+            elif level.upper() == 'INFO':
+                query += ' AND status = ?'
+                params.append('completed')
+
+        # Add ordering and limits
+        query += ' ORDER BY timestamp DESC LIMIT ? OFFSET ?'
+        params.extend([limit, offset])
+
+        cursor.execute(query, params)
+        activities = cursor.fetchall()
+
+        # Format logs
+        logs = []
+        for activity in activities:
+            act_id, agent_name, timestamp, message, category, status = activity
+
+            # Determine log level from status
+            if status == 'failed':
+                log_level = 'ERROR'
+            elif status == 'warning':
+                log_level = 'WARNING'
+            elif status == 'completed':
+                log_level = 'INFO'
+            else:
+                log_level = 'DEBUG'
+
+            logs.append({
+                "id": act_id,
+                "timestamp": timestamp,
+                "level": log_level,
+                "agent": agent_name,
+                "message": message or f"{agent_name}: {category}",
+                "details": {"category": category, "status": status}
+            })
+
+        # Get total count
+        count_query = 'SELECT COUNT(*) FROM activities WHERE 1=1'
+        count_params = []
+
+        if agent:
+            count_query += ' AND agent = ?'
+            count_params.append(agent)
+
+        if level and level.upper() in ['ERROR', 'WARNING', 'INFO']:
+            status_map = {'ERROR': 'failed', 'WARNING': 'warning', 'INFO': 'completed'}
+            count_query += ' AND status = ?'
+            count_params.append(status_map[level.upper()])
+
+        cursor.execute(count_query, count_params)
+        total_count = cursor.fetchone()[0]
+
+        conn.close()
 
         return {
-            "logs": mock_logs,
-            "total": len(mock_logs),
+            "logs": logs,
+            "total": total_count,
             "limit": limit,
             "offset": offset
         }
@@ -357,34 +415,93 @@ async def get_messages(
     offset: int = 0
 ):
     """Get system messages"""
+    import sqlite3
+    import json
+
     try:
-        # For now, return mock messages until we implement proper message aggregation
-        mock_messages = [
-            {
-                "id": f"msg_{i}",
-                "timestamp": datetime.now().isoformat(),
-                "from": f"agent_{i % 3}",
-                "to": f"agent_{(i + 1) % 3}",
-                "type": "task" if i % 2 == 0 else "status",
-                "status": "pending" if i % 3 == 0 else "processed" if i % 3 == 1 else "failed",
-                "subject": f"Task assignment {i}",
-                "content": f"This is a sample message content for message {i}",
-                "priority": "high" if i % 4 == 0 else "normal"
-            }
-            for i in range(offset, min(offset + limit, 30))
-        ]
+        conn = sqlite3.connect('../mcp_system.db')
+        cursor = conn.cursor()
 
-        # Filter by agent if specified
+        # Build query with filters
+        query = '''
+            SELECT id, from_agent, to_agent, message, timestamp, read
+            FROM messages
+            WHERE 1=1
+        '''
+        params = []
+
         if agent:
-            mock_messages = [msg for msg in mock_messages if msg["from"] == agent or msg["to"] == agent]
+            query += ' AND (from_agent = ? OR to_agent = ?)'
+            params.extend([agent, agent])
 
-        # Filter by status if specified
+        # Map status to read state
         if status:
-            mock_messages = [msg for msg in mock_messages if msg["status"] == status]
+            if status == 'pending':
+                query += ' AND read = 0'
+            elif status == 'processed':
+                query += ' AND read = 1'
+
+        # Add ordering and limits
+        query += ' ORDER BY timestamp DESC LIMIT ? OFFSET ?'
+        params.extend([limit, offset])
+
+        cursor.execute(query, params)
+        messages_data = cursor.fetchall()
+
+        # Format messages
+        messages = []
+        for msg in messages_data:
+            msg_id, from_agent, to_agent, content, timestamp, is_read = msg
+
+            # Determine type and priority from content
+            msg_type = 'task' if 'task' in content.lower() else 'status'
+            priority = 'high' if '[HIGH PRIORITY]' in content else 'normal'
+
+            # Extract subject from content (first line or first 50 chars)
+            subject = content.split('\n')[0][:50]
+            if len(subject) < len(content.split('\n')[0]):
+                subject += '...'
+
+            # Determine status
+            if is_read == 0:
+                msg_status = 'pending'
+            else:
+                msg_status = 'processed'
+
+            messages.append({
+                "id": msg_id,
+                "timestamp": timestamp,
+                "from": from_agent,
+                "to": to_agent,
+                "type": msg_type,
+                "status": msg_status,
+                "subject": subject,
+                "content": content,
+                "priority": priority
+            })
+
+        # Get total count
+        count_query = 'SELECT COUNT(*) FROM messages WHERE 1=1'
+        count_params = []
+
+        if agent:
+            count_query += ' AND (from_agent = ? OR to_agent = ?)'
+            count_params.extend([agent, agent])
+
+        if status:
+            if status == 'pending':
+                count_query += ' AND read = 0'
+            elif status == 'processed':
+                count_query += ' AND read = 1'
+
+        cursor.execute(count_query, count_params)
+        total_count = cursor.fetchone()[0]
+
+        conn.close()
 
         return {
-            "messages": mock_messages,
-            "total": len(mock_messages),
+            "messages": messages,
+            "total": total_count,
             "limit": limit,
             "offset": offset
         }

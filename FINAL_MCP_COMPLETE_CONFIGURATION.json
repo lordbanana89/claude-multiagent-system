@@ -1,0 +1,137 @@
+{
+  "mcpServers": {
+    "// ========== CORE DEVELOPMENT (4) ==========": "",
+
+    "filesystem": {
+      "command": "node",
+      "args": ["/Users/erik/Desktop/claude-multiagent-system/mcp-servers-official/src/filesystem/dist/index.js"],
+      "env": {
+        "ALLOWED_DIRECTORIES": "/Users/erik/Desktop/claude-multiagent-system"
+      }
+    },
+
+    "git": {
+      "command": "mcp-server-git",
+      "args": [],
+      "env": {
+        "REPO_PATH": "/Users/erik/Desktop/claude-multiagent-system"
+      }
+    },
+
+    "memory": {
+      "command": "node",
+      "args": ["/Users/erik/Desktop/claude-multiagent-system/mcp-servers-official/src/memory/dist/index.js"],
+      "env": {
+        "DB_PATH": "/Users/erik/Desktop/claude-multiagent-system/data/memory.db"
+      }
+    },
+
+    "fetch": {
+      "command": "mcp-server-fetch",
+      "args": [],
+      "env": {}
+    },
+
+    "// ========== ADVANCED REASONING (4) ==========": "",
+
+    "sequential-thinking": {
+      "command": "node",
+      "args": ["/Users/erik/Desktop/claude-multiagent-system/mcp-servers-official/src/sequentialthinking/dist/index.js"],
+      "env": {}
+    },
+
+    "time": {
+      "command": "mcp-server-time",
+      "args": [],
+      "env": {}
+    },
+
+    "everything": {
+      "command": "node",
+      "args": ["/Users/erik/Desktop/claude-multiagent-system/mcp-servers-official/src/everything/dist/index.js"],
+      "env": {}
+    },
+
+    "// ========== DATABASE & STORAGE (3) ==========": "",
+
+    "sqlite": {
+      "command": "mcp-server-sqlite",
+      "args": ["--db-path", "/Users/erik/Desktop/claude-multiagent-system/data/test.db"],
+      "env": {}
+    },
+
+    "postgres": {
+      "command": "node",
+      "args": ["/Users/erik/Desktop/claude-multiagent-system/mcp-servers-archived/src/postgres/dist/index.js"],
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}"
+      }
+    },
+
+    "redis": {
+      "command": "node",
+      "args": ["/Users/erik/Desktop/claude-multiagent-system/mcp-servers-archived/src/redis/dist/index.js"],
+      "env": {
+        "REDIS_URL": "redis://localhost:6379"
+      }
+    },
+
+    "// ========== BROWSER & UI AUTOMATION (2) ==========": "",
+
+    "puppeteer": {
+      "command": "node",
+      "args": ["/Users/erik/Desktop/claude-multiagent-system/mcp-servers-archived/src/puppeteer/dist/index.js"],
+      "env": {}
+    },
+
+    "playwright": {
+      "command": "playwright-mcp",
+      "args": [],
+      "env": {}
+    },
+
+    "// ========== DESIGN & VISUAL (1) ==========": "",
+
+    "figma": {
+      "command": "figma-mcp",
+      "args": [],
+      "env": {
+        "FIGMA_TOKEN": "${FIGMA_TOKEN}"
+      }
+    },
+
+    "// ========== COLLABORATION & DEVOPS (3) ==========": "",
+
+    "github": {
+      "command": "node",
+      "args": ["/Users/erik/Desktop/claude-multiagent-system/mcp-servers-archived/src/github/dist/index.js"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+
+    "docker": {
+      "command": "docker-mcp",
+      "args": [],
+      "env": {}
+    },
+
+    "notion": {
+      "command": "notion-mcp-server",
+      "args": [],
+      "env": {
+        "NOTION_API_KEY": "${NOTION_API_KEY}"
+      }
+    },
+
+    "// ========== SYSTEM ORCHESTRATION (1) ==========": "",
+
+    "claude-multiagent": {
+      "command": "python3",
+      "args": ["/Users/erik/Desktop/claude-multiagent-system/mcp_server_v2.py"],
+      "env": {
+        "PYTHONPATH": "/Users/erik/Desktop/claude-multiagent-system"
+      }
+    }
+  }
+}

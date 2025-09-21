@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
+import { config } from '../../config';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = config.API_URL;
 
 interface QueueTask {
   id: string;

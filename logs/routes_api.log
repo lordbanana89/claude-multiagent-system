@@ -1,0 +1,780 @@
+Starting Routes API on http://localhost:5001
+
+Available routes:
+  GET  /                     - API info
+  GET  /api/health           - Health check
+  POST /api/auth/login       - Login
+  GET  /api/auth/verify      - Verify token
+  GET  /api/agents           - List agents
+  GET  /api/agents/:id       - Agent details
+  POST /api/agents/:id/heartbeat - Agent heartbeat
+  GET  /api/tasks            - List tasks
+  POST /api/tasks            - Create task
+  GET  /api/tasks/:id        - Task details
+  PUT  /api/tasks/:id        - Update task
+  GET  /api/messages         - List messages
+  POST /api/messages         - Send message
+  GET  /api/system/status    - System status
+  GET  /api/system/metrics   - System metrics
+  GET  /dashboard            - Dashboard
+ * Serving Flask app 'routes_api'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.33:5001
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 281-813-606
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:24:53] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:24:58] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:44] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:44] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:44] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:44] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:44] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:44] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:44] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:44] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:54] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:54] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:54] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:54] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:25:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:04] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:04] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:04] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:04] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:14] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:14] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:14] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:14] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:24] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:24] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:24] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:24] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:34] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:34] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:34] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:34] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:44] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:44] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:44] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:44] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:52] "GET /api/health HTTP/1.1" 200 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:52] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:52] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:26:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:27:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:28:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:29:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:30:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:31:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:32:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:33:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:34:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:35:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:15] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:17] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:17] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:20] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:35] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:37] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:37] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:37] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:45] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:47] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:47] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:47] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:50] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:57] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:57] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:36:57] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:07] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:07] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:07] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:08] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:08] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:08] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:08] "GET /api/health HTTP/1.1" 200 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:12] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:12] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:13] "GET /api/health HTTP/1.1" 200 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:14] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:14] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:18] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:19] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:19] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:19] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:19] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:19] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:19] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:19] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:19] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:23] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:28] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:29] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:29] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:29] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:29] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:33] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:38] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:39] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:39] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:39] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:39] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:43] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:48] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:49] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:49] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:49] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:49] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:53] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:58] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:59] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:59] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:59] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:37:59] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:03] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:08] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:09] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:10] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:10] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:10] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:13] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:18] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:19] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:19] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:19] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:19] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:23] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:26] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:30] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:31] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:36] "GET /api/health HTTP/1.1" 200 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:37] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:37] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:41] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:46] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:38:56] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:01] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:06] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:11] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:16] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:21] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:26] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:31] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:36] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:41] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:46] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:39:56] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:01] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:06] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:11] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:16] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:21] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:26] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:31] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:36] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:41] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:46] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:40:56] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:01] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:06] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:11] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:16] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:21] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:26] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:31] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:36] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:41] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:46] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:41:56] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:01] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:06] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:11] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:16] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:21] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:26] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:31] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:36] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:40] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:46] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:42:56] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:01] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:06] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:11] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:16] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:21] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:26] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:31] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:36] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:41] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:46] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:43:56] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:01] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:06] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:11] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:16] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:21] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:26] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/erik/Desktop/claude-multiagent-system/figma_api.py.tmp.21356.1758447870984', reloading
+INFO:werkzeug: * Detected change in '/Users/erik/Desktop/claude-multiagent-system/figma_api.py', reloading
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:31] "GET /api/health HTTP/1.1" 200 -
+Starting Routes API on http://localhost:5001
+
+Available routes:
+  GET  /                     - API info
+  GET  /api/health           - Health check
+  POST /api/auth/login       - Login
+  GET  /api/auth/verify      - Verify token
+  GET  /api/agents           - List agents
+  GET  /api/agents/:id       - Agent details
+  POST /api/agents/:id/heartbeat - Agent heartbeat
+  GET  /api/tasks            - List tasks
+  POST /api/tasks            - Create task
+  GET  /api/tasks/:id        - Task details
+  PUT  /api/tasks/:id        - Update task
+  GET  /api/messages         - List messages
+  POST /api/messages         - Send message
+  GET  /api/system/status    - System status
+  GET  /api/system/metrics   - System metrics
+  GET  /dashboard            - Dashboard
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 281-813-606
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:36] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:41] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:46] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:44:56] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:01] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:03] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:04] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:04] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:04] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:08] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:12] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:12] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:13] "GET /api/health HTTP/1.1" 200 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:14] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:14] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:17] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:18] "GET /api/health HTTP/1.1" 200 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:21] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:21] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:23] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:25] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:25] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:25] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:25] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:25] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:25] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:25] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:25] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:26] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:27] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:27] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:27] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:28] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:33] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:38] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:39] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:39] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:39] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:39] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:39] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:39] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:39] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:39] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:43] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:46] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:46] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:48] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:48] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:48] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:48] "GET /api/mcp/activities?limit=50 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:48] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:48] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:48] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:48] "GET /api/mcp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:48] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:51] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:52] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:53] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:55] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:45:58] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:00] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:03] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:04] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:05] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:08] "GET /api/health HTTP/1.1" 200 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:10] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+ERROR:__main__:Error fetching knowledge graph: no such table: custom_agents
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:10] "[35m[1mGET /api/knowledge/graph HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:13] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:18] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/erik/Desktop/claude-multiagent-system/figma_desktop_mcp_bridge.py.tmp.21356.1758447980695', reloading
+INFO:werkzeug: * Detected change in '/Users/erik/Desktop/claude-multiagent-system/figma_desktop_mcp_bridge.py', reloading
+Starting Routes API on http://localhost:5001
+
+Available routes:
+  GET  /                     - API info
+  GET  /api/health           - Health check
+  POST /api/auth/login       - Login
+  GET  /api/auth/verify      - Verify token
+  GET  /api/agents           - List agents
+  GET  /api/agents/:id       - Agent details
+  POST /api/agents/:id/heartbeat - Agent heartbeat
+  GET  /api/tasks            - List tasks
+  POST /api/tasks            - Create task
+  GET  /api/tasks/:id        - Task details
+  PUT  /api/tasks/:id        - Update task
+  GET  /api/messages         - List messages
+  POST /api/messages         - Send message
+  GET  /api/system/status    - System status
+  GET  /api/system/metrics   - System metrics
+  GET  /dashboard            - Dashboard
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 281-813-606
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:23] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:28] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:28] "GET /api/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:46:28] "GET /api/health HTTP/1.1" 200 -

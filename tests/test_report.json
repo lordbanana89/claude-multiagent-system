@@ -1,0 +1,85 @@
+{
+  "timestamp": "2025-09-19T00:20:12.396370",
+  "execution_time": "0.34s",
+  "summary": {
+    "total_tests": 13,
+    "passed": 11,
+    "failed": 2,
+    "pass_rate": "84.6%"
+  },
+  "suites": [
+    {
+      "suite": "MCP Tools Shell Tests",
+      "tests": [
+        {
+          "name": "Agent initialization",
+          "status": "PASS"
+        },
+        {
+          "name": "Heartbeat",
+          "status": "PASS"
+        },
+        {
+          "name": "Status update",
+          "status": "PASS"
+        },
+        {
+          "name": "Activity logging",
+          "status": "PASS"
+        },
+        {
+          "name": "Message sending",
+          "status": "FAIL"
+        },
+        {
+          "name": "Agent status check",
+          "status": "PASS"
+        },
+        {
+          "name": "View activities",
+          "status": "PASS"
+        }
+      ],
+      "passed": 6,
+      "failed": 1
+    },
+    {
+      "suite": "Authentication API Tests",
+      "tests": [
+        {
+          "name": "Login endpoint availability",
+          "status": "PASS"
+        },
+        {
+          "name": "Invalid credentials",
+          "status": "PASS"
+        },
+        {
+          "name": "Missing fields validation",
+          "status": "PASS"
+        }
+      ],
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "suite": "Integration Tests",
+      "tests": [
+        {
+          "name": "Database connectivity",
+          "status": "PASS"
+        },
+        {
+          "name": "MCP server availability",
+          "status": "PASS"
+        },
+        {
+          "name": "Inter-agent communication",
+          "status": "FAIL"
+        }
+      ],
+      "passed": 2,
+      "failed": 1
+    }
+  ]
+}

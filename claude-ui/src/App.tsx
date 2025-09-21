@@ -3,9 +3,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import 'reactflow/dist/style.css';
 import './App.css';
 
-// Components
-import DashboardV2 from './components/DashboardV2';
-// import SimpleDashboard from './components/SimpleDashboard';
+// Components - Use the new superior Claude Squad App
+import ClaudeSquadApp from './components/ClaudeSquadApp';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -20,7 +19,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <DashboardV2 />
+      <ClaudeSquadApp />
     </QueryClientProvider>
   );
 }

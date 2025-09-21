@@ -54,7 +54,7 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent, isSelected, onClick }) => 
     }
   };
 
-  const getAgentColor = (id: string) => {
+  const getAgentColor = () => {
     const colors: { [key: string]: string } = {
       'supervisor': 'border-agent-supervisor',
       'master': 'border-agent-master',

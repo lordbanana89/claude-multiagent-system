@@ -17,6 +17,11 @@ import {
   Cell
 } from 'recharts';
 import { format } from 'date-fns';
+import axios from 'axios';
+
+const config = {
+  API_URL: import.meta.env.VITE_API_URL || 'http://localhost:5001'
+};
 
 interface PerformanceData {
   timestamp: string;
@@ -47,48 +52,24 @@ const PerformanceChart: React.FC<ChartProps> = ({
     errorRate: 0
   });
 
-  // Generate mock data for demonstration
-  const generateMockData = (): PerformanceData[] => {
-    const points = timeRange === '1h' ? 12 : timeRange === '6h' ? 36 : timeRange === '24h' ? 48 : 84;
-    const now = Date.now();
-    const interval = timeRange === '1h' ? 5 * 60 * 1000 : // 5 minutes
-                     timeRange === '6h' ? 10 * 60 * 1000 : // 10 minutes
-                     timeRange === '24h' ? 30 * 60 * 1000 : // 30 minutes
-                     2 * 60 * 60 * 1000; // 2 hours
-
-    return Array.from({ length: points }, (_, i) => {
-      const timestamp = new Date(now - (points - i) * interval);
-      return {
-        timestamp: timestamp.toISOString(),
-        cpu: Math.random() * 30 + 40 + Math.sin(i / 5) * 20,
-        memory: Math.random() * 20 + 60 + Math.cos(i / 7) * 15,
-        latency: Math.random() * 50 + 100 + Math.sin(i / 3) * 30,
-        requests: Math.floor(Math.random() * 100 + 50),
-        errors: Math.floor(Math.random() * 5)
-      };
-    });
-  };
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        // In production, this would fetch from the API
-        // const response = await axios.get(`${config.API_URL}/api/analytics/performance`, {
-        //   params: { agentId, timeRange }
-        // });
-        // setData(response.data);
+        // Fetch real data from API
+        const response = await axios.get(`${config.API_URL}/api/analytics/performance`, {
+          params: { agentId, timeRange }
+        });
+        const performanceData = response.data;
+        setData(performanceData);
 
-        // For now, use mock data
-        const mockData = generateMockData();
-        setData(mockData);
-
-        // Calculate metrics
-        const avgCpu = mockData.reduce((sum, d) => sum + d.cpu, 0) / mockData.length;
-        const avgMemory = mockData.reduce((sum, d) => sum + d.memory, 0) / mockData.length;
-        const avgLatency = mockData.reduce((sum, d) => sum + d.latency, 0) / mockData.length;
-        const totalRequests = mockData.reduce((sum, d) => sum + d.requests, 0);
-        const totalErrors = mockData.reduce((sum, d) => sum + d.errors, 0);
+        // Calculate metrics from real data
+        const avgCpu = performanceData.reduce((sum: number, d: PerformanceData) => sum + d.cpu, 0) / performanceData.length;
+        const avgMemory = performanceData.reduce((sum: number, d: PerformanceData) => sum + d.memory, 0) / performanceData.length;
+        const avgLatency = performanceData.reduce((sum: number, d: PerformanceData) => sum + d.latency, 0) / performanceData.length;
+        const totalRequests = performanceData.reduce((sum: number, d: PerformanceData) => sum + d.requests, 0);
+        const totalErrors = performanceData.reduce((sum: number, d: PerformanceData) => sum + d.errors, 0);
 
         setMetrics({
           avgCpu: Math.round(avgCpu),

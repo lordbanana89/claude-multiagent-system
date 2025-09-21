@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "claude-multiagent": {
+      "command": "python3",
+      "args": [
+        "/Users/erik/Desktop/claude-multiagent-system/mcp_server_fastmcp.py"
+      ],
+      "env": {
+        "PYTHONPATH": "/Users/erik/Desktop/claude-multiagent-system"
+      }
+    }
+  }
+}

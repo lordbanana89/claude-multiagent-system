@@ -1,146 +1,239 @@
 #!/bin/bash
 
-# 🚀 Claude Multi-Agent System - Complete Integration Starter
-# Script per avviare tutto il sistema completo
+# Claude Multi-Agent System - Complete Startup Script
+# This script starts all components of the system in the correct order
 
-echo "🤖 Starting Claude Multi-Agent System - Complete Integration"
-echo "=============================================================="
-echo "⚠️  Legacy script detected. The recommended runtime is 'overmind start' (Procfile.tmux)."
-echo "   Use this script only for manual troubleshooting." 
+echo "🚀 Starting Claude Multi-Agent System..."
+echo "=================================="
 
-# Check dependencies
-echo "🔍 Checking dependencies..."
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
 
-if ! command -v ttyd &> /dev/null; then
-    echo "❌ ttyd not found. Installing..."
-    brew install ttyd
+# Function to check if a port is in use
+check_port() {
+    lsof -i :$1 > /dev/null 2>&1
+    return $?
+}
+
+# Function to kill process on port
+kill_port() {
+    local port=$1
+    local pid=$(lsof -ti :$port)
+    if [ ! -z "$pid" ]; then
+        echo -e "${YELLOW}Killing process on port $port (PID: $pid)${NC}"
+        kill -9 $pid 2>/dev/null
+        sleep 1
+    fi
+}
+
+# Function to start a service
+start_service() {
+    local name=$1
+    local command=$2
+    local port=$3
+    local log_file=$4
+
+    echo -e "${YELLOW}Starting $name on port $port...${NC}"
+
+    # Check if port is already in use
+    if check_port $port; then
+        echo -e "${RED}Port $port is already in use. Cleaning up...${NC}"
+        kill_port $port
+    fi
+
+    # Start the service
+    nohup $command > $log_file 2>&1 &
+    local pid=$!
+
+    # Wait for service to start
+    sleep 2
+
+    # Check if service started successfully
+    if check_port $port; then
+        echo -e "${GREEN}✅ $name started successfully (PID: $pid)${NC}"
+        echo $pid >> .system_pids
+        return 0
+    else
+        echo -e "${RED}❌ Failed to start $name${NC}"
+        return 1
+    fi
+}
+
+# Clean up old PIDs file
+rm -f .system_pids
+
+# Create log directory
+mkdir -p logs
+
+echo ""
+echo "🔧 Step 1: Starting Database Services"
+echo "--------------------------------------"
+
+# Check if Redis is running
+if ! redis-cli ping > /dev/null 2>&1; then
+    echo -e "${YELLOW}Starting Redis...${NC}"
+    redis-server --daemonize yes
+    sleep 1
+    if redis-cli ping > /dev/null 2>&1; then
+        echo -e "${GREEN}✅ Redis started${NC}"
+    else
+        echo -e "${RED}❌ Failed to start Redis${NC}"
+    fi
+else
+    echo -e "${GREEN}✅ Redis is already running${NC}"
 fi
 
-if ! command -v tmux &> /dev/null; then
-    echo "❌ tmux not found. Installing..."
-    brew install tmux
+echo ""
+echo "🔧 Step 2: Starting Backend APIs"
+echo "--------------------------------------"
+
+# Start Main Routes API (port 5001)
+start_service "Routes API" "python3 routes_api.py" 5001 "logs/routes_api.log"
+
+# Start FastAPI Gateway (port 8888)
+cd api && start_service "FastAPI Gateway" "python3 -m uvicorn main:app --host 0.0.0.0 --port 8888" 8888 "../logs/fastapi_gateway.log" && cd ..
+
+# Start Integration Orchestrator (port 5002) - CRITICAL FOR INTEGRATION
+start_service "Integration Orchestrator" "python3 integration_orchestrator.py" 5002 "logs/integration.log"
+
+# Start Unified Gateway (port 8000) if exists
+if [ -f "api/unified_gateway.py" ]; then
+    cd api && start_service "Unified Gateway" "python3 -m uvicorn unified_gateway:app --host 0.0.0.0 --port 8000" 8000 "../logs/unified_gateway.log" && cd ..
 fi
 
-echo "✅ Dependencies OK"
+echo ""
+echo "🔧 Step 3: Starting Agent TMUX Sessions"
+echo "--------------------------------------"
 
-# Kill existing processes if any
-echo "🧹 Cleaning up existing processes..."
-pkill -f "langgraph dev" 2>/dev/null || true
-pkill -f "streamlit run.*complete_integration" 2>/dev/null || true
-pkill -f "ttyd -p 80" 2>/dev/null || true
+# Create TMUX sessions for agents
+agents=("supervisor" "master" "backend-api" "database" "frontend-ui" "testing" "instagram" "queue-manager" "deployment")
 
-# Start LangGraph dev server
-echo "🔧 Starting LangGraph dev server..."
-cd langgraph-test
-langgraph dev --port 8080 --no-browser > /dev/null 2>&1 &
-LANGGRAPH_PID=$!
-echo "✅ LangGraph dev server started (PID: $LANGGRAPH_PID)"
+for agent in "${agents[@]}"; do
+    session_name="claude-$agent"
 
-# Wait for LangGraph to be ready
-echo "⏳ Waiting for LangGraph to be ready..."
-sleep 5
+    # Check if session exists
+    if tmux has-session -t $session_name 2>/dev/null; then
+        echo -e "${YELLOW}TMUX session $session_name already exists${NC}"
+    else
+        tmux new-session -d -s $session_name
+        tmux send-keys -t $session_name "echo 'Agent $agent terminal ready'" Enter
+        echo -e "${GREEN}✅ Created TMUX session: $session_name${NC}"
+    fi
+done
 
-# Create test Claude sessions
-echo "🎭 Creating test Claude sessions..."
-tmux kill-session -t claude-backend-api 2>/dev/null || true
-tmux kill-session -t claude-database 2>/dev/null || true
-tmux kill-session -t claude-frontend-ui 2>/dev/null || true
+echo ""
+echo "🔧 Step 4: Starting Frontend"
+echo "--------------------------------------"
 
-tmux new-session -d -s claude-backend-api
-tmux send-keys -t claude-backend-api "echo '🔧 Claude Backend API Agent Ready - Type: claude'" Enter
-sleep 0.2
-tmux send-keys -t claude-backend-api "source /Users/erik/Desktop/claude-multiagent-system/langgraph-test/task_commands.sh" Enter
+# Start Frontend Dev Server
+cd claude-ui
+if [ -f "package.json" ]; then
+    # Install dependencies if needed
+    if [ ! -d "node_modules" ]; then
+        echo -e "${YELLOW}Installing frontend dependencies...${NC}"
+        npm install
+    fi
 
-tmux new-session -d -s claude-database
-tmux send-keys -t claude-database "echo '💾 Claude Database Agent Ready - Type: claude'" Enter
-sleep 0.2
-tmux send-keys -t claude-database "source /Users/erik/Desktop/claude-multiagent-system/langgraph-test/task_commands.sh" Enter
-
-tmux new-session -d -s claude-frontend-ui
-tmux send-keys -t claude-frontend-ui "echo '🎨 Claude Frontend UI Agent Ready - Type: claude'" Enter
-sleep 0.2
-tmux send-keys -t claude-frontend-ui "source /Users/erik/Desktop/claude-multiagent-system/langgraph-test/task_commands.sh" Enter
-
-echo "✅ Test sessions created"
-
-# Start ttyd terminals
-echo "🖥️ Starting web terminals..."
-ttyd -p 8090 --writable -t "titleFixed=Backend API Agent" tmux attach -t claude-backend-api > /dev/null 2>&1 &
-TTYD1_PID=$!
-
-ttyd -p 8091 --writable -t "titleFixed=Database Agent" tmux attach -t claude-database > /dev/null 2>&1 &
-TTYD2_PID=$!
-
-ttyd -p 8092 --writable -t "titleFixed=Frontend UI Agent" tmux attach -t claude-frontend-ui > /dev/null 2>&1 &
-TTYD3_PID=$!
-
-ttyd -p 8093 --writable -t "titleFixed=Testing Agent" tmux attach -t claude-testing > /dev/null 2>&1 &
-TTYD4_PID=$!
-
-ttyd -p 8094 --writable -t "titleFixed=Instagram Agent" tmux attach -t claude-instagram > /dev/null 2>&1 &
-TTYD5_PID=$!
-
-echo "✅ Web terminals started (PIDs: $TTYD1_PID, $TTYD2_PID, $TTYD3_PID, $TTYD4_PID, $TTYD5_PID)"
-
-# Wait for terminals to be ready
-echo "⏳ Waiting for terminals to be ready..."
-sleep 3
-
-# Start Streamlit interface
-echo "🌐 Starting Complete Integration Web Interface..."
+    # Start the dev server
+    start_service "Frontend UI" "npm run dev" 5173 "../logs/frontend.log"
+else
+    echo -e "${RED}Frontend directory not found${NC}"
+fi
 cd ..
-python3 -m streamlit run interfaces/web/complete_integration.py --server.port=8501 > /dev/null 2>&1 &
-STREAMLIT_PID=$!
 
-echo "✅ Streamlit interface started (PID: $STREAMLIT_PID)"
+echo ""
+echo "🔧 Step 5: System Status Check"
+echo "--------------------------------------"
 
-# Wait for Streamlit to be ready
-echo "⏳ Waiting for web interface to be ready..."
-sleep 5
+# Function to check service status
+check_service() {
+    local name=$1
+    local port=$2
+    local url=$3
 
-# Display summary
-echo ""
-echo "🎉 SISTEMA COMPLETAMENTE ATTIVO!"
-echo "================================="
-echo ""
-echo "🌐 Web Interface:     http://localhost:8501"
-echo "🔧 LangGraph API:     http://localhost:8080"
-echo "🎨 LangGraph Studio:  https://smith.langchain.com/studio/?baseUrl=http://localhost:8080"
-echo ""
-echo "🖥️ Web Terminals:"
-echo "   Backend API:       http://localhost:8090"
-echo "   Database:          http://localhost:8091"
-echo "   Frontend UI:       http://localhost:8092"
-echo ""
-echo "📊 API Endpoints:"
-echo "   API Docs:          http://localhost:8080/docs"
-echo "   Health Check:      http://localhost:8080/health"
-echo ""
-echo "🎭 tmux Sessions:"
-echo "   claude-backend-api"
-echo "   claude-database"
-echo "   claude-frontend-ui"
-echo ""
-echo "📋 Process IDs:"
-echo "   LangGraph:   $LANGGRAPH_PID"
-echo "   Streamlit:   $STREAMLIT_PID"
-echo "   ttyd (8090): $TTYD1_PID"
-echo "   ttyd (8091): $TTYD2_PID"
-echo "   ttyd (8092): $TTYD3_PID"
-echo ""
-echo "🛑 To stop all services:"
-echo "   kill $LANGGRAPH_PID $STREAMLIT_PID $TTYD1_PID $TTYD2_PID $TTYD3_PID"
-echo ""
-echo "🚀 Opening web interface in 3 seconds..."
-sleep 3
+    if check_port $port; then
+        # Try to make HTTP request if URL provided
+        if [ ! -z "$url" ]; then
+            if curl -s -o /dev/null -w "%{http_code}" $url | grep -q "200\|404"; then
+                echo -e "${GREEN}✅ $name: Running on port $port${NC}"
+                return 0
+            else
+                echo -e "${YELLOW}⚠️  $name: Port $port active but not responding to HTTP${NC}"
+                return 1
+            fi
+        else
+            echo -e "${GREEN}✅ $name: Port $port active${NC}"
+            return 0
+        fi
+    else
+        echo -e "${RED}❌ $name: Not running on port $port${NC}"
+        return 1
+    fi
+}
 
-# Try to open browser (macOS)
-if command -v open &> /dev/null; then
-    open http://localhost:8501
-elif command -v xdg-open &> /dev/null; then
-    xdg-open http://localhost:8501
+# Check all services
+echo ""
+check_service "Routes API" 5001 "http://localhost:5001/api/health"
+check_service "FastAPI Gateway" 8888 "http://localhost:8888/api/health"
+check_service "Unified Gateway" 8000 "http://localhost:8000/health"
+check_service "Frontend UI" 5173 "http://localhost:5173"
+check_service "Redis" 6379
+
+# Count active TMUX sessions
+active_sessions=$(tmux list-sessions 2>/dev/null | grep "^claude-" | wc -l)
+echo -e "${GREEN}✅ Active Agent Sessions: $active_sessions/9${NC}"
+
+echo ""
+echo "=================================="
+echo -e "${GREEN}🎉 System Startup Complete!${NC}"
+echo ""
+echo "📋 Access Points:"
+echo "   • Frontend UI: http://localhost:5173"
+echo "   • Routes API: http://localhost:5001"
+echo "   • FastAPI Gateway: http://localhost:8888"
+echo "   • API Documentation: http://localhost:8888/docs"
+echo ""
+echo "📝 Logs are available in the 'logs' directory"
+echo ""
+echo "🛑 To stop all services, run: ./stop_system.sh"
+echo ""
+
+# Create stop script if it doesn't exist
+if [ ! -f "stop_system.sh" ]; then
+    cat > stop_system.sh << 'EOF'
+#!/bin/bash
+
+echo "🛑 Stopping Claude Multi-Agent System..."
+
+# Kill processes from PID file
+if [ -f ".system_pids" ]; then
+    while read pid; do
+        if ps -p $pid > /dev/null 2>&1; then
+            kill -9 $pid 2>/dev/null
+            echo "Stopped process: $pid"
+        fi
+    done < .system_pids
+    rm -f .system_pids
 fi
 
-echo ""
-echo "✨ Setup completo! Il sistema è pronto all'uso."
-echo "💡 Usa la web interface per coordinare tutti gli agenti Claude."
+# Kill processes on known ports
+ports=(5001 5173 8000 8888)
+for port in "${ports[@]}"; do
+    pid=$(lsof -ti :$port)
+    if [ ! -z "$pid" ]; then
+        kill -9 $pid 2>/dev/null
+        echo "Stopped service on port $port"
+    fi
+done
+
+# Kill TMUX sessions
+tmux kill-server 2>/dev/null
+
+echo "✅ All services stopped"
+EOF
+    chmod +x stop_system.sh
+    echo "Created stop_system.sh script"
+fi

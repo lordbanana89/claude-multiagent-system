@@ -1,0 +1,54 @@
+{
+  "agent_name": "instagram",
+  "endpoints": {
+    "auth_api": {
+      "base_url": "http://localhost:5002",
+      "endpoints": {
+        "login": "/api/auth/login",
+        "refresh": "/api/auth/refresh",
+        "logout": "/api/auth/logout"
+      },
+      "status": "available",
+      "test_response": "401 - Invalid credentials (expected for test)"
+    },
+    "mcp_server": {
+      "base_url": "http://localhost:9999",
+      "protocol": "jsonrpc",
+      "status": "not_configured",
+      "note": "Returns 404 - endpoint needs configuration"
+    },
+    "internal_mcp": {
+      "base_url": "http://localhost:8099/jsonrpc",
+      "protocol": "jsonrpc",
+      "status": "active",
+      "methods": [
+        "heartbeat",
+        "update_status",
+        "log_activity"
+      ]
+    }
+  },
+  "instagram_webhooks": {
+    "receive_url": "http://localhost:8100/webhooks/instagram",
+    "events": [
+      "new_follower",
+      "new_comment",
+      "new_message",
+      "mention",
+      "story_reply"
+    ]
+  },
+  "integration_status": {
+    "auth_api": "ready_to_integrate",
+    "mcp_endpoint": "pending_configuration",
+    "agent_communication": "active",
+    "database": "connected",
+    "message_queue": "operational"
+  },
+  "next_steps": [
+    "Register instagram_agent credentials with Auth API",
+    "Configure MCP endpoint at port 9999",
+    "Set up webhook receiver on port 8100",
+    "Test end-to-end integration flow"
+  ]
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Play, Stop, RefreshCw, Database, Activity, Terminal, CheckCircle, XCircle, AlertCircle, Users, Layers, Clock, Zap } from 'lucide-react';
+import { Play, Square, RefreshCw, Database, Activity, Terminal, CheckCircle, XCircle, AlertCircle, Users, Layers, Clock, Zap } from 'lucide-react';
+import { config } from '../config';
 
 interface MCPActivity {
   id: string;
@@ -51,7 +52,8 @@ const MCPDashboard: React.FC = () => {
   // Fetch MCP data from SQLite via API
   const fetchMCPData = useCallback(async () => {
     try {
-      const response = await fetch('/api/mcp/status');
+      // Use the main API URL from config for MCP status
+      const response = await fetch(`${config.API_MAIN_URL}/api/mcp/status`);
       const data = await response.json();
 
       setActivities(data.activities || []);
@@ -68,30 +70,26 @@ const MCPDashboard: React.FC = () => {
       setLoading(false);
     } catch (error) {
       console.error('Error fetching MCP data:', error);
-      // Use mock data for development
-      setActivities([
-        { id: '1', agent: 'backend-api', timestamp: new Date().toISOString(), activity: 'Creating /api/auth endpoint', category: 'implementation', status: 'completed' },
-        { id: '2', agent: 'database', timestamp: new Date().toISOString(), activity: 'Designing auth schema', category: 'planning', status: 'completed' },
-        { id: '3', agent: 'frontend-ui', timestamp: new Date().toISOString(), activity: 'Building login form', category: 'implementation', status: 'in_progress' }
-      ]);
-      setComponents([
-        { id: '1', name: '/api/auth', type: 'api', owner: 'backend-api', created_at: new Date().toISOString() },
-        { id: '2', name: 'users_table', type: 'database', owner: 'database', created_at: new Date().toISOString() }
-      ]);
-      setAgentStates([
-        { agent: 'backend-api', last_seen: new Date().toISOString(), status: 'active', current_task: 'Implementing JWT tokens' },
-        { agent: 'database', last_seen: new Date().toISOString(), status: 'active', current_task: 'Creating indexes' },
-        { agent: 'frontend-ui', last_seen: new Date().toISOString(), status: 'active', current_task: 'Styling login form' }
-      ]);
+      // Set empty state instead of mock data
+      setActivities([]);
+      setComponents([]);
+      setAgentStates([]);
       setStats({
-        total_activities: 42,
-        total_components: 8,
-        active_agents: 3,
+        total_activities: 0,
+        total_components: 0,
+        active_agents: 0,
         conflicts_detected: 0
       });
-      setServerStatus('running');
-      setTmuxSessions(['claude-backend-api', 'claude-database', 'claude-frontend-ui']);
+      setServerStatus('stopped');
+      setTmuxSessions([]);
       setLoading(false);
+
+      // Show error message to user
+      const errorMessage = document.createElement('div');
+      errorMessage.className = 'fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded shadow-lg z-50';
+      errorMessage.textContent = 'Failed to connect to MCP API. Please ensure backend is running.';
+      document.body.appendChild(errorMessage);
+      setTimeout(() => errorMessage.remove(), 5000);
     }
   }, []);
 
@@ -106,7 +104,7 @@ const MCPDashboard: React.FC = () => {
 
   const startAgent = async (agentName: string) => {
     try {
-      const response = await fetch('/api/mcp/start-agent', {
+      const response = await fetch(`${config.API_MAIN_URL}/api/mcp/start-agent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ agent_name: agentName })
@@ -121,7 +119,7 @@ const MCPDashboard: React.FC = () => {
 
   const stopAgent = async (agentName: string) => {
     try {
-      const response = await fetch('/api/mcp/stop-agent', {
+      const response = await fetch(`${config.API_MAIN_URL}/api/mcp/stop-agent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ agent_name: agentName })
@@ -307,7 +305,7 @@ const MCPDashboard: React.FC = () => {
                               : 'bg-red-600 hover:bg-red-700 text-white'
                           }`}
                         >
-                          <Stop className="w-3 h-3" />
+                          <Square className="w-3 h-3" />
                           Stop
                         </button>
                       </div>

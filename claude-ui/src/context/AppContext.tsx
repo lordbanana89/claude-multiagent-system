@@ -1,10 +1,17 @@
 import React, { createContext, useContext, useReducer, useEffect, type ReactNode } from 'react';
 import axios from 'axios';
-import { config } from '../config';
 
 // Configure axios defaults
-// Remove baseURL to use Vite proxy
-// axios.defaults.baseURL = config.API_URL;
+// Use different base URLs for different services
+const apiMain = axios.create({
+  baseURL: 'http://localhost:5001',  // routes_api.py
+  timeout: 15000
+});
+
+const apiGateway = axios.create({
+  baseURL: 'http://localhost:8888',  // api/main.py
+  timeout: 15000
+});
 
 // Add request/response interceptors for debugging
 axios.interceptors.request.use(
@@ -371,7 +378,8 @@ export function AppProvider({ children }: AppProviderProps) {
   const fetchQueueStatus = async () => {
     try {
       console.log('Fetching queue status...');
-      const response = await axios.get('/api/system/status', { timeout: 15000 });
+      // Use main API for system status
+      const response = await apiMain.get('/api/system/status');
       // Transform the API response to match our QueueStatus interface
       const queueData = {
         total: response.data.queue?.pending_tasks || 0,
@@ -452,10 +460,10 @@ export function AppProvider({ children }: AppProviderProps) {
       ]);
 
       // Log any failures for debugging
-      let hasErrors = false;
+      // let hasErrors = false;
       results.forEach((result, index) => {
         if (result.status === 'rejected') {
-          hasErrors = true;
+          // hasErrors = true;
           const names = ['agents', 'health', 'queue', 'logs', 'messages', 'tasks'];
           console.warn(`Failed to fetch ${names[index]}:`, result.reason?.message || result.reason);
         }

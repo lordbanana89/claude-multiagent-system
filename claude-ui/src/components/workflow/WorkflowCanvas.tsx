@@ -12,6 +12,9 @@ import ReactFlow, {
 } from 'reactflow';
 import type { Node, Edge, Connection } from 'reactflow';
 import 'reactflow/dist/style.css';
+import integrationService from '../../services/integration';
+import axios from 'axios';
+import { config } from '../../config';
 
 // Import custom nodes
 import AgentNode from './nodes/AgentNode';
@@ -115,34 +118,192 @@ const WorkflowCanvas: React.FC = () => {
       }))
     );
 
-    // Simulate workflow execution
-    for (const node of nodes) {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setNodes((nds) =>
-        nds.map((n) =>
-          n.id === node.id
-            ? { ...n, data: { ...n.data, status: 'success' } }
-            : n
-        )
-      );
+    // Build execution plan from graph
+    const executionPlan = buildExecutionPlan(nodes, edges);
+
+    // Execute each step through real integration
+    for (const step of executionPlan) {
+      const node = nodes.find(n => n.id === step.nodeId);
+      if (!node) continue;
+
+      try {
+        // Mark node as running
+        setNodes((nds) =>
+          nds.map((n) =>
+            n.id === node.id
+              ? { ...n, data: { ...n.data, status: 'running' } }
+              : n
+          )
+        );
+
+        // Execute based on node type
+        if (node.type === 'agent') {
+          // Execute through agent
+          const agentId = node.data.agentId;
+          const task = {
+            title: `Workflow task: ${node.data.label}`,
+            command: step.command || `Execute ${node.data.label}`,
+            priority: step.priority || 5,
+            metadata: {
+              workflow_node: node.id,
+              workflow_execution: Date.now()
+            }
+          };
+
+          const result = await integrationService.executeTask(agentId, task);
+          console.log(`Executed on agent ${agentId}:`, result);
+
+        } else if (node.type === 'action') {
+          // Execute action (e.g., HTTP request)
+          if (node.data.method && node.data.url) {
+            const response = await axios({
+              method: node.data.method,
+              url: node.data.url,
+              timeout: 5000
+            });
+            console.log('Action executed:', response.status);
+          }
+
+        } else if (node.type === 'condition') {
+          // Evaluate condition
+          const condition = node.data.condition || 'true';
+          const result = eval(condition); // Simple evaluation (in production, use safer method)
+          console.log('Condition result:', result);
+
+          // Skip downstream nodes if condition fails
+          if (!result) {
+            // Mark as skipped
+            setNodes((nds) =>
+              nds.map((n) =>
+                n.id === node.id
+                  ? { ...n, data: { ...n.data, status: 'skipped' } }
+                  : n
+              )
+            );
+            continue;
+          }
+        }
+
+        // Mark node as success
+        setNodes((nds) =>
+          nds.map((n) =>
+            n.id === node.id
+              ? { ...n, data: { ...n.data, status: 'success' } }
+              : n
+          )
+        );
+
+        // Small delay between executions
+        await new Promise((resolve) => setTimeout(resolve, 500));
+
+      } catch (error) {
+        console.error(`Error executing node ${node.id}:`, error);
+        // Mark node as error
+        setNodes((nds) =>
+          nds.map((n) =>
+            n.id === node.id
+              ? { ...n, data: { ...n.data, status: 'error', error: String(error) } }
+              : n
+          )
+        );
+      }
     }
 
     setIsExecuting(false);
   };
 
-  const saveWorkflow = () => {
+  // Build execution plan from graph (topological sort)
+  const buildExecutionPlan = (nodes: Node[], edges: Edge[]) => {
+    const plan: any[] = [];
+    const visited = new Set<string>();
+    const visiting = new Set<string>();
+
+    const visit = (nodeId: string) => {
+      if (visited.has(nodeId)) return;
+      if (visiting.has(nodeId)) {
+        console.warn('Cycle detected in workflow');
+        return;
+      }
+
+      visiting.add(nodeId);
+
+      // Visit dependencies first
+      const incomingEdges = edges.filter(e => e.target === nodeId);
+      for (const edge of incomingEdges) {
+        visit(edge.source);
+      }
+
+      visiting.delete(nodeId);
+      visited.add(nodeId);
+
+      const node = nodes.find(n => n.id === nodeId);
+      if (node) {
+        plan.push({
+          nodeId,
+          type: node.type,
+          data: node.data
+        });
+      }
+    };
+
+    // Start from nodes with no incoming edges (triggers)
+    const startNodes = nodes.filter(node =>
+      !edges.some(edge => edge.target === node.id)
+    );
+
+    for (const node of startNodes) {
+      visit(node.id);
+    }
+
+    // Visit any remaining unconnected nodes
+    for (const node of nodes) {
+      visit(node.id);
+    }
+
+    return plan;
+  };
+
+  const saveWorkflow = async () => {
     const workflow = {
+      name: `Workflow_${new Date().toISOString()}`,
       nodes,
       edges,
       timestamp: new Date().toISOString(),
+      metadata: {
+        created_by: 'UI',
+        version: '1.0'
+      }
     };
-    console.log('Saving workflow:', workflow);
-    // TODO: Send to API
+
+    try {
+      // Save to database through API
+      const response = await axios.post(`${config.API_URL}/api/workflows`, workflow);
+      if (response.data.success) {
+        alert(`Workflow saved with ID: ${response.data.workflow_id}`);
+      }
+    } catch (error) {
+      console.error('Failed to save workflow:', error);
+      alert('Failed to save workflow');
+    }
   };
 
   const clearCanvas = () => {
-    setNodes([]);
-    setEdges([]);
+    if (confirm('Are you sure you want to clear the canvas?')) {
+      setNodes([]);
+      setEdges([]);
+    }
+  };
+
+  const loadWorkflow = async (workflowId: string) => {
+    try {
+      const response = await axios.get(`${config.API_URL}/api/workflows/${workflowId}`);
+      if (response.data) {
+        setNodes(response.data.nodes || []);
+        setEdges(response.data.edges || []);
+      }
+    } catch (error) {
+      console.error('Failed to load workflow:', error);
+    }
   };
 
   return (

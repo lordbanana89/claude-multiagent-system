@@ -26,8 +26,8 @@ const SimpleDashboard: React.FC = () => {
   const fetchData = async () => {
     try {
       const [agentsRes, healthRes] = await Promise.all([
-        axios.get('http://localhost:8000/api/agents'),
-        axios.get('http://localhost:8000/api/system/health')
+        axios.get('http://localhost:5001/api/agents'),  // Main API
+        axios.get('http://localhost:8888/api/system/health')  // Gateway API
       ]);
 
       setAgents(agentsRes.data);
