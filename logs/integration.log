@@ -805,3 +805,29 @@ INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:24] "GET /api/integration/health 
 INFO:__main__:Synced 9 agent states
 ERROR:__main__:Integration error: no such column: content
 INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:29] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:33] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:34] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:39] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:43] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:44] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:49] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:52] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:52] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:53] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:54] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:59] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:49:03] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:49:04] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:49:09] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:49:13] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:49:14] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
