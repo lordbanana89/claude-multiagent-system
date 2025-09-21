@@ -779,3 +779,29 @@ INFO:__main__:Synced 9 agent states
 ERROR:__main__:Integration error: no such column: content
 INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:47:39] "GET /api/integration/health HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:47:43] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:47:44] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:47:49] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:47:52] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:47:52] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:47:53] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:47:54] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:47:59] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:03] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:04] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:09] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:13] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:14] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:19] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:23] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:24] "GET /api/integration/health HTTP/1.1" 200 -
+INFO:__main__:Synced 9 agent states
+ERROR:__main__:Integration error: no such column: content
+INFO:werkzeug:127.0.0.1 - - [21/Sep/2025 11:48:29] "GET /api/integration/health HTTP/1.1" 200 -
